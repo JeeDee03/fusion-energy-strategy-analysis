@@ -1,0 +1,12 @@
+partnership_id,company_id,partner_name,announcement_date,partnership_type,reported_value,reported_unit,amount_role,status,strategic_value,source_id
+P001,PF001,RWE,2026-07-07,Strategic Equity Investment,25,EUR_million,investment_part_of_round,announced,Industrial expertise and project cooperation,S012
+P002,PF001,Free State of Bavaria,2026-02-26,Conditional Public Co-Financing,20,percent_of_project_cost,conditional_share,conditional,Potential public funding for Alpha,S013
+P003,PF001,Max Planck IPP,2026-02-26,Scientific Partnership,,,not_disclosed,announced,Plasma physics and scientific leadership,S013
+P004,CF001,Google,2025-06-30,Power Purchase Agreement,200,MW,power_capacity,announced,Future electricity offtake,S014
+P005,CF001,Eni,2025-09-22,Power Purchase Agreement,1000,USD_million,contract_value_lower_bound,announced,Future electricity offtake,S015
+P006,TO001,Tennessee Valley Authority,2025-07-22,Industrial Development Partnership,,,not_disclosed,announced,Manufacturing and utility integration,S016
+P007,TE001,NVIDIA,2026-06-08,Computational Technology Collaboration,,,not_disclosed,announced,Digital twin and AI infrastructure,S017
+P008,TE001,Princeton Plasma Physics Laboratory,2026-06-08,Scientific Partnership,,,not_disclosed,announced,Plasma physics and simulation research,S017
+P009,TK001,UK Fusion Energy,2026-04-14,Technology Supply Contract,70,GBP_million,contract_award,awarded,HTS magnet engineering and commercialization,S018
+P010,TK001,Gauss Fusion,2025-10-07,Industrial Technology Collaboration,,,not_disclosed,announced,HTS magnet integration and industrial manufacturing,S019
+P011,TE001,US Department of Energy INFUSE,2025-09-11,Public Research Collaboration,,,award_amount_not_disclosed,selected,Publicly supported plasma research and development,S020
