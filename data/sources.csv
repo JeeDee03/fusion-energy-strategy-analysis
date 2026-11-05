@@ -8,8 +8,8 @@ S006,Proxima Fusion Series A EUR 130M,Proxima Fusion,2025-06-11,https://proximaf
 S007,Proxima Fusion Series A Extension,Proxima Fusion,2025-09-09,https://proximafusion.com/press-news/proxima-fusion-extends-series-a-to-200m-total-funding-as-it-accelerates-into-hardware-execution,Company Announcement,2026-10-24
 S008,Thea Energy Series A USD 20M,Thea Energy,2024-02-08,https://thea.energy/press-release/thea-energy-announces-20-million-series-a-financing/,Company Announcement,2026-10-24
 S009,CFS Series B2 USD 863M,Commonwealth Fusion Systems,2025-08-28,https://cfs.energy/news-and-media/commonwealth-fusion-systems-raises-863-million-series-b2-round-to-accelerate-the-commercialization-of-fusion-energy/,Company Announcement,2026-10-24
-S010,Type One Energy Total Funding Above USD 400M,Reuters,2026-10-06,https://www.reuters.com/business/energy/fusion-firm-type-one-200-million-siemens-energy-backed-raise-2026-10-06/,News Report,2026-10-24
-S011,Thea Energy Total Private Investment USD 130M,TechCrunch,2026-05-27,https://techcrunch.com/2026/05/27/with-a-new-100m-raise-princetons-thea-energy-is-now-a-top-funded-fusion-startup/,News Report,2026-10-24
+S010,Type One Energy Total Funding Above USD 400M,Reuters via KSL,2026-10-06,https://www.ksl.com/article/51632922/fusion-firm-type-one-in-200-million-siemens-energy-backed-raise,News Report,2026-10-28
+S011,Thea Energy Total Private Investment USD 130M,TechCrunch,2026-05-27,https://techcrunch.com/2026/05/27/with-a-new-100m-raise-princetons-thea-energy-is-now-a-top-funded-fusion-startup/,News Report,2026-10-28
 S012,RWE Invests EUR 25M in Proxima Fusion,RWE,2026-07-07,https://www.rwe.com/en/investor-relations/financial-calendar-and-publications/news-and-ad-hoc-announcements/news/news-2026-07-07/,Company Announcement,2026-10-24
 S013,Proxima Alpha Partnership Agreement,Proxima Fusion,2026-02-26,https://proximafusion.com/press-news/proxima-fusion-rwe-the-free-state-of-bavaria-and-max-planck-institute-for-plasma-physics-sign-agreement-to-build-the-worlds-first-commercial-fusion-power-plant-in-europe,Company Announcement,2026-10-24
 S014,Google and CFS Strategic Partnership,Commonwealth Fusion Systems,2025-06-30,https://www.cfs.energy/news-and-media/google-and-commonwealth-fusion-systems-sign-strategic-partnership/,Company Announcement,2026-10-24
@@ -20,3 +20,16 @@ S018,Tokamak Energy STEP Magnet Systems Partnership,Tokamak Energy,2026-04-14,ht
 S019,Tokamak Energy and Gauss Fusion HTS Collaboration,Tokamak Energy,2025-10-07,https://tokamakenergy.com/2025/10/07/tokamak-energy-signs-strategic-hts-collaboration-with-gauss-fusion/,Company Announcement,2026-10-24
 S020,Thea Energy DOE INFUSE Collaboration Awards,Thea Energy,2025-09-11,https://thea.energy/press-release/thea-energy-selected-for-three-u-s-department-of-energy-public-private-partnership-awards-through-the-innovation-network-for-fusion-energy-program/,Company Announcement,2026-10-24
 S021,Proxima Fusion Company Overview,Proxima Fusion,,https://www.proximafusion.com/about,Company Website,2026-10-24
+MS001,Type One Energy initial licensing application at Bull Run,Type One Energy,2026-01-29,https://typeoneenergy.com/insights-announcements/type-one-energy-initial-licensing-application-bull-run/,Company Announcement,2026-10-28
+MS002,CFS begins preparing a home for fusion plasma,Commonwealth Fusion Systems,2026-05-14,https://blog.cfs.energy/cfs-begins-preparing-a-home-for-our-100-million-degree-fusion-plasma/,Company Blog,2026-10-28
+MS003,Thea Energy announces Helios design paper series,Thea Energy,2026-09-09,https://thea.energy/press-release/thea-energy-publishes-the-most-practical-fusion-power-plant-design-and-a-clear-path-toward-energy-on-the-grid/,Company Announcement,2026-10-28
+MS004,Tokamak Energy completes Demo4 magnet campaign,Tokamak Energy,2026-09-09,https://tokamakenergy.com/2026/09/09/tokamak-energy-completes-world-leading-fusion-magnet-campaign-validating-technology-for-commercial-hts-systems/,Company Announcement,2026-10-28
+ES001,SMARD DE/LU hourly day-ahead price series 4169,Bundesnetzagentur | SMARD.de,,https://www.smard.de/app/chart_data/4169/DE/index_hour.json,Official Market Data,2026-10-28
+ES002,Evaluation of the 2024 electricity market,Bundesnetzagentur | SMARD.de,2025-01-02,https://www.smard.de/page/en/topic-article/5892/215704/evaluation-of-last-year,Official Market Report,2026-10-28
+ES003,SMARD data use and attribution,Bundesnetzagentur | SMARD.de,,https://www.smard.de/en/datennutzung,Data License,2026-10-28
+S3_001,Proxima Fusion Company and Technology Overview,Proxima Fusion,,https://www.proximafusion.com/about,Company Website,2026-10-28
+S3_002,Type One Energy Technology Overview,Type One Energy,,https://typeoneenergy.com/our-technology/,Company Website,2026-10-28
+S3_003,Equilibrium Optimization of the Helios Planar Coil Stellarator Power Plant,Fusion Engineering and Design,2026-09-01,https://doi.org/10.1016/j.fusengdes.2026.115903,Peer Reviewed Paper,2026-10-28
+S3_004,Commonwealth Fusion Systems Technology Overview,Commonwealth Fusion Systems,,https://cfs.energy/technology/,Company Website,2026-10-28
+S3_005,Tokamak Energy Fusion Technology Overview,Tokamak Energy,,https://tokamakenergy.com/our-fusion-energy-and-hts-technology/fusion-energy-technology/,Company Website,2026-10-28
+S3_006,Stellaris A High Field Quasi Isodynamic Stellarator,Fusion Engineering and Design,2025-05-01,https://doi.org/10.1016/j.fusengdes.2025.114868,Peer Reviewed Paper,2026-10-28

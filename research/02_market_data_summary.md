@@ -12,13 +12,13 @@
 
 ## Reported Funding Snapshots
 
-| company_name                | as_of_date   |   amount_million | currency   | comparison_basis        | qualifier   | comparability_group         | verification_status        |
-|:----------------------------|:-------------|-----------------:|:-----------|:------------------------|:------------|:----------------------------|:---------------------------|
-| Proxima Fusion              | 2026-07-07   |              650 | EUR        | public_and_private      | approximate | mixed_public_private        | company_source_checked     |
-| Commonwealth Fusion Systems | 2026-07-30   |             4000 | USD        | reported_capital_raised | approximate | reported_cumulative_capital | company_source_checked     |
-| Type One Energy             | 2026-10-06   |              400 | USD        | reported_total_funding  | lower_bound | reported_cumulative_capital | independently_corroborated |
-| Thea Energy                 | 2026-05-27   |              130 | USD        | private_investment      | reported    | private_capital             | independently_corroborated |
-| Tokamak Energy              | 2024-11-20   |              335 | USD        | private_and_government  | reported    | mixed_public_private        | company_source_checked     |
+| company_name                | as_of_date   |   amount_million | currency   | comparison_basis        | qualifier   | comparability_group         | verification_status     |
+|:----------------------------|:-------------|-----------------:|:-----------|:------------------------|:------------|:----------------------------|:------------------------|
+| Proxima Fusion              | 2026-07-07   |              650 | EUR        | public_and_private      | lower_bound | mixed_public_private        | company_source_checked  |
+| Commonwealth Fusion Systems | 2026-07-30   |             4000 | USD        | reported_capital_raised | approximate | reported_cumulative_capital | company_source_checked  |
+| Type One Energy             | 2026-10-06   |              400 | USD        | reported_total_funding  | lower_bound | reported_cumulative_capital | external_report_checked |
+| Thea Energy                 | 2026-05-27   |              130 | USD        | private_investment      | reported    | private_capital             | external_report_checked |
+| Tokamak Energy              | 2024-11-20   |              335 | USD        | private_and_government  | reported    | mixed_public_private        | company_source_checked  |
 
 ## Selected Partnership Capabilities
 

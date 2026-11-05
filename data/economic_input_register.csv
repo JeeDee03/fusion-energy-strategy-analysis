@@ -1,0 +1,12 @@
+input_id,device_id,economic_category,input_name,required_unit,linked_technical_parameter,evidence_value,evidence_unit,evidence_type,source_id,evidence_status,interpretation,next_action
+EI001,PF_STELLARIS,CAPEX,construction_capex,EUR,,,,,,missing,Total overnight plant construction cost,Define FOAK cost scenarios
+EI002,PF_STELLARIS,CAPEX,magnet_system_capex,EUR,peak_conductor_field,24.9,T,design_target,S3_006,engineering_proxy_only,"Field is a design proxy, not a cost estimate",Research HTS material and fabrication costs
+EI003,PF_STELLARIS,OPEX,fixed_annual_opex,EUR/year,,,,,,missing,Annual fixed operating expenditure,Establish operating cost scenarios
+EI004,PF_STELLARIS,OPEX,replacement_cost,EUR/event,major_maintenance_duration,7.0,months,design_target,S3_006,engineering_proxy_only,Outage time is not replacement expenditure,Estimate major maintenance event costs
+EI005,PF_STELLARIS,Output,net_rated_electric_power,MWe,peak_electric_power,1000.0,MWe,simulated,S3_006,engineering_proxy_only,Peak electric power is not verified net rated output,Resolve gross/net and peak/rated definitions
+EI006,PF_STELLARIS,Output,capacity_factor,fraction,major_maintenance_interval_min,4.0,years,design_target,S3_006,engineering_proxy_only,Major outage schedule is only one part of CF,Build availability and dispatch scenarios
+EI007,PF_STELLARIS,Output,auxiliary_power,MWe,,,,,,missing,Recirculating and other plant power consumption,Research design power balance
+EI008,PF_STELLARIS,Finance,plant_lifetime,years,,,,,,missing,Economic operating life of the plant,Define justified scenario range
+EI009,PF_STELLARIS,Finance,real_discount_rate,fraction,,,,,,missing,Real project discount rate,Define financing assumptions and scenarios
+EI010,PF_STELLARIS,Manufacturing,manufacturing_learning_rate,fraction,number_of_modular_coils,48.0,count,design_target,S3_006,engineering_proxy_only,Coil count alone cannot establish a learning rate,Research manufacturing learning evidence
+EI011,PF_STELLARIS,Revenue,electricity_capture_price,EUR/MWh,,,,,,missing,Realized electricity sales price,Use Stage 2 market data for revenue scenarios

@@ -1,0 +1,9 @@
+device_id,company_id,device_name,technology,device_role,development_status,source_id
+PF_ALPHA,PF001,Alpha,Quasi-isodynamic Stellarator,Demonstrator,Planned,S3_001
+PF_STELLARIS,PF001,Stellaris,Quasi-isodynamic Stellarator,Commercial Concept,Conceptual Design,S3_001
+TO_INFINITY1,TO001,Infinity One,Stellarator,Engineering Verification,Planned,S3_002
+TO_INFINITY2,TO001,Infinity Two,Stellarator,Commercial Concept,Conceptual Design,S3_002
+TE_HELIOS,TE001,Helios,Quasi-axisymmetric Stellarator,Commercial Concept,Preconceptual Design,S3_003
+CF_SPARC,CF001,SPARC,Conventional Tokamak,Demonstrator,Under Construction,S3_004
+CF_ARC,CF001,ARC,Conventional Tokamak,Commercial Concept,Design Development,S3_004
+TK_ST40,TK001,ST40,Spherical Tokamak,Experimental Device,Operating Research Facility,S3_005

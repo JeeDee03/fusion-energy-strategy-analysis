@@ -50,7 +50,8 @@ allowed_qualifiers = {
 allowed_statuses = {
     "pending_review",
     "company_source_checked",
-    "independently_corroborated"
+    "independently_corroborated",
+    "external_report_checked"
 }
 
 assert snapshots["comparability_group"].isin(

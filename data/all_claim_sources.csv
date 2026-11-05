@@ -1,0 +1,26 @@
+claim_id,source_id,page_or_section,evidence_role,source_dependency,verification_note
+CLF001,S001,From research to industrial execution; financing announcement opening,supports,original,Amount and announcement date checked against original disclosure; classification of instrument remains subject to exact terms.
+CLF002,S002,"Opening announcement, October 6 2026",supports,original,Amount and announcement date checked against original disclosure; classification of instrument remains subject to exact terms.
+CLF003,S003,"Opening announcement, May 27 2026",supports,original,Amount and announcement date checked against original disclosure; classification of instrument remains subject to exact terms.
+CLF004,S004,Financing announcement opening and cumulative total,supports,original,Amount and announcement date checked against original disclosure; classification of instrument remains subject to exact terms.
+CLF005,S005,"Opening paragraphs, including cumulative breakdown",supports,original,Amount and announcement date checked against original disclosure; classification of instrument remains subject to exact terms.
+CLF006,S006,Opening financing paragraphs,supports,original,Amount and announcement date checked against original disclosure; classification of instrument remains subject to exact terms.
+CLF007,S007,Opening paragraphs: extension amount and cumulative funding,supports,original,Amount and announcement date checked against original disclosure; classification of instrument remains subject to exact terms.
+CLF008,S008,"Opening announcement, February 8 2024",supports,original,Amount and announcement date checked against original disclosure; classification of instrument remains subject to exact terms.
+CLF009,S009,Opening financing paragraphs,supports,original,Amount and announcement date checked against original disclosure; classification of instrument remains subject to exact terms.
+CLF010,S001,From research to industrial execution; financing announcement opening,supports,original,Dated company release supports the recorded lower bound and public/private scope.
+CLF011,S004,Financing announcement opening and cumulative total,supports,original,Historical cumulative disclosure; not cash remaining or complete comparable private capital.
+CLF012,S010,Second body paragraph: cumulative funding after Series B (Reuters via KSL),supports,unknown,"The cited external report was checked. The financial total remains reported information, not independently audited evidence."
+CLF013,S011,Third body paragraph: cumulative private investment reported by the company,supports,unknown,"The cited external report was checked. The financial total remains reported information, not independently audited evidence."
+CLF014,S005,"Opening paragraphs, including cumulative breakdown",supports,original,Historical cumulative disclosure; not cash remaining or complete comparable private capital.
+CLP001,S012,Opening investment paragraphs and CEO/site discussion,supports,original,Supports documented contribution; does not certify performance or legal enforceability.
+CLP002,S013,MoU financing paragraph,supports,original,Supports documented contribution; does not certify performance or legal enforceability.
+CLP003,S013,MoU paragraph describing partner roles,supports,original,Supports documented contribution; does not certify performance or legal enforceability.
+CLP004,S014,Opening PPA and investment paragraphs,supports,original,Supports documented contribution; does not certify performance or legal enforceability.
+CLP005,S015,Opening agreement announcement,supports,original,Supports documented contribution; does not certify performance or legal enforceability.
+CLP006,S016,Opening commercial contracts and fabrication paragraphs,supports,original,Supports documented contribution; does not certify performance or legal enforceability.
+CLP007,S017,Through these collaborations: NVIDIA role,supports,original,Supports documented contribution; does not certify performance or legal enforceability.
+CLP008,S017,Through these collaborations: PPPL role,supports,original,Supports documented contribution; does not certify performance or legal enforceability.
+CLP009,S018,Opening award and work-package paragraphs,supports,original,Supports documented contribution; does not certify performance or legal enforceability.
+CLP010,S019,Opening strategic collaboration paragraphs,supports,original,Supports documented contribution; does not certify performance or legal enforceability.
+CLP011,S020,Opening selection announcement and collaboration descriptions,supports,original,Supports documented contribution; does not certify performance or legal enforceability.

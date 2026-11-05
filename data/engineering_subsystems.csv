@@ -1,0 +1,6 @@
+evidence_id,device_id,subsystem,engineering_characteristic,economic_driver,evidence_type,source_id
+ENG001,PF_STELLARIS,HTS magnets,Nonplanar modular HTS coil system,magnet_capex,design_target,S3_006
+ENG002,PF_STELLARIS,Structural supports,High field magnet support architecture,structural_capex,simulated,S3_006
+ENG003,PF_STELLARIS,First wall and blanket,Neutron shielding and thermal management design,replacement_cost,simulated,S3_006
+ENG004,PF_STELLARIS,Remote maintenance,Sector splitting maintenance concept,planned_downtime,design_target,S3_006
+ENG005,PF_STELLARIS,Tritium system,Breeding blanket and fuel cycle concept,fuel_cycle_risk,simulated,S3_006

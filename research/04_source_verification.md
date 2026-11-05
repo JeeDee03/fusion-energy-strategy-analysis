@@ -1,54 +1,31 @@
 # Financial Data Source Verification
 
-## Purpose
+Updated: 28 October 2026. Historical disclosure cutoff: 24 October 2026.
 
-This document records the evidence supporting the financial data used in the Fusion Energy Market & Techno-Economic Strategy research project.
+## Verification terminology
 
-## Verification Levels
+- `pending_review`: underlying evidence not yet checked.
+- `company_source_checked`: a company disclosure was checked for its reported amount, scope and date.
+- `original_source_checked`: claim-table terminology for checking the original disclosure; equivalent to company_source_checked for these company-source snapshots.
+- `external_report_checked`: the cited external report was read; this does not establish independently audited financial accuracy or an independent financial reconstruction.
+- `independently_corroborated`: reserved for documented additional independent evidence; not assigned to the current five snapshots.
 
-**Pending Review:** A source has been recorded but the underlying disclosure has not been checked.
+## Current verification register
 
-**Company Source Checked:** The original company publication has been examined and confirms the recorded figure, definition, and reporting date.
+| Snapshot | Reference date | Amount, million | Currency | Qualifier | Scope | Review status | Source |
+|---|---|---:|---|---|---|---|---|
+| FS001 | 2026-07-07 | 650 | EUR | lower_bound | public_and_private | company_source_checked | [S001](https://www.proximafusion.com/press-news/proxima-fusion-raises-eu411-million-to-build-europes-commercial-fusion-champion) |
+| FS002 | 2026-07-30 | 4000 | USD | approximate | reported_capital_raised | company_source_checked | [S004](https://cfs.energy/news-and-media/commonwealth-fusion-systems-raises-another-1-billion-bringing-total-capital-raised-to-4-billion/) |
+| FS003 | 2026-10-06 | 400 | USD | lower_bound | reported_total_funding | external_report_checked | [S010](https://www.ksl.com/article/51632922/fusion-firm-type-one-in-200-million-siemens-energy-backed-raise) |
+| FS004 | 2026-05-27 | 130 | USD | reported | private_investment | external_report_checked | [S011](https://techcrunch.com/2026/05/27/with-a-new-100m-raise-princetons-thea-energy-is-now-a-top-funded-fusion-startup/) |
+| FS005 | 2024-11-20 | 335 | USD | reported | private_and_government | company_source_checked | [S005](https://tokamakenergy.com/2024/11/20/tokamak-energy-raises-125m-to-commercialise-transformative-fusion-and-magnet-technologies/) |
 
-**Independently Corroborated:** An additional independent source has been identified that supports the reported information.
+FS001 now relies on dated S001 rather than the undated company overview. FS003 is supported by the Reuters report hosted on KSL. FS004 remains a historical May disclosure, with a later undisclosed extension discussed in chapter 03. Source locators are recorded in claim_sources.csv.
 
-Independent corroboration does not necessarily mean that financial figures have been audited.
+## Review history
 
-## Verification Register
+The initial verification register described FS003/FS004 as independently corroborated. The enhancement review corrected that wording to external_report_checked: publication in external media is not itself financial audit evidence. The first funding-audit pass and its subsequent update are preserved in [chapter 07](07_funding_audit.md).
 
+## Continuing limitations
 
-| Snapshot ID | Company | Supporting evidence | Status |
-|---|---|---|---|
-| FS001 | Proxima Fusion | Official company overview; approximately EUR 650M in combined public and private funding | Company source checked |
-| FS002 | Commonwealth Fusion Systems | July 30, 2026 company announcement; USD 4B cumulative capital raised | Company source checked |
-| FS003 | Type One Energy | Reuters, October 6, 2026; cumulative funding above USD 400M | Independently corroborated |
-| FS004 | Thea Energy | TechCrunch, May 27, 2026; USD 130M cumulative private investment at that date | Independently corroborated |
-| FS005 | Tokamak Energy | November 20, 2024 funding disclosure; USD 275M private plus USD 60M government | Company source checked |
-
-**Verification note — October 24, 2026**
-
-All five cumulative funding snapshots have been checked against the listed published disclosures. Their reporting dates and financing definitions differ and must be preserved in comparative analysis.
-
-Thea Energy's August 2026 financing extension was announced without a disclosed amount. The May 2026 snapshot should therefore not be presented as the company's latest cumulative financing total.
-
-Source verification confirms that the recorded information corresponds to the cited disclosure; it does not establish independently audited financial accuracy.
-
-## Methodological Rules
-
-1. Original company announcements must be distinguished from independent analysis.
-2. A cumulative funding disclosure must not be treated as an individual investment round.
-3. Funding commitments, project budgets, grants, and actual disbursements must be distinguished.
-4. Approximate amounts and lower bounds must retain their qualifiers.
-5. Financial figures with incompatible definitions must not be ranked without appropriate qualifications.
-6. Every important financial claim must have a traceable source.
-7. Sources should be checked for reporting date, amount, currency, and financing category.
-
-## Outstanding Work
-
-
-## Outstanding Work
-
-- Perform source-level verification of individual funding rounds and partnership records.
-- Monitor new disclosures that may supersede historical funding snapshots.
-- Document material data revisions without deleting historical records.
-- Maintain consistency between datasets, analytical figures, and the research paper.
+Cumulative snapshots and individual rounds must not be summed. Commitments, budgets, awards, PPAs and cash received remain distinct. Company totals have different dates and definitions. Unknown amounts are not zero. Full historical funding coverage and detailed financing terms remain outside this initial baseline.

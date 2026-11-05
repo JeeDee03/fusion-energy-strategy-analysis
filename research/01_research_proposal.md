@@ -1,4 +1,4 @@
-# Research Proposal — Version 0.1
+# Research Proposal — Version 0.2
 
 ## Project Title
 The Economics of Commercial Fusion: A Data-Driven Market and Strategic Analysis of Proxima Fusion
@@ -46,8 +46,8 @@ The analysis is an independent academic portfolio project and is not commissione
 - Research paper
 - Executive strategy presentation
 
-## Initial Research Status
+## Research Status — 28 October 2026
 
-Stage 1 — Research design in progress.
+Stage 1 research design and the initial Stage 2 descriptive baseline have been implemented. Financing, partnership, milestone and historical electricity datasets support reproducible calculations and a consolidated synthesis.
 
-No hypotheses have yet been validated and no original quantitative results have yet been produced.
+H1–H3 remain untested. The five-company sample and selected events do not constitute a complete industry census or complete funding history. Technology benchmarking, FOAK/NOAK modeling and strategic hypothesis evaluation remain future stages. See [closure review](14_stage12_final_review.md) for retained limitations.

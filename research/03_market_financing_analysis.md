@@ -1,7 +1,7 @@
 # 2. Fusion Industry Financing and Competitive Positioning
 
 *The Economics of Commercial Fusion — Independent Research Project*  
-*Chapter version 0.2 | Evidence reviewed: 24 October 2026*
+*Chapter version 0.3 | Disclosure cutoff: 24 October 2026 | Review updated: 28 October 2026*
 
 ## 2.1 Industry Financing Landscape
 
@@ -19,15 +19,15 @@ The dataset distinguishes **individual funding events** (`funding_rounds.csv`) f
 
 | Company | Reference date | Reported amount (millions) | Currency | Funding definition | Qualifier | Evidence status |
 |---|---|---:|---|---|---|---|
-| Proxima Fusion | 2026-07-07* | 650 | EUR | Mixed public and private funding | Approximate | Company source checked |
+| Proxima Fusion | 2026-07-07 | 650 | EUR | Mixed public and private funding | **More than** 650 (lower bound) | Company source checked |
 | Commonwealth Fusion Systems | 2026-07-30 | 4,000 | USD | Company-reported cumulative capital raised | Approximate / rounded | Company source checked |
-| Type One Energy | 2026-10-06 | 400 | USD | Reported cumulative funding | **More than** 400 (lower bound) | External press report checked |
-| Thea Energy | 2026-05-27 | 130 | USD | Reported cumulative private investment | Reported amount | External press report checked |
+| Type One Energy | 2026-10-06 | 400 | USD | Reported cumulative funding | **More than** 400 (lower bound) | External report checked |
+| Thea Energy | 2026-05-27 | 130 | USD | Reported cumulative private investment | Reported amount | External report checked |
 | Tokamak Energy | 2024-11-20 | 335 | USD | $275M private + $60M government | Reported amount | Company source checked |
 
-*The date shown for Proxima is the dataset's reference date, not necessarily the publication date of the undated company overview used to substantiate approximately €650M. Do not interpret it as proof the entire cumulative figure was raised on that day.*
+Proxima Fusion's dated announcement of 7 July 2026 reports more than €650 million in secured public and private funding, including €95 million in public grants. The figure is a company-reported lower bound, not an exact total or a measure of private equity funding alone. [Source: Proxima Fusion, 7 July 2026](https://www.proximafusion.com/press-news/proxima-fusion-raises-eu411-million-to-build-europes-commercial-fusion-champion).
 
-**Sources:** [Proxima Fusion company overview](https://www.proximafusion.com/about); [CFS, 30 July 2026](https://cfs.energy/news-and-media/commonwealth-fusion-systems-raises-another-1-billion-bringing-total-capital-raised-to-4-billion/); [Reuters on Type One Energy, 6 October 2026](https://www.reuters.com/business/energy/fusion-firm-type-one-200-million-siemens-energy-backed-raise-2026-10-06/); [TechCrunch on Thea Energy, 27 May 2026](https://techcrunch.com/2026/05/27/with-a-new-100m-raise-princetons-thea-energy-is-now-a-top-funded-fusion-startup/); [Tokamak Energy, 20 November 2024](https://tokamakenergy.com/2024/11/20/tokamak-energy-raises-125m-to-commercialise-transformative-fusion-and-magnet-technologies/).
+**Sources:** [Proxima Fusion, 7 July 2026](https://www.proximafusion.com/press-news/proxima-fusion-raises-eu411-million-to-build-europes-commercial-fusion-champion); [CFS, 30 July 2026](https://cfs.energy/news-and-media/commonwealth-fusion-systems-raises-another-1-billion-bringing-total-capital-raised-to-4-billion/); [Reuters on Type One Energy, 6 October 2026](https://www.ksl.com/article/51632922/fusion-firm-type-one-in-200-million-siemens-energy-backed-raise); [TechCrunch on Thea Energy, 27 May 2026](https://techcrunch.com/2026/05/27/with-a-new-100m-raise-princetons-thea-energy-is-now-a-top-funded-fusion-startup/); [Tokamak Energy, 20 November 2024](https://tokamakenergy.com/2024/11/20/tokamak-energy-raises-125m-to-commercialise-transformative-fusion-and-magnet-technologies/).
 
 CFS reports the largest cumulative amount in this selected sample, but the reported totals **do not constitute a like-for-like ranking of private financing**. The figures differ in currency, vintage, scope, and the inclusion of public support. Thea Energy also announced a subsequent Series B extension in August 2026 without disclosing its size; the May 2026 figure should therefore be treated as a historical snapshot, not a confirmed present-day total. [Thea Energy press releases](https://thea.energy/media-press/).
 
@@ -92,4 +92,4 @@ Primary data, provenance and analysis scripts are retained in:
 
 The source links supporting Table 2.1 are provided immediately below the table. Further partnership citations are tracked by `source_id` in the dataset. Conclusions should be revised when new disclosures or independently verified technical milestones become available.
 
-*Draft status: Version 0.2 — integrated preliminary financial and partnership analysis; additional source-level auditing remains ongoing.*
+*Baseline status: Version 0.3 — selected-record source review updated; incomplete histories, public/private comparability and undisclosed terms remain explicit limits.*

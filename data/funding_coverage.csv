@@ -1,0 +1,6 @@
+company_id,company_name,recorded_rounds,first_recorded_event,last_recorded_event,snapshot_date,coverage_status
+PF001,Proxima Fusion,3,2025-06-11,2026-07-07,2026-07-07,selected_events_not_complete_history
+TO001,Type One Energy,1,2026-10-06,2026-10-06,2026-10-06,selected_events_not_complete_history
+TE001,Thea Energy,2,2024-02-08,2026-05-27,2026-05-27,selected_events_not_complete_history
+CF001,Commonwealth Fusion Systems,2,2025-08-28,2026-07-30,2026-07-30,selected_events_not_complete_history
+TK001,Tokamak Energy,1,2024-11-20,2024-11-20,2024-11-20,selected_events_not_complete_history

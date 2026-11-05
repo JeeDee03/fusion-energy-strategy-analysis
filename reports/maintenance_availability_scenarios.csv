@@ -1,0 +1,5 @@
+scenario,interpretation,outage_months,availability,availability_percent
+Calendar cycle - 4 years,calendar_cycle,7.0,0.8541666666666666,85.41666666666666
+Calendar cycle - 6 years,calendar_cycle,7.0,0.9027777777777778,90.27777777777779
+4 operating years - 7 months,operating_cycle,7.0,0.8727272727272727,87.27272727272727
+4 operating years - 5 months,operating_cycle,5.0,0.9056603773584906,90.56603773584906

@@ -40,7 +40,7 @@ The project is organized into seven stages:
 | Stage | Description | Status |
 |---|---|---|
 | 1 | Research Design & Hypotheses | Completed |
-| 2 | Market Data & Financial Analysis | Initial analysis completed; validation ongoing |
+| 2 | Market Data & Financial Analysis | Initial descriptive baseline completed; scope limitations retained |
 | 3 | Competitive Technology Benchmarking | Planned |
 | 4 | Techno-Economic Modeling | Planned |
 | 5 | Risk & Monte Carlo Simulation | Planned |
@@ -125,10 +125,9 @@ fusion-energy-strategy-analysis/
 
 ## Reproducing the Analysis
 
-### 1. Clone the repository
+### 1. Open the downloaded or cloned project directory
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
 cd fusion-energy-strategy-analysis
 ```
 
@@ -145,18 +144,14 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-### 4. Run the existing analyses
+### 4. Rebuild and review the baseline
 
 ```bash
-python src/check_dataset.py
-python src/audit_funding.py
-python src/benchmark_funding.py
-python src/funding_comparison.py
-python src/partnership_capabilities.py
-python src/research_summary.py
+python src/run_stage12.py
+python src/check_stage12_closure.py
 ```
 
-Some analyses require the processed datasets included in the repository. The currency normalization script additionally retrieves historical exchange rates from the European Central Bank.
+After dependencies have been installed, the rebuild uses retained inputs without network downloads. It records package versions, file hashes and results in `reports/stage12_run_summary.json`. The closure command screens document consistency; scientific and editorial interpretation remains a separate review. Optional download scripts are excluded from the offline rebuild.
 
 ## Research Documentation
 
@@ -165,6 +160,8 @@ The initial market financing analysis is available in:
 `research/03_market_financing_analysis.md`
 
 The underlying datasets and their associated sources are documented in the `data/` directory.
+
+The consolidated Stage 1–2 synthesis is available in [research/11_stage12_synthesis.md](research/11_stage12_synthesis.md).
 
 ## Limitations
 
@@ -183,4 +180,7 @@ This is an independent educational research project.
 It is not commissioned, sponsored, or endorsed by Proxima Fusion or any of the other companies discussed.
 
 The research does not constitute investment advice.
-```
+
+## Baseline scope and handover
+
+The enhanced Stage 1–2 baseline contains five companies, nine selected financing events, five historical snapshots, 11 partnership records, nine milestone observations and a single-year 2024 DE/LU electricity analysis. It is not a complete financing-history census. H1–H3 remain untested; Stage 3 will assess technical and business-model evidence. Raw ECB input archival remains a documented reproducibility improvement. See [the closing review](research/14_stage12_final_review.md).

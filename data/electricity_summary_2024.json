@@ -1,0 +1,16 @@
+{
+  "year": 2024,
+  "bidding_zone": "Germany/Luxembourg",
+  "hours": 8784,
+  "mean_eur_mwh": 78.51203324225865,
+  "median_eur_mwh": 79.58500000000001,
+  "population_std_eur_mwh": 52.72340747672708,
+  "p05_eur_mwh": -0.01,
+  "p95_eur_mwh": 143.25,
+  "min_eur_mwh": -135.45,
+  "max_eur_mwh": 936.28,
+  "negative_price_hours": 457,
+  "negative_price_share_pct": 5.20264116575592,
+  "hours_above_100_eur_mwh": 2296,
+  "longest_negative_run_hours": 18
+}

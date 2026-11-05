@@ -1,0 +1,11 @@
+parameter_id,device_id,parameter_name,value,unit,evidence_type,source_id,notes,company_id,device_name,company_name
+TP001,TO_INFINITY2,net_electric_output,400.0,MWe,design_target,S3_002,Proposed grid electrical output; not experimentally demonstrated,TO001,Infinity Two,Type One Energy
+TP002,PF_STELLARIS,average_magnetic_field,9.0,T,simulated,S3_006,Conceptual design value from Table 2,PF001,Stellaris,Proxima Fusion
+TP003,PF_STELLARIS,peak_conductor_field,24.9,T,design_target,S3_006,Peak magnetic field at conductor from Table 2,PF001,Stellaris,Proxima Fusion
+TP004,PF_STELLARIS,number_of_modular_coils,48.0,count,design_target,S3_006,Conceptual coil count from Table 2,PF001,Stellaris,Proxima Fusion
+TP005,PF_STELLARIS,peak_fusion_power,2700.0,MW_fusion,simulated,S3_006,Approximate modeled peak fusion power from Table 2,PF001,Stellaris,Proxima Fusion
+TP006,PF_STELLARIS,peak_electric_power,1000.0,MWe,simulated,S3_006,Approximate conceptual peak electrical power; net or gross boundary requires further review,PF001,Stellaris,Proxima Fusion
+TP007,TO_INFINITY2,peak_fusion_power,800.0,MW_fusion,design_target,S3_002,Published conceptual fusion power,TO001,Infinity Two,Type One Energy
+TP008,PF_STELLARIS,major_maintenance_interval_min,4.0,years,design_target,S3_006,Lower end of conceptual replacement interval,PF001,Stellaris,Proxima Fusion
+TP009,PF_STELLARIS,major_maintenance_interval_max,6.0,years,design_target,S3_006,Upper end of conceptual replacement interval,PF001,Stellaris,Proxima Fusion
+TP010,PF_STELLARIS,major_maintenance_duration,7.0,months,design_target,S3_006,Early estimate for major in-vessel replacement campaign,PF001,Stellaris,Proxima Fusion

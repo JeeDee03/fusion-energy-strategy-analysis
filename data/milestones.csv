@@ -1,1 +1,10 @@
-milestone_id,company_id,milestone_name,milestone_type,target_date,actual_date,status,source_id
+milestone_id,company_id,milestone_name,milestone_type,target_date,actual_date,status,source_id,project_name,statement_date,target_year,target_period_text,evidence_level,notes
+M001,PF001,Complete Stellarator Model Coil,hardware_demonstration,,,planned,S006,SMC,2025-06-11,2027,2027,company_target,Historical target from June 2025; not certified as the latest schedule.
+M002,PF001,Begin Alpha operations,demonstrator_operations,,,planned,S006,Alpha,2025-06-11,2031,2031,company_target,Historical operations target; not a claim of electricity export or achieved Q greater than one.
+M003,TO001,Submit initial byproduct material license application,regulatory_submission,,,reported_completed,MS001,Project Infinity,2026-01-29,,,company_report,Submission announced on statement_date; exact submission date unspecified. Not license approval.
+M004,TO001,Commission and start Infinity One,demonstrator_operations,,,planned,MS001,Infinity One,2026-01-29,2029,2029,company_target,Historical schedule; no inference that startup has occurred.
+M005,CF001,Receive second half of SPARC vacuum vessel,hardware_delivery,,,reported_completed,MS002,SPARC,2026-05-14,,,company_report,Arrival reported by publication date; exact arrival date unspecified. Not completion of SPARC.
+M006,CF001,Begin SPARC operations,demonstrator_operations,,,planned,MS002,SPARC,2026-05-14,2027,2027,company_target,Operations target; Q greater than one and grid electricity are separate milestones.
+M007,TE001,Announce publication of Helios design paper series,design_publication,,2026-09-09,reported_completed,MS003,Helios,2026-09-09,,,company_report,Date records the announcement itself. Journal publication dates and technical conclusions require Stage 3 review.
+M008,TE001,Operate Helios,commercial_operations,,,planned,MS003,Helios,2026-09-09,,2030s,company_target,Decade-level target only; no exact year inferred.
+M009,TK001,Complete Demo4 magnet test campaign,hardware_testing,,,reported_completed,MS004,Demo4,2026-09-09,,,company_report,Completion reported by statement date; exact completion day unspecified. Does not establish reactor or power-plant readiness.

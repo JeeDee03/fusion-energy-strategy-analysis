@@ -1,6 +1,6 @@
 snapshot_id,company_id,as_of_date,amount_million,currency,comparison_basis,qualifier,source_id,comparability_group,verification_status
-FS001,PF001,2026-07-07,650,EUR,public_and_private,approximate,S021,mixed_public_private,company_source_checked
+FS001,PF001,2026-07-07,650,EUR,public_and_private,lower_bound,S001,mixed_public_private,company_source_checked
 FS002,CF001,2026-07-30,4000,USD,reported_capital_raised,approximate,S004,reported_cumulative_capital,company_source_checked
-FS003,TO001,2026-10-06,400,USD,reported_total_funding,lower_bound,S010,reported_cumulative_capital,independently_corroborated
-FS004,TE001,2026-05-27,130,USD,private_investment,reported,S011,private_capital,independently_corroborated
+FS003,TO001,2026-10-06,400,USD,reported_total_funding,lower_bound,S010,reported_cumulative_capital,external_report_checked
+FS004,TE001,2026-05-27,130,USD,private_investment,reported,S011,private_capital,external_report_checked
 FS005,TK001,2024-11-20,335,USD,private_and_government,reported,S005,mixed_public_private,company_source_checked

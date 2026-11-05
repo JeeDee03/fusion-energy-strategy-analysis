@@ -1,0 +1,6 @@
+company_id,currency,selected_rounds_million,recorded_snapshot_million,arithmetic_difference_million,interpretation,ranking_permitted
+PF001,EUR,556.0,650,94.0,Selected equity events total EUR 556m; dated company cumulative disclosure is >650m mixed funding including 95m grants. Rounded/lower-bound values and incomplete history prevent exact residual allocation.,no
+TO001,USD,200.0,400,200.0,Scope and dates require reconciliation; residual is not an identified missing transaction.,no
+TE001,USD,120.0,130,10.0,Scope and dates require reconciliation; residual is not an identified missing transaction.,no
+CF001,USD,1863.0,4000,2137.0,Scope and dates require reconciliation; residual is not an identified missing transaction.,no
+TK001,USD,125.0,335,210.0,Scope and dates require reconciliation; residual is not an identified missing transaction.,no
