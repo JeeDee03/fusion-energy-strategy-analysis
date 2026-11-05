@@ -1,0 +1,11 @@
+stage,metric,value,unit,classification
+4.2,Reference CAPEX,12000.0,EUR million,analyst_scenario
+4.2,Reference LCOE,170.14090447598142,EUR/MWh,conditional_model_output
+4.3,Performance combinations,15.0,count,model_coverage
+4.3,Minimum modeled LCOE,111.51599573244873,EUR/MWh,conditional_model_output
+4.3,Maximum modeled LCOE,289.4844687038872,EUR/MWh,conditional_model_output
+4.4,Minimum learned CAPEX,10228.8,EUR million,conditional_model_output
+4.4,Minimum learning-case LCOE,149.73065169732493,EUR/MWh,conditional_model_output
+4.5,Break-even sale price,170.14090447598142,EUR/MWh,conditional_model_output
+4.5,Minimum modeled NPV,-7.951722096140631,EUR billion,conditional_model_output
+4.5,Maximum modeled NPV,2.591169769707419,EUR billion,conditional_model_output

@@ -469,3 +469,36 @@ Important fields:
 5. Break-even electricity prices are conditional on the modeled cost and operating assumptions.
 6. A positive scenario NPV is not evidence that a real fusion project is commercially viable.
 7. Fixed-price offtake scenarios are not equivalent to confirmed commercial power purchase agreements.
+
+## Stage 4.6 — Integrated Economic Research Outputs
+
+### stage4_integrated_summary.csv
+
+Consolidates principal economic metrics across Stage 4.2–4.5.
+
+| Column | Description |
+|---|---|
+| `stage` | Originating analysis stage |
+| `metric` | Economic metric or coverage measure |
+| `value` | Numerical value |
+| `unit` | Unit of measurement |
+| `classification` | Distinguishes analyst assumptions, model outputs and coverage information |
+
+### stage4_integration_audit.json
+
+Machine-readable record of cross-model consistency tests, reference assumptions, identified limitations and overall audit status.
+
+### stage4_integration_audit.md
+
+Human-readable validation summary intended for research review.
+
+### Methodological Rules
+
+- Model consistency checks must not be interpreted as external factual verification.
+- All Stage 4 scenarios must retain their assumption classifications.
+- Reference economic cases must be consistent across analyses.
+- LCOE and project NPV must use compatible discount rates and cash-flow boundaries.
+- Manufacturing learning must not be double-counted.
+- Historical electricity prices must not be treated as future forecasts.
+- The distinction between capital cost intensity, total capital investment, gross power and net electricity production must be preserved.
+- Stage 5 must distinguish exploratory probability assumptions from empirically supported distributions.

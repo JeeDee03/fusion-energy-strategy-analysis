@@ -1,0 +1,66 @@
+{
+  "stage": "4",
+  "status": "PASS_WITH_LIMITATIONS",
+  "reference_scenario": "CAL002",
+  "reference_lcoe_eur_per_mwh": 170.14090447598142,
+  "checks": [
+    {
+      "check": "Stage 4.2 reference is unique",
+      "status": "PASS",
+      "detail": "CAL002 must occur exactly once."
+    },
+    {
+      "check": "Stage 4.2 LCOE reconciliation",
+      "status": "PASS",
+      "detail": "Stage 4.2 must agree with shared LCOE."
+    },
+    {
+      "check": "Stage 4.3 reference is unique",
+      "status": "PASS",
+      "detail": "Same CAPEX and CF as CAL002."
+    },
+    {
+      "check": "Stage 4.3 LCOE reconciliation",
+      "status": "PASS",
+      "detail": "Performance baseline matches CAL002."
+    },
+    {
+      "check": "Stage 4.4 starts at baseline CAPEX",
+      "status": "PASS",
+      "detail": "At N=1, no manufacturing learning yet."
+    },
+    {
+      "check": "Stage 4.4 starts at baseline LCOE",
+      "status": "PASS",
+      "detail": "At N=1, all learning cases match CAL002."
+    },
+    {
+      "check": "Stage 4.5 break-even price equals LCOE",
+      "status": "PASS",
+      "detail": "Only valid under common model boundaries."
+    },
+    {
+      "check": "NPV equals zero at break-even price",
+      "status": "PASS",
+      "detail": "NPV at LCOE should be approximately zero."
+    },
+    {
+      "check": "Stage 4.5 NPVs reproduce",
+      "status": "PASS",
+      "detail": "Exported values match current DCF code."
+    }
+  ],
+  "limitations": [
+    "Economic scenarios remain analyst assumptions.",
+    "Reference 1000 MWe is not verified Stellaris net output.",
+    "FOAK/NOAK CAPEX not empirically calibrated.",
+    "No construction period or interest during construction.",
+    "No explicit replacement or decommissioning costs.",
+    "Performance sensitivities do not model reliability.",
+    "Magnet learning rates and CAPEX share are hypothetical.",
+    "2024 German electricity prices are not forecasts.",
+    "Annual model uses a 8760-hour normalized year; 2024 historical market data contains 8784 hours.",
+    "H1, H2, and H3 are not empirically confirmed."
+  ],
+  "interpretation": "Internal consistency only; not independent validation of engineering or commercial assumptions."
+}
