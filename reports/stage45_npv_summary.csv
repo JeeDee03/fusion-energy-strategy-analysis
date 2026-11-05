@@ -1,0 +1,5 @@
+scenario_id,scenario_name,pricing_basis,assumption_class,electricity_price_eur_per_mwh,annual_energy_mwh,annual_revenue_eur,annual_operating_cash_flow_eur,lcoe_eur_per_mwh,break_even_price_eur_per_mwh,npv_eur
+REV001,2024 German day-ahead average,historical_average_stress_test,historical_observation,78.51,7446000.0,584585460.0,347355460.0,170.14090447598142,170.14090447598142,-7951722096.140631
+REV002,Low fixed-price case,hypothetical_fixed_price,analyst_scenario,120.0,7446000.0,893520000.0,656290000.0,170.14090447598142,170.14090447598142,-4351223425.35262
+REV003,Intermediate fixed-price case,hypothetical_fixed_price,analyst_scenario,170.0,7446000.0,1265820000.0,1028590000.0,170.14090447598142,170.14090447598142,-12227678.440097585
+REV004,High fixed-price case,hypothetical_fixed_price,analyst_scenario,200.0,7446000.0,1489200000.0,1251970000.0,170.14090447598142,170.14090447598142,2591169769.707419

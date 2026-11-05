@@ -1,0 +1,5 @@
+scenario_id,scenario_name,electricity_price_eur_per_mwh,pricing_basis,assumption_class
+REV001,2024 German day-ahead average,78.51,historical_average_stress_test,historical_observation
+REV002,Low fixed-price case,120.00,hypothetical_fixed_price,analyst_scenario
+REV003,Intermediate fixed-price case,170.00,hypothetical_fixed_price,analyst_scenario
+REV004,High fixed-price case,200.00,hypothetical_fixed_price,analyst_scenario

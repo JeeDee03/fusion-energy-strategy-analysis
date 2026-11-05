@@ -439,3 +439,33 @@ Contains hypothetical magnet-system manufacturing learning scenarios.
 5. Hypothetical learning rates must not be labeled as observed Proxima Fusion production experience.
 6. FOAK and NOAK scenarios must distinguish technical learning from development and financing costs.
 7. Learning curves must retain their defined cumulative-production reference and comparable product boundaries.
+
+## Stage 4.5 — Electricity Revenue and Project Cash Flow
+
+### electricity_revenue_scenarios.csv
+
+Contains historical-price stress tests and hypothetical electricity sale-price scenarios.
+
+Important fields:
+
+- `scenario_id`: Unique revenue scenario identifier.
+- `electricity_price_eur_per_mwh`: Assumed constant real electricity sale price.
+- `pricing_basis`: Distinguishes historical-average stress tests from hypothetical fixed-price cases.
+- `assumption_class`: Distinguishes historical observations from analyst scenarios.
+
+### Generated Outputs
+
+- `reports/stage45_npv_summary.csv`: Scenario electricity revenues, annual operating cash flows, break-even prices and NPV.
+- `reports/stage45_annual_cash_flows.csv`: Year-by-year project cash-flow schedules, including year-zero investment.
+- `reports/stage45_npv_comparison.png`: NPV comparison across sale-price cases.
+- `reports/stage45_cumulative_cash_flow.png`: Cumulative discounted cash-flow trajectories.
+
+### Methodological Rules
+
+1. Historical electricity-market prices must not be presented as future market forecasts.
+2. Discount rates must be consistent with real or nominal cash-flow assumptions.
+3. Financing costs must not be double-counted.
+4. A project-level NPV calculation must be distinguished from equity-investor NPV.
+5. Break-even electricity prices are conditional on the modeled cost and operating assumptions.
+6. A positive scenario NPV is not evidence that a real fusion project is commercially viable.
+7. Fixed-price offtake scenarios are not equivalent to confirmed commercial power purchase agreements.
