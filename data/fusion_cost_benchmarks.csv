@@ -1,0 +1,5 @@
+benchmark_id,reference_design,cost_metric,value,unit,plant_net_mwe,development_basis,source_id,interpretation
+FC001,ARAI tokamak plant,overnight_capex_lower,8800,USD_per_kWe,350,NOAK,EC001,Published lower capital cost estimate
+FC002,ARAI tokamak plant,overnight_capex_upper,22200,USD_per_kWe,350,NOAK,EC001,Published upper capital cost estimate
+FC003,ARAI tokamak plant,lcoe_lower,140,USD_per_MWh,350,NOAK,EC001,Lower published LCOE estimate
+FC004,ARAI tokamak plant,lcoe_upper,550,USD_per_MWh,350,NOAK,EC001,Upper published LCOE estimate

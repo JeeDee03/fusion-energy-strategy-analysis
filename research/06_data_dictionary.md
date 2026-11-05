@@ -358,3 +358,28 @@ The initial register generated in Stage 3.5 uses `engineering_proxy_only` and `m
 The register currently identifies 11 preliminary economic model inputs for Proxima Fusion's Stellaris concept. It is an evidence-gap assessment, not a completed cost model.
 
 The economic inputs will be quantified and evaluated during Stage 4.
+
+## Stage 4.2 — Fusion Cost Benchmarks and Economic Scenarios
+
+### fusion_cost_benchmarks.csv
+
+Contains published techno-economic estimates for reference fusion power plant designs. Each record includes the metric, value, original currency and unit, reference plant capacity, development basis and source ID.
+
+Benchmark values must not be treated as Proxima Fusion cost estimates.
+
+### lcoe_scenarios_stage42.csv
+
+Contains analyst-defined sensitivity cases for the Stellaris research model.
+
+Capital intensity is expressed in EUR/kWe and converted into total EUR million using the scenario's assumed net rated electrical capacity.
+
+The `analyst_scenario` classification identifies hypothetical modeling assumptions, rather than source-derived plant specifications.
+
+### Methodological Requirements
+
+- Do not equate overnight capital cost with fully financed project cost.
+- Do not compare USD and EUR values without explicit currency normalization.
+- Preserve the reference price year and reactor technology when transferring cost benchmarks.
+- Distinguish FOAK and NOAK development assumptions.
+- Keep published evidence separate from scenario assumptions.
+- Report calculated LCOE as conditional model results rather than commercial forecasts.

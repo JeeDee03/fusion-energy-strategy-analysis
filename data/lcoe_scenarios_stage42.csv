@@ -1,0 +1,4 @@
+scenario_id,scenario_name,device_id,capex_eur_per_kwe,net_power_mwe,capacity_factor,fixed_opex_eur_million_per_year,variable_opex_eur_per_mwh,plant_lifetime_years,real_discount_rate,assumption_class
+CAL001,Low CAPEX sensitivity case,PF_STELLARIS,8000,1000,0.85,200,5,35,0.08,analyst_scenario
+CAL002,Mid CAPEX sensitivity case,PF_STELLARIS,12000,1000,0.85,200,5,35,0.08,analyst_scenario
+CAL003,High CAPEX sensitivity case,PF_STELLARIS,18000,1000,0.85,200,5,35,0.08,analyst_scenario
