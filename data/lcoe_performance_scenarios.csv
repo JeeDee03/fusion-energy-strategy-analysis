@@ -1,0 +1,6 @@
+scenario_id,scenario_name,capacity_factor,assumption_class
+PERF001,Low utilization,0.70,analyst_scenario
+PERF002,Moderate utilization,0.75,analyst_scenario
+PERF003,Reference utilization,0.85,analyst_scenario
+PERF004,High utilization,0.90,analyst_scenario
+PERF005,Stretch utilization,0.95,analyst_scenario

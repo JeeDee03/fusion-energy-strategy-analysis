@@ -1,0 +1,4 @@
+scenario_name,capex_eur_per_kwe,required_capacity_factor,feasible_under_cf_le_1
+Low CAPEX sensitivity case,8000,0.85,True
+Mid CAPEX sensitivity case,12000,1.1791093234741168,False
+High CAPEX sensitivity case,18000,1.672773308685292,False

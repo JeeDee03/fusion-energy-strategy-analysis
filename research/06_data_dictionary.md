@@ -383,3 +383,29 @@ The `analyst_scenario` classification identifies hypothetical modeling assumptio
 - Distinguish FOAK and NOAK development assumptions.
 - Keep published evidence separate from scenario assumptions.
 - Report calculated LCOE as conditional model results rather than commercial forecasts.
+
+## Stage 4.3 — Engineering Performance Sensitivity
+
+### lcoe_performance_scenarios.csv
+
+Defines hypothetical net electrical capacity-factor scenarios for the Stage 4 LCOE model.
+
+Each row specifies a unique scenario ID, descriptive name, capacity factor and assumption classification.
+
+The values are analyst-defined sensitivities, not company-reported performance expectations.
+
+### Stage 4.3 Generated Outputs
+
+- `reports/stage43_performance_sensitivity.csv`: All combinations of Stage 4.2 capital costs and Stage 4.3 performance scenarios.
+- `reports/stage43_break_even_capacity_factor.csv`: Capacity factors required to reach the specified reference LCOE.
+- `reports/stage43_net_power_sensitivity.csv`: Separate net electrical output sensitivity with constant total CAPEX and OPEX.
+- `reports/stage43_lcoe_heatmap.png`: Visualization of CAPEX and capacity-factor sensitivity.
+
+### Methodological Rules
+
+1. Plant availability must not automatically be treated as net electrical capacity factor.
+2. Capacity factor is bounded between zero and one for the specified rated net electrical output.
+3. Net electrical output must be distinguished from gross electrical output and fusion thermal power.
+4. Changes to capacity factor may involve additional engineering expenditure in real projects.
+5. A break-even capacity factor above one indicates that the specified target cannot be achieved through capacity-factor improvements alone under the stated assumptions.
+6. Synthetic cost and performance scenarios must not be interpreted as Proxima Fusion forecasts.
