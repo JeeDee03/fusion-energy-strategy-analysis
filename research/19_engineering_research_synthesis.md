@@ -12,41 +12,70 @@ The analysis focuses on the engineering drivers of construction costs, operating
 
 ## 2. Reactor Technology Comparison
 
-The study examines five fusion developers:
+The benchmarking analysis covers five fusion developers and distinguishes experimental devices, demonstrators, and commercial power-plant concepts.
 
-- Proxima Fusion — Quasi-isodynamic stellarator
-- Type One Energy — Optimized stellarator
-- Thea Energy — Planar-coil stellarator
-- Commonwealth Fusion Systems — High-field conventional tokamak
-- Tokamak Energy — Spherical tokamak
+| Company | Reference device | Confinement concept | Documented distinguishing characteristic | Evidence |
+|---|---|---|---|---|
+| Proxima Fusion | Stellaris | Quasi-isodynamic stellarator | Conceptual high-field design using 48 non-planar modular coils | S3_006, Table 2 |
+| Type One Energy | Infinity Two | Optimized stellarator | Proposed 800 MW fusion power and 400 MWe grid output | S3_002, "Introducing Infinity Two" |
+| Thea Energy | Helios | Quasi-axisymmetric stellarator | Proposed planar HTS magnet architecture with individually controlled shaping coils | S3_007, Abstract |
+| Commonwealth Fusion Systems | ARC | High-field tokamak | Published physics-basis studies for a proposed 400 MW net-electric power plant | S3_008, June 4, 2026 announcement |
+| Tokamak Energy | ST40 | Spherical tokamak | Experimental achievement of approximately 100 million °C plasma temperature | S3_009, "The Science" |
 
-The comparison distinguishes experimental facilities, demonstration reactors and proposed commercial power plants.
+### 2.1 Stellarator and Tokamak Trade-offs
 
-Stellarators offer the prospect of steady-state plasma confinement without relying on a large inductively driven plasma current. However, their engineering and commercial advantages depend on the particular design and successful system integration.
+Stellarators use externally generated three-dimensional magnetic fields to confine plasma. Their configuration offers the prospect of steady-state operation without the large plasma current required in conventional tokamaks.
 
-Tokamaks benefit from a broader experimental physics heritage, but disruptions, operational scenarios and reactor engineering remain relevant challenges.
+However, the complexity of their magnet systems introduces manufacturing and integration challenges. These challenges vary by design and should not be generalized to all stellarators.
 
-No overall technological winner can be established solely from the available evidence.
+Tokamaks benefit from a substantial experimental research heritage and can use comparatively simpler toroidal magnetic geometry, but face plasma-current control, disruption-management and operating-regime challenges.
+
+The ARC and Infinity Two electricity-output figures are design projections, while the ST40 plasma-temperature result is an experimental achievement. They must not be interpreted as equivalent measures of reactor maturity or commercial performance.
+
+### 2.2 Economic Relevance
+
+The comparison identifies potential relationships between reactor architecture and:
+
+- Magnet manufacturing CAPEX
+- Structural and cryogenic system requirements
+- Plasma control and auxiliary power demands
+- Maintenance-related availability
+- Construction complexity and technology-development risk
+
+The available evidence does not establish which complete reactor architecture will deliver the lowest commercial LCOE.
+
+**Key references:** S3_006, S3_002, S3_007, S3_008, S3_009.
 
 ## 3. Magnetic Systems and Manufacturing
 
-### 3.1 Proxima Fusion
+### 3.1 Proxima Fusion — Non-Planar Modular Magnets
 
-The Stellaris conceptual design uses a high-field superconducting magnet system incorporating complex modular coil geometries.
+The Stellaris conceptual design uses 48 non-planar modular coils and high-temperature superconducting technology. The published design reports an average magnetic field of 9.0 T and a peak conductor field of 24.9 T (S3_006, Table 2).
 
-Magnet design introduces important requirements for superconducting materials, cryogenic engineering, mechanical support, dimensional precision and manufacturing repeatability.
+The combination of strong magnetic fields, three-dimensional coil geometry, structural loading and cryogenic requirements creates demanding engineering conditions.
 
-### 3.2 Alternative Manufacturing Approaches
+These are important potential contributors to magnet-system CAPEX, but the published field strengths and coil count are not sufficient to calculate commercial magnet manufacturing costs.
 
-Thea Energy's planar-coil concept provides a potentially different route to manufacturability, while Type One Energy pursues its own optimized stellarator and modular magnet approach.
+### 3.2 Alternative Magnet and Manufacturing Approaches
 
-Simpler component geometry does not necessarily imply lower total system cost. Coil quantity, conductor requirements, power electronics, support structures and assembly must also be considered.
+**Type One Energy:** Infinity Two is based on an optimized stellarator configuration using non-planar HTS magnets. Its peer-reviewed physics basis supports a proposed commercial operating point, but does not independently establish manufacturing cost competitiveness (S3_002).
 
-### 3.3 Implications for H3
+**Thea Energy:** The published Helios design proposes 12 large planar encircling coils and 324 individually controlled superconducting shaping coils. The architecture aims to simplify the geometry of individual coils compared with traditional non-planar stellarator coils (S3_007, Abstract).
 
-Manufacturing standardization and repeated production could reduce unit costs, but the scale of such reductions cannot yet be derived from the current engineering evidence.
+However, this design also introduces substantial requirements for shaping-coil integration, control, power supply systems and assembly.
 
-The Stage 4 economic model should therefore distinguish first-of-a-kind and later-plant scenarios, with explicit assumptions regarding manufacturing learning.
+**Commonwealth Fusion Systems:** ARC uses a high-field tokamak approach. Its published physics-basis program supports continued development of the commercial design, while complete plant construction and operating costs remain uncertain (S3_008).
+
+**Tokamak Energy:** ST40 provides experimental spherical-tokamak physics evidence. Its plasma-temperature achievement does not directly quantify the manufacturing cost of a future HTS-based commercial reactor (S3_009).
+
+### 3.3 Implications for H3 — Manufacturing Scalability
+
+Manufacturing standardization and repeated production could reduce unit costs, but the magnitude of such reductions cannot yet be derived from the available evidence.
+
+The number of coils is not a directly comparable manufacturing-cost metric. Coil geometry, dimensions, conductor requirements, structural supports, installation, testing and control systems all contribute to system costs.
+
+Consequently, the Stage 4 economic model should investigate explicitly defined FOAK and NOAK scenarios without assuming that any particular magnet design has already established a commercial cost advantage.
+
 
 ## 4. Maintenance and Availability
 
@@ -140,3 +169,54 @@ The techno-economic model should prioritize:
 Stage 3 engineering investigation synthesized.
 
 The next phase is quantitative techno-economic modeling and scenario evaluation. Final hypotheses remain open pending those results.
+
+## 11. Comparative Engineering Findings and Decision Relevance
+
+The Stage 3 comparison identifies three important engineering mechanisms relevant to Proxima Fusion's commercial competitiveness.
+
+### Finding 1 — Steady-State Operation Is a Potential Advantage, Not an Economic Result
+
+Stellarator confinement offers a potential route to continuous plasma operation. However, the commercial value of this capability depends on integrated plant availability, auxiliary power demand, maintenance downtime, and net electrical output.
+
+The results of Stage 3.3 demonstrate why scheduled maintenance must be distinguished from continuous plasma capability.
+
+**Implication for H1:** The economic model must investigate whether possible operating advantages compensate for construction and maintenance costs.
+
+### Finding 2 — Magnet Architecture Creates Different Manufacturing Trade-offs
+
+Proxima's non-planar modular magnets and Thea's planar shaping-coil architecture represent different strategies for achieving stellarator magnetic confinement.
+
+The available evidence identifies differences in coil geometry and design requirements, but does not establish comparative system manufacturing costs.
+
+**Implication for H3:** Manufacturing learning and standardization should be modeled through transparent cost scenarios rather than inferred from coil counts alone.
+
+### Finding 3 — Experimental Success and Commercial Readiness Are Different
+
+The reference projects differ substantially in maturity and purpose.
+
+ST40 provides experimental plasma-physics evidence, while Stellaris, Infinity Two, Helios, and ARC provide various levels of conceptual and engineering design evidence.
+
+Experimental performance of one device cannot be directly interpreted as demonstrated commercial performance of another.
+
+**Implication for H1 and H2:** The techno-economic and strategic models must account for unresolved technical risks and distinguish engineering validation from financing or commercialization announcements.
+
+### Stage 4 Decision Variables
+
+The principal model inputs to be investigated are:
+
+- FOAK construction CAPEX
+- Net rated electricity output
+- Auxiliary power requirements
+- Scheduled and unplanned downtime
+- Major component replacement expenditure
+- Magnet manufacturing costs
+- Production learning and NOAK construction costs
+- Project financing and investment structure
+
+### Conclusion
+
+Stage 3 establishes a structured engineering basis for analyzing Proxima Fusion's potential competitiveness. It identifies plausible technical advantages, cost drivers, manufacturing opportunities and development risks.
+
+However, the existing evidence is insufficient to establish commercial superiority or to confirm the research hypotheses.
+
+The next stage will evaluate the economic conditions under which these engineering characteristics could produce competitive electricity costs.

@@ -11,3 +11,8 @@ TP009,PF_STELLARIS,major_maintenance_interval_max,6,years,design_target,S3_006,U
 TP010,PF_STELLARIS,major_maintenance_duration,7,months,design_target,S3_006,Early estimate for major in-vessel replacement campaign
 TP011,PF_STELLARIS,major_maintenance_duration_target,5,months,design_target,S3_006,Five-month target for in-vessel replacement stated in Section 2.11
 TP012,PF_STELLARIS,full_power_years_before_replacement,4,full_power_years,simulated,S3_006,Estimated accumulated full-power operation before component replacement; not necessarily calendar years
+TP013,TE_HELIOS,number_of_encircling_coils,12,count,design_target,S3_007,Proposed planar HTS encircling coils; Helios conceptual design
+TP014,TE_HELIOS,number_of_shaping_coils,324,count,design_target,S3_007,Proposed individually controlled planar shaping coils
+TP015,CF_ARC,net_electric_output,400,MWe,design_target,S3_008,Published ARC net electric power objective; not demonstrated generation
+TP016,TK_ST40,plasma_temperature,100000000,degC,measured,S3_009,Approximate experimentally achieved plasma temperature; not a commercial plant result
+TP017,TE_HELIOS,peak_conductor_field,19.4,T,simulated,S3_007,Calculated maximum field in the proposed Helios coil design; confirm wording against original paper

@@ -6,6 +6,13 @@ TP004,PF_STELLARIS,number_of_modular_coils,48.0,count,design_target,S3_006,Conce
 TP005,PF_STELLARIS,peak_fusion_power,2700.0,MW_fusion,simulated,S3_006,Approximate modeled peak fusion power from Table 2,PF001,Stellaris,Proxima Fusion
 TP006,PF_STELLARIS,peak_electric_power,1000.0,MWe,simulated,S3_006,Approximate conceptual peak electrical power; net or gross boundary requires further review,PF001,Stellaris,Proxima Fusion
 TP007,TO_INFINITY2,peak_fusion_power,800.0,MW_fusion,design_target,S3_002,Published conceptual fusion power,TO001,Infinity Two,Type One Energy
-TP008,PF_STELLARIS,major_maintenance_interval_min,4.0,years,design_target,S3_006,Lower end of conceptual replacement interval,PF001,Stellaris,Proxima Fusion
-TP009,PF_STELLARIS,major_maintenance_interval_max,6.0,years,design_target,S3_006,Upper end of conceptual replacement interval,PF001,Stellaris,Proxima Fusion
+TP008,PF_STELLARIS,major_maintenance_interval_min,4.0,years,design_target,S3_006,Lower end of broad scheduled replacement interval; calendar versus operating basis not specified in this record,PF001,Stellaris,Proxima Fusion
+TP009,PF_STELLARIS,major_maintenance_interval_max,6.0,years,design_target,S3_006,Upper end of broad scheduled replacement interval; calendar versus operating basis not specified in this record,PF001,Stellaris,Proxima Fusion
 TP010,PF_STELLARIS,major_maintenance_duration,7.0,months,design_target,S3_006,Early estimate for major in-vessel replacement campaign,PF001,Stellaris,Proxima Fusion
+TP011,PF_STELLARIS,major_maintenance_duration_target,5.0,months,design_target,S3_006,Five-month target for in-vessel replacement stated in Section 2.11,PF001,Stellaris,Proxima Fusion
+TP012,PF_STELLARIS,full_power_years_before_replacement,4.0,full_power_years,simulated,S3_006,Estimated accumulated full-power operation before component replacement; not necessarily calendar years,PF001,Stellaris,Proxima Fusion
+TP013,TE_HELIOS,number_of_encircling_coils,12.0,count,design_target,S3_007,Proposed planar HTS encircling coils; Helios conceptual design,TE001,Helios,Thea Energy
+TP014,TE_HELIOS,number_of_shaping_coils,324.0,count,design_target,S3_007,Proposed individually controlled planar shaping coils,TE001,Helios,Thea Energy
+TP015,CF_ARC,net_electric_output,400.0,MWe,design_target,S3_008,Published ARC net electric power objective; not demonstrated generation,CF001,ARC,Commonwealth Fusion Systems
+TP016,TK_ST40,plasma_temperature,100000000.0,degC,measured,S3_009,Approximate experimentally achieved plasma temperature; not a commercial plant result,TK001,ST40,Tokamak Energy
+TP017,TE_HELIOS,peak_conductor_field,19.4,T,simulated,S3_007,Calculated maximum field in the proposed Helios coil design; confirm wording against original paper,TE001,Helios,Thea Energy
