@@ -1,0 +1,4 @@
+scenario_id,scenario_name,device_id,capex_eur_million,net_power_mwe,capacity_factor,fixed_opex_eur_million_per_year,variable_opex_eur_per_mwh,plant_lifetime_years,real_discount_rate,assumption_class
+TEST001,Illustrative baseline,PF_STELLARIS,8000,1000,0.85,200,5,35,0.08,synthetic_test
+TEST002,Higher construction cost,PF_STELLARIS,10000,1000,0.85,200,5,35,0.08,synthetic_test
+TEST003,Lower capacity factor,PF_STELLARIS,8000,1000,0.75,200,5,35,0.08,synthetic_test
