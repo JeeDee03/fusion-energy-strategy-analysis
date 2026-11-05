@@ -1,0 +1,4 @@
+scenario_id,scenario_name,magnet_capex_share,magnet_learning_rate,assumption_class
+LR000,No magnet learning,0.25,0.00,analyst_scenario
+LR010,Moderate magnet learning,0.25,0.10,analyst_scenario
+LR020,High magnet learning,0.25,0.20,analyst_scenario

@@ -409,3 +409,33 @@ The values are analyst-defined sensitivities, not company-reported performance e
 4. Changes to capacity factor may involve additional engineering expenditure in real projects.
 5. A break-even capacity factor above one indicates that the specified target cannot be achieved through capacity-factor improvements alone under the stated assumptions.
 6. Synthetic cost and performance scenarios must not be interpreted as Proxima Fusion forecasts.
+
+## Stage 4.4 — Manufacturing Learning Analysis
+
+### manufacturing_learning_scenarios.csv
+
+Contains hypothetical magnet-system manufacturing learning scenarios.
+
+| Column | Description |
+|---|---|
+| `scenario_id` | Unique learning scenario identifier |
+| `scenario_name` | Descriptive scenario label |
+| `magnet_capex_share` | Assumed magnet-system share of initial total plant CAPEX |
+| `magnet_learning_rate` | Assumed magnet-system cost reduction per cumulative production doubling |
+| `assumption_class` | Identifies scenarios as analyst assumptions |
+
+### Generated Outputs
+
+- `reports/stage44_learning_results.csv`: Modeled plant CAPEX and LCOE under alternative manufacturing learning assumptions.
+- `reports/stage44_capex_learning.png`: Total plant CAPEX sensitivity to cumulative magnet-system production.
+- `reports/stage44_lcoe_learning.png`: Electricity cost sensitivity to manufacturing learning.
+
+### Methodological Rules
+
+1. Learning rates represent cost reductions per cumulative production doubling, not per year or per individual unit.
+2. Component-level cost reductions must not be double-counted through an additional plant-wide learning factor.
+3. Magnet-system manufacturing costs must be distinguished from total plant CAPEX.
+4. Production-volume scenarios must not be presented as company deployment forecasts.
+5. Hypothetical learning rates must not be labeled as observed Proxima Fusion production experience.
+6. FOAK and NOAK scenarios must distinguish technical learning from development and financing costs.
+7. Learning curves must retain their defined cumulative-production reference and comparable product boundaries.
