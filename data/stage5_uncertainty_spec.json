@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "design_status": "specified_not_simulated",
+  "probability_interpretation": "conditional_on_exploratory_design_not_real_world_success_probability",
+  "model_basis": {
+    "currency": "EUR",
+    "price_year": 2024,
+    "discount_basis": "real_pre_tax_unlevered_no_extra_IDC",
+    "reference_case": "CAL002",
+    "capex_mapping": "intensity_times_fixed_reference_1000_MWe_divided_by_1000_to_EUR_million",
+    "capex_context_rule": "same_total_CAPEX_across_auxiliary_contexts_not_scaled_with_derived_net_power",
+    "opex_boundary": "routine_excludes_major_replacements",
+    "years_after_COD": 35
+  },
+  "parameters": [
+    {
+      "parameter_id": "CAPEX",
+      "model_field": "capex_eur_per_kwe",
+      "unit": "EUR_2024/kWe",
+      "lower": 8000.0,
+      "reference": 12000.0,
+      "upper": 18000.0,
+      "role": "pilot_sample",
+      "distribution": "exploratory_uniform",
+      "range_class": "existing_scenario_envelope",
+      "evidence_class": "analyst_assumption",
+      "rationale": "8000 and 18000 bound existing CAL001-CAL003. Their order of magnitude is contextualized by unconverted literature only; they are not inferred EUR confidence bounds.",
+      "next_evidence": "Obtain a component cost breakdown and normalize literature currency, price year, country and first/repeat-unit scope."
+    },
+    {
+      "parameter_id": "FOM",
+      "model_field": "fixed_opex_eur_million_per_year",
+      "unit": "EUR_2024_million/year",
+      "lower": 100.0,
+      "reference": 200.0,
+      "upper": 300.0,
+      "role": "pilot_sample",
+      "distribution": "exploratory_uniform",
+      "range_class": "exploratory_candidate_not_executed",
+      "evidence_class": "analyst_assumption",
+      "rationale": "100-300 is an analyst plus/minus 50% stress bracket. These endpoints are newly documented candidates, not newly executed scenarios or empirical bounds.",
+      "next_evidence": "Build a bottom-up fixed-OPEX estimate and distinguish routine work from separately modeled major replacements."
+    },
+    {
+      "parameter_id": "VOM",
+      "model_field": "variable_opex_eur_per_mwh",
+      "unit": "EUR_2024/MWh",
+      "lower": 0.0,
+      "reference": 5.0,
+      "upper": 10.0,
+      "role": "pilot_sample",
+      "distribution": "exploratory_uniform",
+      "range_class": "exploratory_candidate_not_executed",
+      "evidence_class": "analyst_assumption",
+      "rationale": "0-10 tests removal versus doubling of the 5 EUR/MWh placeholder. Zero is a mathematical sensitivity endpoint, not a plausible fusion fuel-cost assertion.",
+      "next_evidence": "Disaggregate variable expenses and prevent double counting with replacement and fuel-cycle costs."
+    },
+    {
+      "parameter_id": "RATE",
+      "model_field": "real_discount_rate",
+      "unit": "fraction_real",
+      "lower": 0.04,
+      "reference": 0.08,
+      "upper": 0.12,
+      "role": "pilot_sample",
+      "distribution": "exploratory_uniform",
+      "range_class": "exploratory_candidate_not_executed",
+      "evidence_class": "analyst_assumption",
+      "rationale": "4-12% is an analyst plus/minus 4 percentage-point bracket to explore discount sensitivity. No capital-market calibration is claimed.",
+      "next_evidence": "Develop financing scenarios with explicit risk allocation and real/nominal assumptions; avoid interpreting the hurdle rate as measured WACC."
+    },
+    {
+      "parameter_id": "PRICE",
+      "model_field": "electricity_price_eur_per_mwh",
+      "unit": "EUR_2024/MWh",
+      "lower": 78.51,
+      "reference": 170.0,
+      "upper": 200.0,
+      "role": "pilot_sample",
+      "distribution": "exploratory_uniform",
+      "range_class": "existing_scenario_envelope",
+      "evidence_class": "analyst_assumption",
+      "rationale": "78.51-200 spans the current mixed historical/hypothetical price cases. It is not a forecast range or an empirical distribution of future plant revenues.",
+      "next_evidence": "Develop future PPA/merchant scenarios and generation-weighted revenues; do not freeze one historical year as a price forecast."
+    },
+    {
+      "parameter_id": "LIFE",
+      "model_field": "plant_lifetime_years",
+      "unit": "years",
+      "lower": 25.0,
+      "reference": 35.0,
+      "upper": 45.0,
+      "role": "fixed_pilot",
+      "distribution": "not_sampled",
+      "range_class": "exploratory_candidate_not_executed",
+      "evidence_class": "analyst_assumption",
+      "rationale": "25-45 years is a symmetric plus/minus 10-year analyst stress bracket; no survival distribution is inferred.",
+      "next_evidence": "Separate plant economic life from short-lived components and obtain defensible operating-horizon scenarios."
+    },
+    {
+      "parameter_id": "POWER",
+      "model_field": "net_power_mwe",
+      "unit": "MWe",
+      "lower": 800.0,
+      "reference": 1000.0,
+      "upper": 1200.0,
+      "role": "derived_engineering",
+      "distribution": "not_sampled",
+      "range_class": "existing_scenario_envelope",
+      "evidence_class": "analyst_assumption",
+      "rationale": "800/1000/1200 MWe are the existing fixed-total-CAPEX output sensitivities. This is an exploratory plus/minus 20% bracket.",
+      "next_evidence": "Resolve complete plant power balance, conversion efficiency, auxiliary demand and rated versus peak output."
+    },
+    {
+      "parameter_id": "CF",
+      "model_field": "capacity_factor",
+      "unit": "fraction",
+      "lower": 0.7,
+      "reference": 0.85,
+      "upper": 0.95,
+      "role": "derived_engineering",
+      "distribution": "not_sampled",
+      "range_class": "existing_scenario_envelope",
+      "evidence_class": "analyst_assumption",
+      "rationale": "70-95% spans the existing performance grid. The upper point is a stretch sensitivity, not validated under the current maintenance regime.",
+      "next_evidence": "Build maintenance/reliability-constrained scenario families in Step 5; justify every high-CF combination."
+    },
+    {
+      "parameter_id": "SHARE",
+      "model_field": "magnet_capex_share",
+      "unit": "fraction",
+      "lower": 0.1,
+      "reference": 0.25,
+      "upper": 0.4,
+      "role": "learning_extension",
+      "distribution": "exploratory_uniform",
+      "range_class": "exploratory_candidate_not_executed",
+      "evidence_class": "analyst_assumption",
+      "rationale": "10-40% is an analyst plus/minus 15 percentage-point bracket. Current executed learning scenarios hold the share at 25%.",
+      "next_evidence": "Obtain a consistent subsystem cost breakdown and identify the cost categories actually subject to repeat-production learning."
+    },
+    {
+      "parameter_id": "LEARNING",
+      "model_field": "magnet_learning_rate",
+      "unit": "fraction_per_doubling",
+      "lower": 0.0,
+      "reference": 0.1,
+      "upper": 0.2,
+      "role": "learning_extension",
+      "distribution": "exploratory_uniform",
+      "range_class": "existing_scenario_envelope",
+      "evidence_class": "analyst_assumption",
+      "rationale": "0-20% spans the executed component-learning cases. Rates apply per doubling of equivalent plant-scale magnet sets, not to total plant CAPEX.",
+      "next_evidence": "Find relevant manufacturing evidence, estimate industrial investment and justify transferability and cumulative production levels."
+    }
+  ],
+  "pilot": {
+    "family": "FOAK_conditional_lifecycle",
+    "sampled_ids": [
+      "CAPEX",
+      "FOM",
+      "VOM",
+      "RATE",
+      "PRICE"
+    ],
+    "fixed_ids": [
+      "LIFE"
+    ],
+    "derived_ids": [
+      "POWER",
+      "CF"
+    ],
+    "engineering_case_ids": [
+      "GEN002",
+      "GEN003",
+      "GEN007"
+    ],
+    "construction_case_ids": [
+      "LC004",
+      "LC006"
+    ],
+    "replacement_fractions_of_sampled_initial_CAPEX": [
+      0.05,
+      0.1
+    ],
+    "context_weights": null,
+    "context_interpretation": "separate_structural_stress_cases_no_mixture_probabilities",
+    "excluded_engineering_cases": {
+      "GEN001": "Upper-limit diagnostic with zero other losses.",
+      "GEN004": "Alternative calendar interpretation; keep separate from FPY pilot.",
+      "GEN005": "Deliberately unmet 95% target diagnostic.",
+      "GEN006": "Two-month outage exceeds documented duration target; separate stretch sensitivity only."
+    }
+  },
+  "dependencies": {
+    "modes": [
+      {
+        "id": "independent_diagnostic",
+        "rule": "independent_uniform_ranks",
+        "interpretation": "Convenience design, not evidence of physical/economic independence."
+      },
+      {
+        "id": "aligned_burden_stress",
+        "rule": "common_rank",
+        "signs": {
+          "CAPEX": 1,
+          "FOM": 1,
+          "VOM": 1,
+          "RATE": 1,
+          "PRICE": -1
+        },
+        "interpretation": "Same marginal supports, high costs/rate coincide with low price; not an estimated copula or a mathematical tail bound."
+      },
+      {
+        "id": "offsetting_burden_stress",
+        "rule": "common_rank",
+        "signs": {
+          "CAPEX": 1,
+          "FOM": -1,
+          "VOM": -1,
+          "RATE": -1,
+          "PRICE": 1
+        },
+        "interpretation": "Opposite rank stress for dependence sensitivity; not an observed compensating relationship or a tail bound."
+      }
+    ],
+    "derived_rules": [
+      "net_power=gross_power*(1-auxiliary_fraction)",
+      "q=(1-other_outage_fraction)*operating_load_fraction",
+      "FPY_operating_window=FPY_interval/q",
+      "event_generation=annual_overlap_of_operating_windows_not_second_CF_deduction",
+      "replacement_cost=fraction*sampled_initial_CAPEX",
+      "construction_shares_and_receipt_dates_from_selected_case"
+    ],
+    "rejection_policy": "fail_and_report_invalid_configuration_never_silently_resample_or_clip",
+    "feasibility_scope": "mathematical_and_boundary_consistency_not_demonstrated_engineering_feasibility"
+  },
+  "learning_extension": {
+    "status": "specified_not_simulated",
+    "family": "separate_repeat_unit_learning_sensitivity_not_verified_NOAK",
+    "sampled_ids": [
+      "SHARE",
+      "LEARNING"
+    ],
+    "cumulative_units": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "context_engineering_case": "GEN002",
+    "construction_case": "LC004",
+    "replacement_fraction": 0.05,
+    "capex_factor": "1-share+share*N**log2(1-learning_rate)",
+    "replacement_rule": "fraction_of_unlearned_sampled_initial_CAPEX_no_automatic_learning_on_replacements",
+    "cost_boundary": "magnet_only_initial_CAPEX_learning_nonmagnet_costs_constant_industrial_investment_omitted",
+    "coupling_to_other_parameters": "diagnostic_independence_only_test_share_learning_common_rank_as_separate_stress"
+  },
+  "sampling_plan": {
+    "generator": "numpy.random.Generator_PCG64",
+    "master_seeds": [
+      20261105,
+      20261106,
+      20261107,
+      20261108
+    ],
+    "sample_sizes": [
+      2048,
+      8192,
+      32768
+    ],
+    "extension_size_if_needed": 131072,
+    "design": "independent_replicates_with_nested_prefixes_within_each_seed",
+    "common_random_numbers_across_contexts": true,
+    "quantile_convention": "linear_interpolation_at_(n-1)*p",
+    "alternative_marginal": "triangular_same_bounds_mode_at_reference_exploratory_density_sensitivity",
+    "invalid_draw_policy": "halt_report_input_and_context_no_replacement_draws",
+    "archive": [
+      "design_hash",
+      "input_and_script_hashes",
+      "python_and_package_versions",
+      "seed",
+      "generator",
+      "context",
+      "dependency_mode",
+      "sample_size",
+      "invalid_count",
+      "output_hashes"
+    ]
+  },
+  "acceptance": {
+    "metrics": [
+      "lifecycle_break_even_price",
+      "project_NPV",
+      "conditional_sample_fraction_NPV_above_zero"
+    ],
+    "quantiles": [
+      0.05,
+      0.5,
+      0.95
+    ],
+    "consecutive_refinements_required": 2,
+    "break_even_quantile_abs_tolerance_eur_per_mwh": 2,
+    "break_even_quantile_relative_tolerance": 0.01,
+    "npv_quantile_abs_tolerance_eur": 100000000,
+    "npv_quantile_relative_tolerance": 0.02,
+    "fraction_MC_interval_method": "Wilson_95_percent_under_chosen_iid_design",
+    "fraction_MC_half_width_max": 0.01,
+    "rule": "Each metric must pass in every seed/context/dependency mode for two consecutive refinements; use max(absolute,relative*abs(previous)) for quantile tolerances. Extend once if needed; otherwise label NONCONVERGED and retain results.",
+    "sensitivity": "Report within-context rank associations and matched common-random-number context effects, not causal coefficients; compare marginal/dependence designs before interpreting robust drivers.",
+    "interpretation": "Monte_Carlo_error_is_not_epistemic_confidence_or_empirical_probability"
+  },
+  "gates": {
+    "empirical_calibration": "open",
+    "human_editorial_and_source_review": "required",
+    "H1_H2_H3": "open",
+    "main_stage5_simulation": "not_implemented",
+    "main_stage6_strategy": "planned",
+    "main_stage7_final_deliverables": "planned"
+  },
+  "reviewed_input_hashes": {
+    "data/economic_assumptions.csv": "c95ce738c028800e9d400d01fc207927963d35df0ae406282acf94dce4c6564a",
+    "data/economic_reference_notes.csv": "898a3f2371dad5ff8243e24456c68e95b83e654121ecbf3d73c999defcff02ee",
+    "data/economic_model_basis.json": "703845797bb9f548ed6cd3bb21ea8d0413065ede81e278f9f46567f69c68f45f",
+    "data/lcoe_scenarios_stage42.csv": "84572c57e6fac4927aa79ef5cad7c27c39df987515185639944a3e17a8c3d0cb",
+    "data/engineering_generation_cases.csv": "af3ba64d1e4680ae7ef401602a68e6eaf6205881e6acb30ff91731859bbc3a60",
+    "data/lifecycle_cash_flow_cases.json": "098c6e1f224ab95f90cd1d4a06dbe158b2930e15d405c088058e2f204ec22520"
+  }
+}
