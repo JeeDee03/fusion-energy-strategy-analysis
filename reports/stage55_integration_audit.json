@@ -1,0 +1,120 @@
+{
+  "status": "COMPLETE_EXPLORATORY_CROSS_SEED_SUMMARY_NOT_CONVERGENCE_CERTIFIED",
+  "n_per_seed": 8192,
+  "seeds": [
+    20261105,
+    20261106,
+    20261107,
+    20261108
+  ],
+  "contexts": 12,
+  "marginal_rows": 48,
+  "dependency_rows": 96,
+  "learning_rows": 20,
+  "input_hashes": [
+    {
+      "file": "stage54_marginal_comparison_seed20261105_n8192.csv",
+      "sha256": "9f251fd10b98200f22403a2a7e8258aa678f1e98cffb91aa7aa447c5b88f0ac8"
+    },
+    {
+      "file": "stage54_marginal_comparison_audit_seed20261105_n8192.json",
+      "sha256": "287dd863e3becb91ea670805933c1829c9d637e448cec435203b5ade141b81ad"
+    },
+    {
+      "file": "stage54_marginal_comparison_seed20261106_n8192.csv",
+      "sha256": "37c03f40d93402f3a965c994c33506fe3eda4d134a08ddd3f8e9538ff12386af"
+    },
+    {
+      "file": "stage54_marginal_comparison_audit_seed20261106_n8192.json",
+      "sha256": "7d2793cb4216eaf8f62c0c88d09c99bb5812f19dd94cbee3f7d5c620d8295806"
+    },
+    {
+      "file": "stage54_marginal_comparison_seed20261107_n8192.csv",
+      "sha256": "f5de1d16a3db0ccf4ab5114831f1f70a78171cf70e1eb66077c3af4caee951b2"
+    },
+    {
+      "file": "stage54_marginal_comparison_audit_seed20261107_n8192.json",
+      "sha256": "83351770085cbe699d97ad74a120f8a6ec16666ec0c458176161f2ed96f547fb"
+    },
+    {
+      "file": "stage54_marginal_comparison_seed20261108_n8192.csv",
+      "sha256": "ab2806b38a36d9bd908ecbde65f41cf0fe114caf269a07f659e8010c6a87fe08"
+    },
+    {
+      "file": "stage54_marginal_comparison_audit_seed20261108_n8192.json",
+      "sha256": "c35e1b9debbc7624ad276aadff05e12fef8278ec0fab91208a0cec57d4269548"
+    },
+    {
+      "file": "stage54_dependency_comparison_seed20261105_n8192.csv",
+      "sha256": "5d4996a4a217ef0e02015a587758376e514d05cc7c6e809a5fea451ce5719003"
+    },
+    {
+      "file": "stage54_dependency_audit_seed20261105_n8192.json",
+      "sha256": "89b9f06a4e0c01f96e6d80b4caad291d7a65e7d048e8feaef4af98e6174885cb"
+    },
+    {
+      "file": "stage54_dependency_comparison_seed20261106_n8192.csv",
+      "sha256": "2dfbc48a10729dd85a7d2dd07b873c701c7710bc48d36433f6257df7834542b5"
+    },
+    {
+      "file": "stage54_dependency_audit_seed20261106_n8192.json",
+      "sha256": "387aefe4f50b720960b953bd97a3696175b1c4f71487639b1b8bf650d49219c5"
+    },
+    {
+      "file": "stage54_dependency_comparison_seed20261107_n8192.csv",
+      "sha256": "ef8be96caef2e76e371468b0a1361f43c4d1448bccf43c611f307add02b19923"
+    },
+    {
+      "file": "stage54_dependency_audit_seed20261107_n8192.json",
+      "sha256": "28b03ceeed22b110645af8e2a0c22f684dc4f9e2aae80d005b05a6da48d546d5"
+    },
+    {
+      "file": "stage54_dependency_comparison_seed20261108_n8192.csv",
+      "sha256": "99ea22e117fdce23715228adc5b1308d3b60c0398c27ac4b60a9476719cf92d9"
+    },
+    {
+      "file": "stage54_dependency_audit_seed20261108_n8192.json",
+      "sha256": "c930087c6507ac8947474c8045c03c876feffa0d8f97adf851c79cc34e7a63ce"
+    },
+    {
+      "file": "stage543_learning_summary_seed20261105_n8192.csv",
+      "sha256": "9ff9f55d8abf774afb3ef53cad7dde470d5d0d10f2e15d629ed23758fc237cfc"
+    },
+    {
+      "file": "stage543_learning_manifest_seed20261105_n8192.json",
+      "sha256": "0839572f22506575296e131a83241ff8f43684f84010cbb70c052da5036cd7b8"
+    },
+    {
+      "file": "stage543_learning_summary_seed20261106_n8192.csv",
+      "sha256": "9c839dcd974bf08c58a3b78ed745d63593597e451ab6b21777dbbf3eea1c099d"
+    },
+    {
+      "file": "stage543_learning_manifest_seed20261106_n8192.json",
+      "sha256": "50e01bc07d4a9095c1bb2cc446a02fe40d3cd5971fc9316667eff6e9c7d01193"
+    },
+    {
+      "file": "stage543_learning_summary_seed20261107_n8192.csv",
+      "sha256": "39fb4b0d86747bed6c9476925a7dae5a26f1221d2be0a25bde0de73a730b4ee0"
+    },
+    {
+      "file": "stage543_learning_manifest_seed20261107_n8192.json",
+      "sha256": "764b21877f7781c144ba1d6bdb70b7757583b5d5a3bb9677a17a12704f7cb3a0"
+    },
+    {
+      "file": "stage543_learning_summary_seed20261108_n8192.csv",
+      "sha256": "2ba4043e450eb607a4650fc16cddb44c91183da63bca4742cc19236c1537a6a5"
+    },
+    {
+      "file": "stage543_learning_manifest_seed20261108_n8192.json",
+      "sha256": "1c8c6a3ec3b0af6ea956e13ff83fc2fdd03f29a43e38e21e98c25be69e5a771a"
+    }
+  ],
+  "output_sha256": "ba68235e0d2e40a739859f4565d06b8ac15915629d793af69a47e48b9c3392c9",
+  "limits": [
+    "four-seed summary does not certify convergence",
+    "distribution and dependence assumptions are exploratory",
+    "H3 learning analysis uses one structural context",
+    "historical Stage 5.3 strict status remains NONCONVERGED",
+    "seed means are descriptive, not real-world probabilities"
+  ]
+}
