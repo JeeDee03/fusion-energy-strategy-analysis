@@ -1,0 +1,35 @@
+{
+  "stage": "7.2.4",
+  "purpose": "Publication graphics from retained model outputs",
+  "context": "GEN002_LC004_R05",
+  "source_sha256": {
+    "engineering_generation_scenarios.csv": "4bed94ae8d59c19d7b10b899e422a98cb13c58010f031d527262c7461718c040",
+    "lifecycle_summary.csv": "e8146904b42a2a2f4217f032554f86dda71e13d7af7c36f26c76fc958b476faa",
+    "stage52_summary_seed20261105_n128.csv": "5da4bebb02d507db2badc57b71360e7a8f3103e07641d69a8a86b937d6dd65b8",
+    "stage52_summary_seed20261105_n131072.csv": "29f481b658fc3d0919b66271bf0112a172cf467f1aa07ce95f3d2bcacf883796",
+    "stage52_summary_seed20261105_n2048.csv": "eb258cdfb689971f0053ed2c57df0084f81f090792183b06eff7644fcfd53a9a",
+    "stage52_summary_seed20261105_n32768.csv": "e5ebd7255eda39ecaebb3a07859362fe9608fa52a0670a512f8cbd7aa867c6ca",
+    "stage52_summary_seed20261105_n8192.csv": "425b07a1db5375f4362028a513c8f98a6e48dcaccfdc72c9bc5d9e3391ee4785",
+    "stage52_summary_seed20261106_n131072.csv": "3431bfca3f678da31f7e32ade3e9906656ec76e7ad3b8377556daf23b2d7a018",
+    "stage52_summary_seed20261106_n32768.csv": "a568ad868e0ddc134765483b4e1a73cb347b8e83094fb4d6f8fbed2a1a79cb86",
+    "stage52_summary_seed20261106_n8192.csv": "0868d76ada551e2a76c24107df51feacfd4820f54d1bcb09dd1ab3c120a34196",
+    "stage52_summary_seed20261107_n131072.csv": "74342b1432dcb2309b0d5bd8287cd7f973ce39404eb48321c6a6408bb317f4bb",
+    "stage52_summary_seed20261107_n32768.csv": "93c0404218c2d1bc7fd655fb2aa2fd27d61aa31d83e3adb144b2fb7ab664f767",
+    "stage52_summary_seed20261107_n8192.csv": "347157ef02713d0ce0226f8b07271871b3940fa8e624b83fec2b092c6848d8c0",
+    "stage52_summary_seed20261108_n131072.csv": "3fcae89a027c0d4bf7269b735cf9e8603bb175f4a1220da950fe9da67e316dc5",
+    "stage52_summary_seed20261108_n32768.csv": "19449b23d4d0fc05c1b06435dadaa2462dd6eafb1c0560a5a77ed659e0fb2054",
+    "stage52_summary_seed20261108_n8192.csv": "21490ea0c2dab67b9083cb651ac17b767b298aca299c218e3043ef72c53fb747",
+    "stage65_feasibility_screen.csv": "f6d98ea7a35803c76c708cf827e952dd14ac0f57032cb8a351ffae2fc495dce3"
+  },
+  "figures": [
+    "figure01_engineering_capacity_factor.png",
+    "figure02_lifecycle_break_even.png",
+    "figure03_monte_carlo_refinement.png",
+    "figure04_strategy_feasibility.png"
+  ],
+  "limitations": [
+    "Analyst-defined scenarios, not plant forecasts",
+    "Strict Monte Carlo convergence not certified",
+    "Feasibility restricted to 15 selected contexts"
+  ]
+}
