@@ -242,7 +242,7 @@ ax.set_xlabel(
     "Cumulative equivalent plant-scale magnet sets"
 )
 
-ax.set_ylabel("Plant CAPEX (EUR billion)")
+ax.set_ylabel("Plant CAPEX (2024 EUR billion)")
 ax.set_title(
     "Component-Level Learning and Plant CAPEX"
 )
@@ -281,7 +281,7 @@ ax2.set_xlabel(
     "Cumulative equivalent plant-scale magnet sets"
 )
 
-ax2.set_ylabel("Modeled LCOE (EUR/MWh)")
+ax2.set_ylabel("Modeled LCOE (2024 EUR/MWh)")
 ax2.set_title(
     "Magnet Learning and Fusion Electricity Cost"
 )

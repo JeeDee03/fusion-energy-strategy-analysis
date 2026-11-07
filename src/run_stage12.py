@@ -8,25 +8,8 @@ REPORTS=ROOT/'reports'
 REPORTS.mkdir(exist_ok=True)
 SUMMARY=REPORTS/'stage12_run_summary.json'
 LOG=REPORTS/'stage12_run.log'
-STEPS=[
- 'check_dataset.py','audit_funding.py','benchmark_funding.py','validate_financial_data.py',
- 'validate_milestones.py','validate_partnership_evidence.py',
- 'funding_comparison.py','partnership_capabilities.py','research_summary.py',
- 'electricity_market_analysis.py','integrate_stage12.py'
-]
-REQUIRED=[
- 'companies.csv','sources.csv','funding_rounds.csv','funding_snapshots.csv','funding_normalized.csv',
- 'strategic_partnerships.csv','milestones.csv','claims.csv','claim_sources.csv',
- 'partnership_evidence.csv','partnership_capability_tags.csv','partnership_claims.csv','partnership_claim_sources.csv'
-]
-GENERATED=[
- 'reports/funding_comparison_usd.png','reports/partnership_capabilities.png',
- 'reports/electricity_price_distribution_2024.png','reports/electricity_monthly_2024.png',
- 'reports/electricity_price_duration_2024.png','reports/funding_event_timeline.png','reports/partnership_evidence_map.png',
- 'research/02_market_data_summary.md','research/11_stage12_synthesis.md',
- 'data/electricity_prices_de_lu_2024.csv','data/electricity_monthly_2024.csv','data/electricity_summary_2024.json',
- 'data/partnership_capability_matrix.csv','data/all_claims.csv','data/all_claim_sources.csv'
-]
+from stage12_provenance import STEPS, REQUIRED, GENERATED, input_paths
+
 def read(name):
  with (ROOT/'data'/name).open(newline='',encoding='utf-8') as f:return list(csv.DictReader(f))
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -34,12 +17,13 @@ def mapping(rows,key):
  result={r[key]:r for r in rows}
  if len(result)!=len(rows):raise ValueError('Duplicate '+key)
  return result
-state={'started_at_utc':datetime.now(timezone.utc).isoformat(),'status':'running','python':sys.version,'platform':platform.platform(),'packages':{},'steps':[],'evidence_issues':[],'input_hashes':{},'output_hashes':{}}
+state={'schema_version':1,'started_at_utc':datetime.now(timezone.utc).isoformat(),'status':'running','python':sys.version,'platform':platform.platform(),'packages':{},'steps':[],'evidence_issues':[],'input_hashes':{},'output_hashes':{}}
 def save():
- state['finished_at_utc']=datetime.now(timezone.utc).isoformat()
+ if state['status'] != 'running':state['finished_at_utc']=datetime.now(timezone.utc).isoformat()
  SUMMARY.write_text(json.dumps(state,indent=2),encoding='utf-8')
 
 def main():
+ save()
  if sys.flags.optimize or os.environ.get('PYTHONOPTIMIZE') not in (None,'','0'):
   raise RuntimeError('Disable Python optimization (-O / PYTHONOPTIMIZE): existing validators use assert checks.')
  missing=[str(ROOT/'data'/n) for n in REQUIRED if not (ROOT/'data'/n).is_file()]
@@ -50,14 +34,12 @@ def main():
  for package in ['pandas','numpy','matplotlib','tabulate']:
   try:state['packages'][package]=metadata.version(package)
   except metadata.PackageNotFoundError:raise RuntimeError(f'Missing dependency: {package}. Install the project requirements in the active environment.')
- originals=[ROOT/'data'/n for n in REQUIRED]+[ROOT/'src'/s for s in STEPS]+[Path(__file__).resolve()]
+ originals=[ROOT/name for name in input_paths(ROOT)]
  manifest=json.loads(manifest_path.read_text())
- originals.append(manifest_path)
  for item in manifest['files']:
   path=raw/item['file']
   if not path.is_file():raise FileNotFoundError(str(path))
   if digest(path)!=item['sha256']:raise ValueError('Raw SMARD snapshot hash mismatch: '+item['file'])
-  originals.append(path)
  # Prevent a stale processed FX table from silently rebuilding a misleading funding chart.
  rounds=mapping(read('funding_rounds.csv'),'funding_id')
  normalized=mapping(read('funding_normalized.csv'),'funding_id')

@@ -112,7 +112,7 @@ text='''# Stage 1–2 Synthesis: Financing, Partnerships and Electricity-Market 
 
 ## 1. Research purpose and boundaries
 
-The project asks how Proxima Fusion should position itself technologically, economically and strategically in Europe. This chapter establishes the descriptive evidence base for later technical benchmarking and economic scenarios. The five companies form a purposive case sample, not a representative census. See [research protocol](05_analysis_protocol.md) and [data dictionary](06_data_dictionary.md).
+The project asks how Proxima Fusion should position itself technologically, economically and strategically in Europe. This chapter preserves the Stage 1–2 descriptive boundary. Technical benchmarking and conditional economic models are now implemented in Stages 3–4; see [current integrated status](31_research_status_and_claims.md). Those extensions do not change the descriptive scope or validate hypotheses here. The five companies form a purposive case sample, not a representative census. See [research protocol](05_analysis_protocol.md) and [data dictionary](06_data_dictionary.md).
 
 The evidence separates financing events from cumulative disclosures, company funding from project budgets, and announced relationships from demonstrated economic outcomes. It does not rank technical success from capital raised or partnership counts.
 
@@ -178,7 +178,7 @@ The time-weighted market mean is not a future sales-price assumption or an LCOE 
 | H2 — Partnerships | Source-linked contributions and explicit missing contract terms | Allocation of capital, liabilities, retained value and control under defined alternatives |
 | H3 — Manufacturing scalability | Recorded manufacturing and technology-supply relationships | Repeatable component costs, learning assumptions, redesign needs and deployment scale |
 
-None of the three hypotheses is validated by descriptive funding or partnership records. Stage 3 must inspect engineering and business-model evidence before subsequent models translate it into costs, output and risk assumptions.
+None of the three hypotheses is validated by descriptive funding or partnership records. Current Stage 3 evidence and Stage 4 conditional models are summarized in [chapter 31](31_research_status_and_claims.md); all three hypotheses remain open.
 
 ## 7. Data consistency and open issues
 

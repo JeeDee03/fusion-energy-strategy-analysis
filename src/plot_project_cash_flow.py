@@ -27,7 +27,7 @@ values = summary["npv_eur"] / 1e9
 ax.bar(labels, values)
 ax.axhline(0, color="black", linewidth=1)
 
-ax.set_ylabel("Project NPV (EUR billion)")
+ax.set_ylabel("Project NPV (2024 EUR billion)")
 ax.set_title(
     "Illustrative Stellaris Project NPV"
 )
@@ -63,7 +63,7 @@ ax2.axhline(0, color="black", linewidth=1)
 
 ax2.set_xlabel("Years since initial investment")
 ax2.set_ylabel(
-    "Cumulative discounted cash flow (EUR billion)"
+    "Cumulative discounted cash flow (2024 EUR billion)"
 )
 
 ax2.set_title(

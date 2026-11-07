@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-05",
+  "scope": "Stages 1–4 implementation; no empirical hypothesis confirmation or publication approval.",
+  "hypotheses": [
+    {
+      "id": "H1",
+      "title": "Technology Economics",
+      "statement": "Stellarator operating advantages may compensate for higher engineering complexity and capital costs.",
+      "status": "open",
+      "assessment": "Conditional plant-economic mechanisms explored; comparative engineering and cost advantage not established.",
+      "next_evidence": "Comparable plant boundaries, calibrated costs and credible net-generation/maintenance evidence."
+    },
+    {
+      "id": "H2",
+      "title": "Commercialization Strategy",
+      "statement": "Industrial and utility partnerships may mitigate financing and commercialization risks.",
+      "status": "open",
+      "assessment": "Declared roles and commitments described; causal risk reduction and company-level retained value not quantified.",
+      "next_evidence": "Contractual funding, liabilities, ownership, control and retained cash flows under comparable strategy cases."
+    },
+    {
+      "id": "H3",
+      "title": "Manufacturing Scalability",
+      "statement": "Standardization and accumulated manufacturing experience may reduce reactor construction costs.",
+      "status": "open",
+      "assessment": "Component-learning scenarios calculated; observed fusion learning rates and industrial investment requirements remain unknown.",
+      "next_evidence": "Measured component cost shares, repeat-production evidence, cost floors and deployment/industrial investment requirements."
+    }
+  ],
+  "stages": [
+    {
+      "stage": 1,
+      "status": "design_implemented"
+    },
+    {
+      "stage": 2,
+      "status": "descriptive_baseline_with_limits"
+    },
+    {
+      "stage": 3,
+      "status": "evidence_framework_with_gaps"
+    },
+    {
+      "stage": 4,
+      "status": "conditional_models_not_empirically_calibrated"
+    },
+    {
+      "stage": 5,
+      "status": "planned"
+    },
+    {
+      "stage": 6,
+      "status": "planned"
+    },
+    {
+      "stage": 7,
+      "status": "planned"
+    }
+  ]
+}

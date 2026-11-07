@@ -111,7 +111,7 @@ matrix = results.pivot(
     values="lcoe_eur_per_mwh"
 )
 
-print("\nLCOE SENSITIVITY (EUR/MWh)")
+print("\nLCOE SENSITIVITY (2024 EUR/MWh)")
 print(matrix.round(2).to_string())
 
 fig, ax = plt.subplots(figsize=(9, 5))
@@ -125,7 +125,7 @@ ax.set_xticklabels(
 
 ax.set_yticks(range(len(matrix.index)))
 ax.set_yticklabels(
-    [f"EUR {x:,.0f}/kWe" for x in matrix.index]
+    [f"2024 EUR {x:,.0f}/kWe" for x in matrix.index]
 )
 
 ax.set_xlabel("Assumed net electrical capacity factor")
@@ -141,7 +141,7 @@ for i in range(len(matrix.index)):
             matrix.values.mean() else "black"
         )
 
-fig.colorbar(image, ax=ax, label="LCOE (EUR/MWh)")
+fig.colorbar(image, ax=ax, label="LCOE (2024 EUR/MWh)")
 
 fig.tight_layout()
 fig.savefig(

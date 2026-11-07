@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "currency": "EUR",
+  "price_year": 2024,
+  "cost_boundary": "staged_overnight_capex_plus_separate_replacements",
+  "discount_basis": "real_pre_tax_unlevered_no_extra_IDC",
+  "assumption_rationale": "Construction durations, phase shares and replacement costs are exploratory analyst assumptions. Their role is to expose timing and cost mechanisms, not estimate commercial Stellaris economics.",
+  "cases": [
+    {
+      "scenario_id": "LC001",
+      "scenario_name": "Legacy special-case reconciliation",
+      "generation_mode": "legacy_constant_cf",
+      "engineering_case_id": "",
+      "price_scenario_id": "REV004",
+      "construction_years": 0,
+      "construction_spend_shares": [
+        1
+      ],
+      "replacement_cost_eur_million": 0,
+      "opex_boundary": "legacy_aggregate",
+      "assumption_class": "analyst_scenario",
+      "notes": "Validation control: upfront investment, constant CF and no explicit replacements reproduce the prior simplified DCF."
+    },
+    {
+      "scenario_id": "LC002",
+      "scenario_name": "Five-year construction, constant-CF diagnostic",
+      "generation_mode": "legacy_constant_cf",
+      "engineering_case_id": "",
+      "price_scenario_id": "REV004",
+      "construction_years": 5,
+      "construction_spend_shares": [
+        0.1,
+        0.2,
+        0.3,
+        0.25,
+        0.15
+      ],
+      "replacement_cost_eur_million": 0,
+      "opex_boundary": "legacy_aggregate",
+      "assumption_class": "analyst_scenario",
+      "notes": "Analyst five-year schedule isolates construction spending and receipt timing; no commercial construction-duration evidence is claimed."
+    },
+    {
+      "scenario_id": "LC003",
+      "scenario_name": "Explicit maintenance, zero event-cost diagnostic",
+      "generation_mode": "engineering_events",
+      "engineering_case_id": "GEN002",
+      "price_scenario_id": "REV004",
+      "construction_years": 5,
+      "construction_spend_shares": [
+        0.1,
+        0.2,
+        0.3,
+        0.25,
+        0.15
+      ],
+      "replacement_cost_eur_million": 0,
+      "opex_boundary": "routine_excludes_major_replacements",
+      "assumption_class": "analyst_scenario",
+      "notes": "Maintenance windows reduce actual generation. Zero replacement expenditure isolates timing/generation effects; it is not a credible free replacement claim."
+    },
+    {
+      "scenario_id": "LC004",
+      "scenario_name": "Explicit maintenance, 600 million per replacement",
+      "generation_mode": "engineering_events",
+      "engineering_case_id": "GEN002",
+      "price_scenario_id": "REV004",
+      "construction_years": 5,
+      "construction_spend_shares": [
+        0.1,
+        0.2,
+        0.3,
+        0.25,
+        0.15
+      ],
+      "replacement_cost_eur_million": 600,
+      "opex_boundary": "routine_excludes_major_replacements",
+      "assumption_class": "analyst_scenario",
+      "notes": "600 million EUR_2024 per event is a 5%-of-reference-CAPEX analyst stress value, not a vendor quote or source-calibrated maintenance cost."
+    },
+    {
+      "scenario_id": "LC005",
+      "scenario_name": "Explicit maintenance, 1200 million per replacement",
+      "generation_mode": "engineering_events",
+      "engineering_case_id": "GEN002",
+      "price_scenario_id": "REV004",
+      "construction_years": 5,
+      "construction_spend_shares": [
+        0.1,
+        0.2,
+        0.3,
+        0.25,
+        0.15
+      ],
+      "replacement_cost_eur_million": 1200,
+      "opex_boundary": "routine_excludes_major_replacements",
+      "assumption_class": "analyst_scenario",
+      "notes": "Double LC004 event expenditure to isolate cost sensitivity. No new maintenance performance or technical achievability is inferred."
+    },
+    {
+      "scenario_id": "LC006",
+      "scenario_name": "Two-year late COD at unchanged spending dates",
+      "generation_mode": "engineering_events",
+      "engineering_case_id": "GEN002",
+      "price_scenario_id": "REV004",
+      "construction_years": 7,
+      "construction_spend_shares": [
+        0.1,
+        0.2,
+        0.3,
+        0.25,
+        0.15,
+        0,
+        0
+      ],
+      "replacement_cost_eur_million": 600,
+      "opex_boundary": "routine_excludes_major_replacements",
+      "assumption_class": "analyst_scenario",
+      "notes": "Pure delay diagnostic relative to LC004: spending dates and 35 operating years preserved, COD two years later. Delay overhead, interest on debt and cost overruns are excluded."
+    }
+  ]
+}

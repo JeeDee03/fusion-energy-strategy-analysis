@@ -1,7 +1,12 @@
 
 from pathlib import Path
+import math
 
 import pandas as pd
+
+from economic_validation import (
+    ECONOMIC_FIELDS, finite_number, positive_integer, validate_economic_case,
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -14,41 +19,32 @@ INPUT_FILE = DATA / "lcoe_scenarios.csv"
 
 def capital_recovery_factor(r, n):
     """Convert upfront capital into an equivalent annual cost."""
-    if n <= 0 or r < 0:
-        raise ValueError("Invalid lifetime or discount rate")
-
+    r = finite_number(r, "real_discount_rate", minimum=0)
+    n = positive_integer(n)
     if r == 0:
         return 1 / n
-
-    return r / (1 - (1 + r) ** (-n))
+    # Avoid cancellation when r is near zero.
+    return finite_number(r / -math.expm1(-n * math.log1p(r)),
+                         "capital_recovery_factor", minimum=0)
 
 
 def calculate_lcoe(row):
     """Compute simplified, real, pre-tax LCOE in EUR/MWh."""
 
-    capex = float(row["capex_eur_million"]) * 1e6
-    power_mw = float(row["net_power_mwe"])
-    cf = float(row["capacity_factor"])
-    fixed_opex = (
-        float(row["fixed_opex_eur_million_per_year"])
-        * 1e6
-    )
-    variable_opex = float(
-        row["variable_opex_eur_per_mwh"]
-    )
-
-    lifetime = int(row["plant_lifetime_years"])
-    rate = float(row["real_discount_rate"])
-
-    if capex < 0 or fixed_opex < 0 or variable_opex < 0:
-        raise ValueError("Costs cannot be negative")
-
-    if power_mw <= 0 or not (0 < cf <= 1):
-        raise ValueError("Invalid power or capacity factor")
+    checked = validate_economic_case(row)
+    capex = finite_number(checked["capex_eur_million"] * 1e6, "CAPEX in EUR", minimum=0)
+    power_mw = checked["net_power_mwe"]
+    cf = checked["capacity_factor"]
+    fixed_opex = finite_number(checked["fixed_opex_eur_million_per_year"] * 1e6,
+                               "fixed OPEX in EUR/year", minimum=0)
+    variable_opex = checked["variable_opex_eur_per_mwh"]
+    lifetime = checked["plant_lifetime_years"]
+    rate = checked["real_discount_rate"]
 
     crf = capital_recovery_factor(rate, lifetime)
 
-    annual_energy_mwh = power_mw * 8760 * cf
+    annual_energy_mwh = finite_number(power_mw * 8760 * cf, "annual_energy_mwh",
+                                       minimum=0, minimum_inclusive=False)
 
     annual_capital_cost = capex * crf
 
@@ -58,7 +54,9 @@ def calculate_lcoe(row):
         + variable_opex * annual_energy_mwh
     )
 
-    lcoe = annual_total_cost / annual_energy_mwh
+    annual_capital_cost = finite_number(annual_capital_cost, "annual_capital_cost_eur", minimum=0)
+    annual_total_cost = finite_number(annual_total_cost, "annual_total_cost_eur", minimum=0)
+    lcoe = finite_number(annual_total_cost / annual_energy_mwh, "lcoe_eur_per_mwh", minimum=0)
 
     return pd.Series({
         "annual_energy_mwh": annual_energy_mwh,
@@ -97,7 +95,7 @@ def main():
             "Session 4.1 accepts synthetic_test scenarios only"
         )
 
-    numeric_columns = required_columns[3:10]
+    numeric_columns = list(ECONOMIC_FIELDS)
 
     for col in numeric_columns:
         scenarios[col] = pd.to_numeric(

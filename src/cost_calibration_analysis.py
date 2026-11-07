@@ -151,8 +151,8 @@ ax.plot(
     marker="o"
 )
 
-ax.set_xlabel("Assumed overnight CAPEX (EUR/kWe)")
-ax.set_ylabel("Modeled LCOE (EUR/MWh)")
+ax.set_xlabel("Assumed overnight CAPEX (2024 EUR/kWe)")
+ax.set_ylabel("Modeled LCOE (2024 EUR/MWh)")
 
 ax.set_title(
     "Provisional Stellaris CAPEX Sensitivity"

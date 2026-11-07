@@ -81,7 +81,7 @@ manual=[
  'Verify that year-only targets and company-reported completions are not presented as exact dates or independent technical demonstrations.',
  'Retain the single-year, DE/LU scope and October 2026 retrieval vintage of the 2024 electricity baseline; do not present historical means as future sale prices.',
  'Record that FX conversions were checked internally but the original ECB input snapshot/provenance has not yet been archived in this enhancement cycle.',
- 'Confirm that H1-H3 remain research hypotheses, with technical benchmarking and economic testing assigned to later stages.',
+ 'Confirm that H1-H3 remain open: current Stage 3 evidence and Stage 4 conditional models do not establish empirical confirmation; use chapter 31 for the current status.',
  'Inspect rendered tables/figures and select one clear reading entry point in README; no chart should imply a financing-strength or partnership-quality ranking.'
 ]
 block=sum(f['level']=='BLOCKER' for f in findings);review=sum(f['level']=='REVIEW' for f in findings)

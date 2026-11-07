@@ -1,0 +1,6 @@
+company_id,strategy_label,classification_basis,source_ids,review_date,limitations
+PF001,Planned fusion plant development,analyst_classification_of_declared_strategy,BPF01;BPF02,2026-11-05,Final monetization and ownership terms unresolved in this review.
+TO001,Fusion technology OEM (declared strategy),analyst_classification_of_declared_strategy,BTO02;BTO03,2026-11-05,OEM strategy does not disclose realized fees or complete risk-transfer terms.
+TE001,Planned fusion systems commercialization,analyst_classification_of_declared_strategy,BTE01;BTE02,2026-11-05,Future utility engagement does not establish final sales or ownership structure.
+CF001,Planned fusion power owner-operator,analyst_classification_of_declared_strategy,BCF01;BCF02,2026-11-05,First-ARC ownership plan and reported agreements are not operating revenue.
+TK001,HTS systems and fusion technology,analyst_classification_of_declared_strategy,BTK01;BTK02,2026-11-05,HTS business/contract evidence is distinct from fusion power-plant commercialization.

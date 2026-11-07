@@ -1,10 +1,12 @@
 
 from pathlib import Path
+import math
 
 import numpy as np
 import pandas as pd
 
 from lcoe_model import calculate_lcoe
+from economic_validation import finite_number, validate_economic_case, validate_price
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -36,14 +38,17 @@ def load_reference_case():
         "real_discount_rate",
     ]
 
+    missing = set(required) - set(row.index)
+    if missing:
+        raise ValueError(f"Reference case missing columns: {sorted(missing)}")
     for field in required:
-        row[field] = float(row[field])
-
-    row["capex_eur_million"] = (
-        row["capex_eur_per_kwe"]
-        * row["net_power_mwe"]
-        / 1000
-    )
+        row[field] = finite_number(row[field], field)
+    row["capex_eur_million"] = finite_number(
+        row["capex_eur_per_kwe"] * row["net_power_mwe"] / 1000,
+        "capex_eur_million", minimum=0)
+    checked = validate_economic_case(row)
+    for field, value in checked.items():
+        row[field] = value
 
     return row
 
@@ -58,34 +63,18 @@ def calculate_project_cash_flow(case, price):
     No financing, taxes, replacements, residual value,
     price escalation or construction schedule.
     """
-    price = float(price)
-
-    if not np.isfinite(price):
-        raise ValueError("Invalid electricity price")
-
-    capex = float(case["capex_eur_million"]) * 1e6
-    power = float(case["net_power_mwe"])
-    cf = float(case["capacity_factor"])
-    fixed_opex = (
-        float(case["fixed_opex_eur_million_per_year"])
-        * 1e6
-    )
-    variable_opex = float(
-        case["variable_opex_eur_per_mwh"]
-    )
-    rate = float(case["real_discount_rate"])
-
-    raw_lifetime = float(case["plant_lifetime_years"])
-    lifetime = int(raw_lifetime)
-
-    if raw_lifetime != lifetime or lifetime <= 0:
-        raise ValueError("Invalid lifetime")
-    if rate < 0 or not np.isfinite(rate):
-        raise ValueError("Invalid discount rate")
-    if capex < 0 or fixed_opex < 0 or variable_opex < 0:
-        raise ValueError("Costs must be nonnegative")
-    if power <= 0 or not 0 < cf <= 1:
-        raise ValueError("Invalid power or capacity factor")
+    price = validate_price(price)
+    checked = validate_economic_case(case)
+    capex = finite_number(checked["capex_eur_million"] * 1e6, "CAPEX in EUR", minimum=0)
+    power = checked["net_power_mwe"]
+    cf = checked["capacity_factor"]
+    fixed_opex = finite_number(checked["fixed_opex_eur_million_per_year"] * 1e6,
+                               "fixed OPEX in EUR/year", minimum=0)
+    variable_opex = checked["variable_opex_eur_per_mwh"]
+    rate = checked["real_discount_rate"]
+    lifetime = checked["plant_lifetime_years"]
+    # Validate derived costs/output through the same LCOE path before building rows.
+    lcoe = float(calculate_lcoe(checked)["lcoe_eur_per_mwh"])
 
     annual_energy = power * 8760 * cf
 
@@ -97,6 +86,9 @@ def calculate_project_cash_flow(case, price):
         - fixed_opex
         - annual_variable_opex
     )
+
+    annual_revenue = finite_number(annual_revenue, "annual_revenue_eur")
+    annual_cash_flow = finite_number(annual_cash_flow, "annual_operating_cash_flow_eur")
 
     rows = [{
         "year": 0,
@@ -119,7 +111,7 @@ def calculate_project_cash_flow(case, price):
             "investment_eur": 0.0,
             "cash_flow_eur": annual_cash_flow,
             "discounted_cash_flow_eur": (
-                annual_cash_flow / (1 + rate) ** year
+                annual_cash_flow * math.exp(-year * math.log1p(rate))
             ),
         })
 
@@ -132,9 +124,9 @@ def calculate_project_cash_flow(case, price):
         "discounted_cash_flow_eur"
     ].sum()
 
-    lcoe = float(
-        calculate_lcoe(case)["lcoe_eur_per_mwh"]
-    )
+    npv = finite_number(npv, "npv_eur")
+    if not np.isfinite(cash_flows.select_dtypes(include="number").to_numpy()).all():
+        raise ValueError("Annual cash-flow table contains non-finite derived results")
 
     return cash_flows, {
         "annual_energy_mwh": annual_energy,

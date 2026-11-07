@@ -6,6 +6,11 @@ import numpy as np
 import pandas as pd
 
 from lcoe_model import calculate_lcoe
+from stage4_reconciliation import reconciliation_checks
+from validate_economic_assumptions import audit_assumptions
+from engineering_generation import reconciliation_check as generation_reconciliation_check
+from lifecycle_cash_flow import reconciliation_check as lifecycle_reconciliation_check
+from company_comparison import reconciliation_check as company_reconciliation_check
 from project_cash_flow import (
     calculate_project_cash_flow,
     load_reference_case,
@@ -50,6 +55,21 @@ def require_csv(filename, required_columns):
 
 
 def main():
+    checks.clear()
+    warnings.clear()
+    assumptions = audit_assumptions(ROOT)
+    record_check("Economic assumption traceability and model basis", not assumptions["errors"],
+                 assumptions["status"] + (": " + "; ".join(assumptions["errors"]) if assumptions["errors"] else
+                 "; mathematical traceability only; research gaps retained."))
+    engineering_passed, engineering_detail = generation_reconciliation_check(ROOT)
+    record_check("Conditional engineering generation cases", engineering_passed, engineering_detail)
+    lifecycle_passed, lifecycle_detail = lifecycle_reconciliation_check(ROOT)
+    record_check("Construction and replacement cash-flow reconciliation", lifecycle_passed, lifecycle_detail)
+    company_passed, company_detail = company_reconciliation_check(ROOT)
+    record_check("Comparable company evidence and business profiles", company_passed, company_detail)
+    for name, passed, detail in reconciliation_checks(ROOT):
+        record_check(name, passed, detail)
+
     # ------------------------------------
     # 1. Load all relevant model outputs
     # ------------------------------------
@@ -238,9 +258,9 @@ def main():
         "Economic scenarios remain analyst assumptions.",
         "Reference 1000 MWe is not verified Stellaris net output.",
         "FOAK/NOAK CAPEX not empirically calibrated.",
-        "No construction period or interest during construction.",
-        "No explicit replacement or decommissioning costs.",
-        "Performance sensitivities do not model reliability.",
+        "Legacy model omits construction timing. Lifecycle extension includes staged investment/late revenue in a real unlevered DCF, without an extra debt-interest/IDC charge.",
+        "Lifecycle extension includes explicit major replacement events/costs under analyst assumptions. Legacy tables omit them; decommissioning remains excluded.",
+        "Legacy performance sensitivities are independent algebraic tests; new engineering cases provide only conditional maintenance/load consistency, not reliability validation.",
         "Magnet learning rates and CAPEX share are hypothetical.",
         "2024 German electricity prices are not forecasts.",
         "Annual model uses a 8760-hour normalized year; "
@@ -340,6 +360,8 @@ def main():
         "status": (
             "PASS_WITH_LIMITATIONS" if not failed else "FAIL"
         ),
+        "economic_model_basis": assumptions["model_basis"],
+        "assumption_register_status": assumptions["status"],
         "reference_scenario": "CAL002",
         "reference_lcoe_eur_per_mwh": reference_lcoe,
         "checks": checks,
@@ -364,7 +386,9 @@ def main():
         "",
         f"**Reference:** CAL002",
         "",
-        f"**Reference LCOE:** {reference_lcoe:.2f} EUR/MWh",
+        f"**Reference LCOE:** {reference_lcoe:.2f} EUR_2024/MWh",
+        "",
+        "Monetary model outputs use 2024 constant EUR by analyst convention; this is not empirical cost calibration.",
         "",
         "## Reconciliation Checks",
         "",

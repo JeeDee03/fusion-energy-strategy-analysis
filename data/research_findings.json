@@ -1,0 +1,55 @@
+[
+  {
+    "id": "F01",
+    "artifact": "reports/stage42_lcoe_scenarios.csv",
+    "where": {
+      "scenario_id": "CAL002"
+    },
+    "field": "lcoe_eur_per_mwh",
+    "value": 170.14,
+    "unit": "EUR_2024/MWh",
+    "boundary": "Legacy upfront CAPEX and constant 85% net CF; CAL002 analyst inputs.",
+    "classification": "conditional_model_output",
+    "absolute_tolerance": 0.005
+  },
+  {
+    "id": "F02",
+    "artifact": "reports/lifecycle_summary.csv",
+    "where": {
+      "scenario_id": "LC001"
+    },
+    "field": "break_even_eur_2024_per_mwh",
+    "value": 170.14,
+    "unit": "EUR_2024/MWh",
+    "boundary": "Lifecycle legacy special case: no construction delay or explicit replacement cost.",
+    "classification": "conditional_model_output",
+    "absolute_tolerance": 0.005
+  },
+  {
+    "id": "F03",
+    "artifact": "reports/lifecycle_summary.csv",
+    "where": {
+      "scenario_id": "LC004"
+    },
+    "field": "break_even_eur_2024_per_mwh",
+    "value": 213.42,
+    "unit": "EUR_2024/MWh",
+    "boundary": "Five construction years, GEN002 event generation, EUR 600m per replacement; analyst stress case.",
+    "classification": "conditional_model_output",
+    "absolute_tolerance": 0.005
+  },
+  {
+    "id": "F04",
+    "artifact": "reports/stage44_learning_results.csv",
+    "where": {
+      "scenario_id": "LR020",
+      "cumulative_equivalent_units": 16
+    },
+    "field": "total_capex_eur_million",
+    "value": 10228.8,
+    "unit": "EUR_2024 million",
+    "boundary": "25% magnet share, 20% component learning, four doublings; 14.76% total reduction from EUR 12000m.",
+    "classification": "conditional_model_output",
+    "absolute_tolerance": 0.005
+  }
+]
