@@ -38,21 +38,25 @@ The project is organized into seven stages:
 
 | Stage | Description | Status |
 |---|---|---|
-| 1 | Research Design & Hypotheses | Completed |
+| 1 | Research Design & Hypotheses | Design implemented; hypotheses open |
 | 2 | Market Data & Financial Analysis | Descriptive baseline completed; scope limitations retained |
-| 3 | Competitive Technology Benchmarking | Completed; evidence gaps documented |
-| 4 | Techno-Economic Modeling | Completed; internally reconciled, assumption-driven analysis |
+| 3 | Competitive Technology Benchmarking | Evidence framework implemented; gaps retained |
+| 4 | Techno-Economic Modeling | Conditional models implemented; empirical calibration open |
 | 5 | Risk & Monte Carlo Simulation | Planned |
 | 6 | Strategic Decision Modeling | Planned |
 | 7 | Final Research Report & Dashboard | Planned |
 
 ### Research Hypotheses
 
-- **H1 — Technology Economics:** Stellarator operating advantages may compensate for higher engineering complexity and capital costs.
-- **H2 — Commercialization Strategy:** Industrial and utility partnerships may mitigate financing and commercialization risks.
-- **H3 — Manufacturing Scalability:** Standardization and accumulated manufacturing experience may reduce reactor construction costs.
+<!-- hypotheses:start -->
+**H1 — Technology Economics:** Stellarator operating advantages may compensate for higher engineering complexity and capital costs. Status: **open**.
 
-None of these hypotheses is considered empirically confirmed by the completed stages.
+**H2 — Commercialization Strategy:** Industrial and utility partnerships may mitigate financing and commercialization risks. Status: **open**.
+
+**H3 — Manufacturing Scalability:** Standardization and accumulated manufacturing experience may reduce reactor construction costs. Status: **open**.
+<!-- hypotheses:end -->
+
+Current evidence requirements: `data/research_status.json`; integrated reading entry point: [chapter 31](research/31_research_status_and_claims.md).
 
 ## Market and Strategic Research — Stages 1–2
 
@@ -322,55 +326,72 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-### 4. Rebuild and review the Stage 1–2 baseline
+### 4. Rebuild Stages 1–4 and verify both provenance records
 
 ```bash
-python src/run_stage12.py
-python src/check_stage12_closure.py
+python src/run_stage14.py
+python -m unittest discover -s tests -p 'test_*.py'
+python src/check_stage14_freshness.py
 ```
 
-After dependencies have been installed, the rebuild uses retained inputs without network downloads.
+The combined command runs Stage 1–2, its closure screening, Stage 3–4, then the
+read-only cross-stage check, stopping on failure. The two underlying logs and
+run summaries are preserved. It uses retained inputs after dependencies have
+been installed; no download scripts are executed.
 
-It records package versions, file hashes, and results in `reports/stage12_run_summary.json`.
+The separate Stage 1–2 commands remain `python src/run_stage12.py` and
+`python src/check_stage12_closure.py`; read its [bounded synthesis](research/11_stage12_synthesis.md).
 
-The closure command screens document consistency; scientific and editorial interpretation remains a separate review.
-
-Optional download scripts are excluded from the offline rebuild.
-
-### 5. Rebuild and review Stage 4
+For a Stage 3–4-only change, the existing commands remain available:
 
 ```bash
-python src/lcoe_model.py
-python src/validate_lcoe_model.py
-python src/cost_calibration_analysis.py
-python src/performance_sensitivity.py
-python src/validate_performance_sensitivity.py
-python src/manufacturing_learning.py
-python src/validate_manufacturing_learning.py
-python src/project_cash_flow.py
-python src/validate_project_cash_flow.py
-python src/plot_project_cash_flow.py
-python src/integrate_stage4.py
+python src/run_stage34.py
+python src/check_stage34_freshness.py
 ```
 
-The integration generates:
+The Stage 3–4 runner has 23 ordered steps. Its research consistency step
+checks canonical H1–H3 wording in four current documents, local links and pinned
+numerical statements against generated model tables. It writes a bounded audit
+and a current conditional-findings summary; it cannot certify arbitrary prose,
+source truth or publication suitability. Source documents and the status register
+are now hash-tracked. All top-level `src/*.py` files are conservatively tracked
+by both rebuilds; a script change requires both records to be refreshed before
+claiming cross-stage freshness.
 
-- `reports/stage4_integrated_summary.csv`
-- `reports/stage4_integration_audit.json`
-- `reports/stage4_integration_audit.md`
+The cross-stage check verifies complete declared file sets, hashes, step success
+and current Python/dependency versions. An old Stage 1–2 record is insufficient
+when shared company metadata changed. Its `CURRENT_WITH_RESEARCH_LIMITATIONS`
+result means compatible rebuild records, not scientific completion.
 
-A passing audit establishes cross-model consistency under the stated assumptions. It does not provide independent commercial or technical verification.
+Keep `reports/milestone_review.csv`: it is a human input and is never overwritten
+by these runners. Correcting reviewed evidence remains a separate editorial task.
+The Stage 1–2 closure report retains human review requirements.
 
-## Research Documentation
+### 5. Reading the current models
 
-- [Market Financing Analysis](research/03_market_financing_analysis.md)
-- [Stage 1–2 Research Synthesis](research/11_stage12_synthesis.md)
-- [Stage 1–2 Closing Review](research/14_stage12_final_review.md)
-- [Stage 3 Engineering Synthesis](research/19_engineering_research_synthesis.md)
-- [Stage 4 Techno-Economic Synthesis](research/25_stage4_techno_economic_synthesis.md)
-- [Data Dictionary](research/06_data_dictionary.md)
+Start with [the integrated status chapter](research/31_research_status_and_claims.md)
+and [Stage 4 synthesis](research/25_stage4_techno_economic_synthesis.md).
 
-The underlying datasets and their associated sources are documented in the `data/` directory.
+| Layer | Input / chapter | Interpretation |
+|---|---|---|
+| Economic register | `data/economic_assumptions.csv`; chapter 27 | Ten parameter families, 57 original numeric bindings; new extensions have separate reviewed inputs. |
+| Generation | `data/engineering_generation_cases.csv`; chapter 28 | Seven conditional gross/net, FPY/calendar, maintenance and load cases; one deliberately unmet CF target. |
+| Lifecycle DCF | `data/lifecycle_cash_flow_cases.json`; chapter 29 | Six construction/replacement cases; legacy LC001 reconciles to the original model. |
+| Company comparison | Three company/competitive-source CSVs; chapter 30 | Five companies × eight criteria, 40 cells and 14 primary sources, snapshot reviewed 2026-11-05; four selected-review gaps. |
+| Research status | `data/research_status.json`; chapter 31 | H1–H3 open; implementation status distinct from calibration and editorial review. |
+
+The reference uses 2024 constant EUR as an analyst convention, real pre-tax
+unlevered discounting and illustrative first-unit FOAK inputs. This is not
+empirical cost calibration or conversion of published USD benchmarks. Learning
+cases are not verified NOAK plants. The hypothetical two-month outage case
+reaching 95% CF is beyond the documented duration target; it is not measured
+engineering performance. Company strategy labels do not assert realized fusion
+revenues, risk reduction, cost ranking or plant readiness.
+
+Original chapters 19–24 retain layer-specific findings; their legacy boundaries
+are identified explicitly. New lifecycle expenses are separate from routine OPEX
+to avoid double counting. The pricing scenarios are stress tests, not forecasts.
+The research-numbering migration preserves edits and refuses conflicting copies.
 
 ## Limitations
 
@@ -382,7 +403,7 @@ Technological milestones announced by companies are not treated as independently
 
 Stage 4 economic scenarios are not company-reported construction or performance forecasts. The model does not yet establish verified Stellaris CAPEX, OPEX, net electrical capacity factor, or manufacturing learning rates.
 
-The initial economic models simplify construction timing, financing, taxes, component replacement, decommissioning, and hourly electricity-market participation.
+The legacy models omit construction timing and explicit replacement costs. The lifecycle extension models those mechanisms under analyst assumptions. Debt financing, taxes, decommissioning, offline power purchases and hourly electricity-market participation remain excluded.
 
 Historical electricity prices must not be interpreted as future revenue forecasts.
 
@@ -430,4 +451,20 @@ Where empirical evidence is insufficient, uncertainty distributions will be expl
 
 The results will provide the foundation for Stage 6, where alternative financing, industrial partnerships, and commercialization strategies will be evaluated.
 
-**Current Research Status:** Stages 1–4 completed as structured, reproducible research workflows. Stage 5 — Uncertainty Analysis — is next.
+**Current Research Status:** The nine-step Stage 3–4 improvement cycle is implemented, subject to passing checks and human review. Main Stage 5 simulation remains to be implemented; its source-bound uncertainty specification is now chapter 32. Empirical calibration and H1–H3 remain open.
+## Stage 5 uncertainty specification — improvement Step 9
+
+Read [chapter 32](research/32_stage5_uncertainty_specification.md) and
+`data/stage5_uncertainty_spec.json`. Five exploratory marginal supports are
+separated from 12 unweighted engineering/construction/replacement contexts;
+power and CF are derived, while learning has a separate family. Marginal-density
+and dependence sensitivities, seeds, convergence rules and failure behavior are
+specified without interpreting analyst ranges as empirical probabilities.
+
+The final rebuild step runs 396 deterministic reference/corner evaluations,
+not Monte Carlo samples. See `reports/stage5_spec_audit.md` and
+`reports/stage5_design_dry_run.csv`. The status
+`SPECIFICATION_CHECKS_CLEAR_WITH_RESEARCH_GAPS` certifies bounded preflight
+checks only. Main Stage 5 simulations, convergence and sensitivity results are
+not implemented or claimed by this update. The existing combined rebuild, tests
+and freshness commands reproduce this extension.

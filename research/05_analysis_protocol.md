@@ -2,9 +2,9 @@
 
 **Project:** The Economics of Commercial Fusion: A Data-Driven Market and Strategic Analysis of Proxima Fusion
 
-**Version:** 0.1 | **Prepared:** 28 October 2026
+**Version:** 0.2 | **Prepared:** 28 October 2026 | **Updated:** 5 November 2026
 
-**Status:** Initial methodological baseline. This document specifies how evidence will be collected and evaluated; it does not certify that data collection, source verification, or hypothesis testing has been completed.
+**Status:** Current protocol, retaining the initial evidence rules. This document specifies how evidence will be collected and evaluated; it does not certify that data collection, source verification, or hypothesis testing has been completed.
 
 ## 1. Research question and analytical sequence
 
@@ -73,6 +73,17 @@ For conflicting claims, first compare dates, scope, definitions, and subsequent 
 
 ## 6. Hypothesis evaluation plan
 
+<!-- hypotheses:start -->
+**H1 — Technology Economics:** Stellarator operating advantages may compensate for higher engineering complexity and capital costs. Status: **open**.
+
+**H2 — Commercialization Strategy:** Industrial and utility partnerships may mitigate financing and commercialization risks. Status: **open**.
+
+**H3 — Manufacturing Scalability:** Standardization and accumulated manufacturing experience may reduce reactor construction costs. Status: **open**.
+<!-- hypotheses:end -->
+
+Canonical definitions/status: `data/research_status.json`. The broader H1 feasibility wording in proposal v0.2 is operationalized here as testing the offset between operating advantages and capital/engineering burdens; this is a clarification, not new confirmation.
+
+
 ### H1 — Technology economics
 
 Evaluate the technical and financial conditions under which a hypothetical stellarator plant meets a defined electricity-cost or revenue threshold. Separate FOAK and NOAK cases.
@@ -118,3 +129,13 @@ These are acceptance criteria, not a statement that the work is complete. Subseq
 | Version | Date | Change |
 |---|---|---|
 | 0.1 | 2026-10-28 | Initial protocol drafted from the project brief and previously reviewed Stage 1–2 outputs; no new factual source audit performed. |
+
+| 0.2 | 2026-11-05 | Harmonize H1–H3 with the proposal and current synthesis; retain baseline evidence rules and separate conditional model tests from empirical confirmation. |
+
+## 10. Current implementation and model boundaries
+
+See [chapter 31](31_research_status_and_claims.md) for current progress and claim boundaries. The original Stage 1–2 checklist above remains an acceptance checklist, not a fresh sign-off. The financing baseline retains its 2026-10-28 cutoff; the separate competitive-source snapshot is reviewed through 2026-11-05. Updating that snapshot does not silently extend financial-event coverage.
+
+The legacy model uses year-zero overnight investment and constant net CF. The lifecycle extension includes staged overnight expenditure, delayed first revenue and explicit major replacement events. All are real, pre-tax, unlevered scenarios; debt terms, taxes, decommissioning, offline power purchases and hourly capture-price dispatch remain excluded. A real discount rate captures time value; a separate debt-interest/IDC charge is not added to this unlevered boundary. Routine OPEX excludes separately charged major replacement costs in event cases, subject to empirical allocation.
+
+Numerical conclusions are conditional on analyst inputs. The current price basis is 2024 constant EUR by convention; literature USD values have not been rebased into empirically calibrated EUR costs. A 35-year normalized operating model uses 8760 h/year, while historical 2024 market data have 8784 hours. The Stage 5 design now specifies coherent joint contexts and exploratory probability interpretation in [chapter 32](32_stage5_uncertainty_specification.md); its preflight is deterministic, and sampling/convergence implementation remains future work. Main Stage 6 must evaluate company-level strategy outcomes before any H2 conclusion.
