@@ -1,6 +1,6 @@
 company_id,company_name,country,founded_year,technology,business_model,company_status
-PF001,Proxima Fusion,Germany,2023,Stellarator,Undetermined,Active
-TO001,Type One Energy,USA,2019,Stellarator,Undetermined,Active
-TE001,Thea Energy,USA,2022,Stellarator,Undetermined,Active
-CF001,Commonwealth Fusion Systems,USA,2018,Tokamak,Undetermined,Active
-TK001,Tokamak Energy,United Kingdom,2009,Spherical Tokamak,Undetermined,Active
+PF001,Proxima Fusion,Germany,2023,Stellarator,Planned fusion plant development,Active
+TO001,Type One Energy,USA,2019,Stellarator,Fusion technology OEM (declared strategy),Active
+TE001,Thea Energy,USA,2022,Stellarator,Planned fusion systems commercialization,Active
+CF001,Commonwealth Fusion Systems,USA,2018,Tokamak,Planned fusion power owner-operator,Active
+TK001,Tokamak Energy,United Kingdom,2009,Spherical Tokamak,HTS systems and fusion technology,Active
