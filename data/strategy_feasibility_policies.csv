@@ -1,0 +1,2 @@
+policy_id,company_min_npv_eur,external_min_npv_eur,project_min_npv_eur,integrated_external_rule,evidence_class
+FP01,0,0,0,not_applicable,analyst_screening_convention_not_bankability_standard

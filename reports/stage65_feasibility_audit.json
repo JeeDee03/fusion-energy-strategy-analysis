@@ -1,0 +1,20 @@
+{
+  "status": "CONDITIONAL_ECONOMIC_GATES_COMPLETE_NOT_STRATEGY_RECOMMENDATION",
+  "risk_rows": 60,
+  "context_rows": 15,
+  "threshold_rows": 20,
+  "eligible_rows": 0,
+  "contexts_with_eligible_strategy": 0,
+  "inputs_sha256": {
+    "risk": "26f63038bf91bd89d3fb21c537dbebbdab83acbf10c0dd31d3bf6b5b1457fe16",
+    "mcda": "833963cd7193a3315193adaf1c5805f75526d2dde9c44b49df15a61ff5149fe4",
+    "policies": "baf4401d90a8bda4f81cd15b2642d94e7e747fe2307644d8ff9ef73a2c46f0e1"
+  },
+  "limits": [
+    "Zero NPV is a screening convention, not a bankability or financing criterion",
+    "Thresholds above tested prices are linear extrapolations of the toy scenario",
+    "Supplier customer contract remains assumed, not validated",
+    "No default, warranty, debt, manufacturing investment, or qualitative C06-C08 scores",
+    "No probability weights assigned to prices, stresses or strategies"
+  ]
+}
