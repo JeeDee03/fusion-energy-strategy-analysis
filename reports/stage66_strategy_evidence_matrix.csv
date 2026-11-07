@@ -1,0 +1,5 @@
+strategy_id,screened_cases,company_pass_count,external_pass_count,project_pass_count,joint_pass_count,mcda_first_place_records,assessment
+STR01,15,0,15,0,0,0,NO_ECONOMICALLY_ELIGIBLE_CASE_IN_TESTED_SET
+STR02,15,0,0,0,0,0,NO_ECONOMICALLY_ELIGIBLE_CASE_IN_TESTED_SET
+STR03,15,15,0,0,0,60,NO_ECONOMICALLY_ELIGIBLE_CASE_IN_TESTED_SET
+STR04,15,0,0,0,0,0,NO_ECONOMICALLY_ELIGIBLE_CASE_IN_TESTED_SET

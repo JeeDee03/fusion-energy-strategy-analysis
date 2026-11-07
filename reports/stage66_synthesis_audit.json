@@ -1,0 +1,43 @@
+{
+  "status": "CONDITIONAL_STAGE6_STRATEGIC_SYNTHESIS_NO_EMPIRICAL_RECOMMENDATION",
+  "source_hashes_sha256": {
+    "stage62": "40c3b00e6582bbec53a97ea23d17c5a20b9d2b0d41942efe6094e8a6bb1694b5",
+    "stage63": "26f63038bf91bd89d3fb21c537dbebbdab83acbf10c0dd31d3bf6b5b1457fe16",
+    "stage64_scores": "833963cd7193a3315193adaf1c5805f75526d2dde9c44b49df15a61ff5149fe4",
+    "stage64_weights": "e75e79598498558b84168974818d638f1a086bcf519d414b6dc6eae9bbee727d",
+    "stage65_gates": "f6d98ea7a35803c76c708cf827e952dd14ac0f57032cb8a351ffae2fc495dce3",
+    "stage65_contexts": "47dc102be3f802d4bfecfbdf5fb48e76be5873fb43b15981f2b3175ee6a5dd2c",
+    "stage65_thresholds": "efa736d18c8d398243c6bc0c5e437afdd764e1f076cfb0deccc99f831c9c146b",
+    "stage65_audit": "9b88dc3132e1c11fef936860614488e4de1b8e27cf46a73a6ce1c26ae1d355d9",
+    "stage55_summary": "4d964f54a64457b9b0c1f738a470729c2de838f2154572dfe32e9fd0eeb3b8e1",
+    "stage55_audit": "9ac2fe6afbe232a61f97097763c309fa2d889a0744828ba4057a095e68d5d2b3"
+  },
+  "derived_summary": {
+    "status": "CONDITIONAL_STAGE6_STRATEGIC_SYNTHESIS_NO_EMPIRICAL_RECOMMENDATION",
+    "scenarios_screened": 60,
+    "contexts_screened": 15,
+    "eligible_scenarios": 0,
+    "contexts_with_any_eligible": 0,
+    "all_contexts_same_mcda_leader": true,
+    "provisional_leaders": [
+      "STR03"
+    ],
+    "baseline_joint_thresholds": {
+      "STR01": 217.82706236352004,
+      "STR02": 219.69691472626405,
+      "STR03": 230.16536546131655,
+      "STR04": 222.46058572031794
+    },
+    "all_baseline_thresholds_extrapolated_above_200": true,
+    "stage55_status": "COMPLETE_EXPLORATORY_CROSS_SEED_SUMMARY_NOT_CONVERGENCE_CERTIFIED",
+    "limitations": [
+      "Strategic options and fees remain hypothetical rather than disclosed contracts",
+      "No direct lender terms, customer demand, default, warranties or full financing waterfalls",
+      "MCDA is four-criterion partial screening; C05-C08 not fully evaluated",
+      "No empirical probability of commercial success or structural scenario weights",
+      "Stage 5.3 strict convergence criterion remains unmet",
+      "Stage 5 manufacturing learning assumes one engineering/construction context",
+      "All thresholds outside 120-200 EUR/MWh are linear extrapolations, not market forecasts"
+    ]
+  }
+}

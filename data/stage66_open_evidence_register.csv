@@ -1,0 +1,9 @@
+gap_id,topic,current_status,evidence_needed,planned_model_update
+G01,Commercial plant CAPEX,unverified,Costed engineering procurement construction estimate,Recalibrate project CAPEX distributions
+G02,Operating performance,unverified,Validated net generation availability and outage data,Recalibrate engineering case parameters
+G03,Debt financing terms,not_modeled,Bankable financing quotes and guarantees,Add lender covenants and equity cash-flow waterfall
+G04,OEM supplier feasibility,not_verified,Customer willingness contract pricing warranty and default terms,Reprice contracts and financing viability
+G05,Manufacturing learning,exploratory,Production cost histories factory investment and qualification data,Calibrate learning curves and facility CAPEX
+G06,Strategic MCDA coverage,incomplete,Evidence for C05 C06 C07 C08 and preference elicitation,Complete criterion register and re-evaluate rankings
+G07,Monte Carlo convergence,strict_condition_unmet,Second consecutive passing high-sample refinement,Repeat convergence assessment under budget
+G08,Source and repository completeness,pending_human_review,Editorial verification and reproducible tracked baseline,Publication audit and release tagging
