@@ -1,6 +1,6 @@
 # Stage 6.6 — Integrated Strategic Synthesis and Stage 7 Handover
 
-**Evidence class:** Model-derived conditional assessment, not a company recommendation or verified plant forecast.  
+**Evidence class:** Model-derived conditional assessment, not a company recommendation or verified plant forecast.
 **Status:** Draft structure; update numeric statements only from `reports/stage66_synthesis_summary.md` after running the integration.
 
 ## 1. Objective
