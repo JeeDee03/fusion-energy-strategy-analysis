@@ -1,0 +1,12 @@
+{
+  "status": "PASS_PAIRED_COMPARISON_NOT_CONVERGENCE_CERTIFIED",
+  "seed": 20261105,
+  "sample_size_per_context": 2048,
+  "contexts": 12,
+  "total_paired_evaluations": 24576,
+  "uniform_input_sha256": "a5b007ba302d7d07a1e2d9d219f5879c4cb95966c806cd58d6ad48f68dd9c800",
+  "triangular_input_sha256": "4f68c214930913a5687bd21136069b8e958b5f8af9faf707c5a73ccc922d6e4e",
+  "comparison_sha256": "432315d143ba9c76f4a87c772534b4e04490c9037117296e3f9f33a1de574b7e",
+  "methods": "identical uniform PCG64 ranks mapped by the inverse triangular CDF; each structural context reported separately",
+  "interpretation": "analyst_assumption_marginal_sensitivity_not_empirical_probability"
+}
