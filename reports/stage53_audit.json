@@ -1,0 +1,48 @@
+{
+  "stage": "5.3",
+  "status": "NONCONVERGED",
+  "design": "independent_uniform_only",
+  "canonical_sample_sizes": [
+    2048,
+    8192,
+    32768
+  ],
+  "required_seeds": [
+    20261105,
+    20261106,
+    20261107,
+    20261108
+  ],
+  "processed": [
+    {
+      "seed": 20261105,
+      "max_n": 32768,
+      "source": "stage52_draws_seed20261105_n32768.csv"
+    },
+    {
+      "seed": 20261106,
+      "max_n": 32768,
+      "source": "stage52_draws_seed20261106_n32768.csv"
+    },
+    {
+      "seed": 20261107,
+      "max_n": 32768,
+      "source": "stage52_draws_seed20261107_n32768.csv"
+    },
+    {
+      "seed": 20261108,
+      "max_n": 32768,
+      "source": "stage52_draws_seed20261108_n32768.csv"
+    }
+  ],
+  "failed_refinement_tests": 74,
+  "consecutive_refinements_required": 2,
+  "notes": [
+    "Convergence checks use nested prefixes within each independent seed.",
+    "Results do not establish empirical probability of Proxima commercial success.",
+    "Structural contexts are not probability weighted.",
+    "Spearman associations are not causal effects or independent variance shares.",
+    "Full Stage 5 convergence across distribution and dependence designs is not assessed here.",
+    "Marginal and dependence stress designs are reserved for Stage 5.4."
+  ]
+}
