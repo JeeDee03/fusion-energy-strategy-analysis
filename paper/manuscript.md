@@ -2,7 +2,7 @@
 
 *An Integrated Techno-Economic, Uncertainty, and Commercialization Strategy Analysis*
 
-## Abstract — Draft
+## Abstract
 
 The commercialization of nuclear fusion requires the simultaneous resolution of engineering, economic, financial, and organizational challenges. While stellarator configurations offer potential operational advantages, their commercial competitiveness depends on the relationship between plant capital intensity, net electricity generation, maintenance requirements, manufacturing scalability, and revenue realization.
 
@@ -10,17 +10,15 @@ This study develops an integrated analytical framework for examining these relat
 
 Under the illustrative reference assumptions, the simplified LCOE is approximately €170.14/MWh, while an extended lifecycle scenario incorporating construction timing and major component replacement produces a break-even electricity price of approximately €213.42/MWh. These values are conditional model outputs rather than empirically calibrated project forecasts.
 
-The uncertainty analysis identifies sensitivity to economic assumptions but does not satisfy the study's strict convergence criterion. The strategic analysis examines integrated ownership, joint ventures, technology supply, and hybrid commercialization structures. None of the evaluated strategies satisfies all stakeholder economic feasibility gates across the 15 examined contexts.
+The exploratory uncertainty analysis identifies sensitivity to economic assumptions, but the retained convergence audits report nonconvergence. The strategic analysis examines integrated ownership, joint ventures, technology supply, and hybrid commercialization structures. None of the evaluated strategies satisfies all stakeholder economic feasibility gates across the 15 examined contexts.
 
-The findings demonstrate the importance of jointly assessing engineering performance, capital investment, lifecycle expenditures, and stakeholder-level value allocation. The study provides a reproducible exploratory framework while distinguishing mathematical consistency from empirical validation and commercial bankability.
+The findings demonstrate the importance of jointly assessing engineering performance, capital investment, lifecycle expenditures, and stakeholder-level value allocation. The study provides a computationally reproducible exploratory framework while distinguishing internal numerical consistency from empirical validation and commercial bankability.
 
 ## 1. Introduction
 
 ### 1.1 Background and Motivation
 
 The development of commercial nuclear fusion involves the transition from experimental plasma confinement and conceptual reactor designs toward integrated electricity-generating power plants. This transition requires progress not only in plasma physics but also in superconducting magnet systems, heat exhaust, structural engineering, maintenance architecture, and power-plant integration. The conceptual Stellaris design illustrates several of these engineering challenges within a proposed stellarator-based power-plant architecture [BPF03]. However, the successful integration of these subsystems into a commercially operating facility, together with the associated investment and electricity-generation economics, remains to be demonstrated.
-
-Stellarator technology is particularly relevant to the development of commercial fusion energy. Recent conceptual reactor studies, including the Stellaris high-field quasi-isodynamic design, investigate the integration of plasma confinement, superconducting magnets, structural support, heat exhaust, and remote maintenance within a coherent power-plant architecture [BPF03]. However, these engineering studies do not establish demonstrated commercial availability or independently verified plant economics.
 
 An assessment of commercial potential therefore cannot rely exclusively on plasma physics performance or nominal electrical output. It must also examine capital expenditure, operational availability, electricity production, replacement schedules, financing assumptions, and the distribution of risks and revenues among participating organizations.
 
@@ -53,8 +51,11 @@ These hypotheses are treated as open research questions rather than confirmed pr
 This study makes four methodological contributions:
 
 1. It links engineering-constrained electricity generation to economic cost and investment models rather than relying exclusively on unconstrained capacity-factor assumptions.
+
 2. It incorporates construction timing, major component replacement, and manufacturing learning into a conditional lifecycle economic framework.
+
 3. It examines parameter uncertainty and dependence assumptions while explicitly reporting convergence limitations and distinguishing exploratory simulations from empirically calibrated probabilities.
+
 4. It compares alternative commercialization structures through stakeholder-specific cash flows, risk allocation, multi-criteria evaluation, and economic feasibility screening.
 
 ### 1.5 Scope and Interpretation
@@ -74,10 +75,15 @@ This study adopts an integrated computational research design combining publicly
 The analytical framework is organized into six interrelated layers:
 
 1. Evidence collection and comparative industry analysis.
+
 2. Engineering-constrained electricity generation.
+
 3. Techno-economic and lifecycle investment modeling.
+
 4. Manufacturing learning and cost scalability.
+
 5. Exploratory uncertainty and sensitivity analysis.
+
 6. Stakeholder-level commercialization strategy evaluation.
 
 The purpose of integrating these layers is to examine how technical design assumptions propagate into financial outcomes and how alternative commercial arrangements distribute those outcomes among stakeholders.
@@ -104,33 +110,59 @@ Published techno-economic research provides an external reference for understand
 
 ### 2.3 Engineering-Constrained Electricity Generation
 
-Annual electricity generation is a central determinant of plant economics.
+The engineering model estimates long-run electricity generation under alternative maintenance intervals, major outage durations, auxiliary consumption, additional downtime, and operating-load assumptions.
 
-A simplified reference formulation is:
+Annual net electricity generation is calculated as:
 
-**E = P_net × 8,760 × CF**
+\[
+E_{\mathrm{annual}}=8760P_{\mathrm{net}}CF
+\]
 
-where:
+where \(P_{\mathrm{net}}\) is the net-rated electrical capacity in MW and \(CF\) is the derived net capacity factor. The resulting energy is measured in MWh per year.
 
-- E denotes annual net electricity generation in MWh.
-- P_net denotes net-rated electrical capacity in MW.
-- CF denotes the net capacity factor.
+Net-rated capacity is defined as:
 
-This expression is appropriate for constant annual utilization assumptions but does not explicitly represent the timing or duration of major maintenance events.
+\[
+P_{\mathrm{net}}=P_{\mathrm{gross}}(1-a)
+\]
 
-The engineering extension therefore evaluates generation under alternative maintenance intervals, major replacement outages, additional downtime, operating load factors, and auxiliary electricity consumption.
+where \(a\) is the assumed proportional auxiliary-load fraction.
 
-A simplified representation of the net-rating boundary is:
+Two maintenance scheduling conventions are considered. First, the full-power-exposure approach assumes that maintenance exposure accumulates proportionally to effective operating output. The non-major-outage operating factor is:
 
-**P_net = P_gross × (1 − a)**
+\[
+q=(1-d)\ell
+\]
 
-where a denotes the assumed proportional auxiliary-load fraction during operation.
+where \(d\) denotes additional downtime and \(\ell\) denotes the operating-load fraction.
 
-The implemented engineering model distinguishes full-power-exposure maintenance intervals from calendar-based maintenance intervals. It also prevents scheduled downtime and capacity-factor deductions from being counted twice.
+For a specified full-power exposure interval \(F\), the operating window is:
 
-The resulting generation estimates are conditional on specified engineering inputs. They are not predictions of commercially achievable Stellaris availability.
+\[
+T_{\mathrm{operating}}=\frac{F}{q}
+\]
 
-The engineering scenario inputs are recorded in `data/engineering_generation_cases.csv`, while derived performance metrics are retained in `reports/engineering_generation_scenarios.csv`. Conceptual Stellaris design and maintenance discussions provide engineering context [BPF03], but the model's auxiliary-load assumptions, additional downtime fractions, and hypothetical outage modifications remain analyst-defined. Accordingly, the resulting capacity factors are conditional scenario outputs rather than verified plant performance estimates.
+With a major outage lasting \(m\) months, the cycle-average capacity factor becomes:
+
+\[
+CF_{\mathrm{FPY}}=\frac{F}{F/q+m/12}
+\]
+
+Second, under a calendar-cycle maintenance convention with a total cycle length \(T\):
+
+\[
+CF_{\mathrm{calendar}}=
+
+\left(1-\frac{m}{12T}\right)q
+\]
+
+The model applies additional downtime and operating-load effects once, avoiding duplicate capacity-factor deductions. Auxiliary consumption reduces net-rated capacity separately.
+
+Scenario results are based on conceptual engineering context and analyst-defined assumptions recorded in `data/engineering_generation_cases.csv`. The derived capacity factors and electricity-generation estimates are retained in `reports/engineering_generation_scenarios.csv`.
+
+The full-power-exposure approach assumes linear scaling of exposure and gross electrical output with operating load. This is an analytical proxy, not a validated fusion power balance or component-lifetime model.
+
+Consequently, the derived figures are conditional long-run cycle averages rather than measured commercial Stellaris performance [BPF03].
 
 ### 2.4 Levelized Cost of Electricity
 
@@ -138,68 +170,101 @@ The simplified economic framework uses the levelized cost of electricity to expr
 
 For constant annual generation and operating expenditure, the reference formulation is:
 
-**LCOE = (CAPEX × CRF + FOM) / E + VOM**
+\[
+LCOE=\frac{CAPEX\cdot CRF+FOM}{E}+VOM
+\]
 
 The capital recovery factor is defined as:
 
-**CRF = r(1 + r)^N / [(1 + r)^N − 1]**
+\[
+CRF=\frac{r(1+r)^N}{(1+r)^N-1}
+\]
 
 where:
 
 - CAPEX represents initial capital investment.
+
 - FOM represents annual fixed operating expenditure.
+
 - VOM represents variable operating expenditure per MWh.
+
 - E represents annual electricity generation.
+
 - r represents the real discount rate.
+
 - N represents the economic operating lifetime.
 
-The annualized LCOE formulation and capital recovery factor follow established electricity-generation cost accounting conventions documented in the National Renewable Energy Laboratory's Annual Technology Baseline methodology [EC003]. The specific financial inputs used in this study remain analyst-defined assumptions rather than values validated by that methodological reference.
+The annualized LCOE formulation and capital recovery factor follow established electricity-generation cost accounting conventions documented in the Annual Technology Baseline methodology [EC003]. The specific financial inputs used in this study remain analyst-defined assumptions rather than values validated by that methodological reference.
 
 ### 2.5 Discounted Lifecycle Cash-Flow Analysis
 
-A discounted cash-flow model evaluates the relationship between investment expenditure, operating costs, electricity revenue, and project value.
+The lifecycle discounted cash-flow model evaluates the effects of construction timing, electricity generation, routine operating expenditures, and major component replacement events on project investment economics.
 
-The general net present value identity is:
+The analysis uses a real, pre-tax, unlevered financial boundary.
 
-**NPV = Σ [CF_t / (1 + r)^t]**
+Net present value is expressed as:
 
-where CF_t denotes the net project cash flow occurring at time t.
+\[
+NPV=PV(R)-PV(C)
+\]
 
-The initial simplified model places capital investment at the beginning of the project and assumes constant annual operating conditions.
+where \(PV(R)\) denotes the present value of electricity revenues and \(PV(C)\) represents the present value of construction expenditure, routine operating costs, and separately modeled replacement expenditure.
 
-The extended lifecycle model introduces construction expenditure distributed over time, delayed revenue commencement, explicit major component replacement expenditure, and maintenance-related generation interruptions.
+Construction expenditure is distributed across the specified construction period using predefined spending shares that sum to one. For a construction duration of \(K\) years, expenditure is assigned to model times \(t=0,\ldots,K-1\).
 
-Construction spending precedes commercial generation. Replacement expenditure is charged at the modeled event time, while the corresponding interruption affects electricity output.
+Operating revenues and routine operating expenditures are assigned to the ends of operating years, beginning at model time \(t=K+1\).
 
-This timing-aware formulation permits comparison of scenarios involving construction schedules, maintenance strategies, replacement budgets, and commissioning delays.
+In engineering-event scenarios, annual electricity generation is calculated from the exact overlap between operating windows and calendar-year intervals. Major maintenance outages interrupt generation explicitly rather than through an additional application of the long-run capacity factor.
 
-A break-even electricity price is defined as the constant real sale price that produces zero project NPV under the specified assumptions.
+Major replacement expenditure is discounted at the exact modeled start of each replacement outage. For annual reporting, the corresponding amount is allocated to a reporting-year bucket, while its discounted value retains the precise event-time calculation.
 
-This price should not be interpreted as a forecast of achievable electricity-market revenue or a financing commitment.
+The present value of total project cost is:
+
+\[
+PV(C)=PV(CAPEX)+PV(OPEX)+PV(REPL)
+\]
+
+For a constant real electricity sale price \(p\), the present value of revenues is:
+
+\[
+PV(R)=p\cdot PV(E)
+\]
+
+where \(PV(E)\) is the discounted sum of electricity generation.
+
+The resulting project NPV is:
+
+\[
+NPV=p\cdot PV(E)-PV(C)
+\]
+
+The break-even electricity price is therefore obtained from the condition \(NPV=0\):
+
+\[
+p_{\mathrm{break-even}}=\frac{PV(C)}{PV(E)}
+\]
+
+This formulation is implemented in `src/lifecycle_cash_flow.py` and produces the scenario results in `reports/lifecycle_summary.csv`.
+
+The model distinguishes routine operating expenditure from separately charged major replacement costs to avoid double counting. It excludes detailed debt financing, taxes, decommissioning obligations, offline electricity purchases, and hourly electricity-market dispatch.
+
+The resulting break-even prices are conditional project-level cost-recovery thresholds, not empirically calibrated commercial electricity tariffs or bankable investment forecasts.
 
 ### 2.6 Manufacturing Learning and Capital-Cost Scalability
 
-Manufacturing scalability is assessed using a component-level experience-curve formulation.
+Manufacturing scalability is assessed using a component-level experience curve. Let \(N\) denote cumulative equivalent units relative to the first unit, \(LR\) the assumed cost reduction per doubling, and \(s\) the learning-addressable share of initial plant capital expenditure. The component experience factor implemented in the model is:
 
-For a component with cumulative production increasing from Q_0 to Q, the illustrative cost relationship is:
+\[
+f(N)=(1-LR)^{\log_2(N)}, \qquad N\geq 1, \quad 0\leq LR<1.
+\]
 
-**C(Q) = C_0 × (Q / Q_0)^b**
+Total modeled plant capital expenditure is calculated as:
 
-with:
+\[
+CAPEX(N)=CAPEX_0\left[(1-s)+s\,f(N)\right].
+\]
 
-**b = log₂(1 − LR)**
-
-where LR denotes the assumed learning rate per doubling of cumulative production.
-
-The model applies learning only to the designated learning-addressable component share of total plant expenditure.
-
-The remaining expenditure is held constant within the simplified calculation.
-
-This distinction prevents the cost reduction of one subsystem from being incorrectly applied to the full power plant.
-
-Learning rates, manufacturing shares, production volumes, and industrial scale-up investments are treated as uncertain or provisional.
-
-Consequently, the analysis tests the mathematical implications of learning assumptions without claiming an empirically established stellarator manufacturing learning curve.
+Learning is applied exclusively to the designated magnet-system share, while all other capital expenditure is held constant. For \(s=0.25\), \(LR=0.20\), and \(N=16\), the four production doublings reduce total modeled CAPEX by \(14.76\%\). These are analyst-defined assumptions: the model excludes additional industrial scale-up expenditure and does not establish an empirically calibrated stellarator manufacturing learning curve.
 
 ### 2.7 Monte Carlo Uncertainty Analysis
 
@@ -223,24 +288,18 @@ The uncertainty results are interpreted as conditional sensitivity evidence, not
 
 Four hypothetical commercialization structures are evaluated:
 
-- STR01: Integrated plant ownership.
-- STR02: Joint-venture ownership.
-- STR03: Technology supplier or OEM structure.
-- STR04: Hybrid ownership and supply arrangement.
+- **STR01:** Integrated plant ownership.
+- **STR02:** Joint-venture ownership.
+- **STR03:** Technology supplier or OEM structure.
+- **STR04:** Hybrid ownership and supply arrangement.
 
-These structures are analyst-defined alternatives rather than confirmed contractual arrangements adopted by Proxima Fusion.
+These structures are analyst-defined alternatives, not confirmed contractual arrangements adopted by Proxima Fusion. The model allocates baseline project cash flows between the modeled technology company and external project participants. Supplier production costs and invoices are treated as transfers within the consolidated system, not additional consolidated project revenue; incremental company setup and overhead expenditures are accounted for separately. The allocation preserves the lifecycle model's discounted replacement-event timing.
 
-The evaluation separates plant-level project value from the financial value retained by the modeled technology company and external project participants.
+Economic eligibility is evaluated separately from preference-based scoring. A strategy-context combination passes only if company NPV, applicable external-partner NPV, and overall project NPV are all non-negative. For STR01, the external-investor gate is not applicable.
 
-Stakeholder-level cash flows are reconciled to the corresponding modeled economic boundaries.
+A partial exploratory multi-criteria decision analysis (MCDA) considers four quantitative criteria: company equity exposure, stressed company NPV, company CAPEX-risk share, and company electricity-price-risk share. Criterion scores are min-max normalized **within each price-and-stress context**; weighted composite scores are generated under four alternative preference policies. Accordingly, MCDA scores are context-dependent screening measures, not absolute cross-context values or definitive commercial strategy rankings. Passing the economic feasibility gates is a prerequisite for an economically eligible recommendation; favorable MCDA scores alone are insufficient.
 
-The strategy framework combines contractual value-allocation scenarios, risk-transfer stress tests, provisional multi-criteria decision analysis, and economic feasibility screening.
-
-A strategy is considered economically eligible within the exploratory screening only when its defined company, external stakeholder where applicable, and overall project NPV conditions are satisfied.
-
-The multi-criteria evaluation examines capital retention, company-level financial value, construction exposure, and revenue-risk exposure under alternative preference weights.
-
-These results describe the consequences of assumed allocation rules and preferences. They do not independently validate financing terms, bankability, or a definitive commercialization strategy.
+The model does not validate financing terms, actual contracts, commercial bankability, or a preferred real-world corporate strategy.
 
 ### 2.9 Computational Validation and Reproducibility
 
@@ -248,13 +307,7 @@ The research is implemented in Python, with structured CSV and JSON inputs, mode
 
 Validation includes numerical identity checks, input-range restrictions, scenario coverage, selected independent calculations, financial reconciliation, source-file hashes, and regression tests designed to detect stale results.
 
-A separate Git checkout and isolated Python environment are used to evaluate whether committed source files support the published validation workflow.
-
-Passing unit tests and regeneration checks provides evidence of computational consistency under the supplied assumptions.
-
-Such checks do not establish empirical calibration, the completeness of external source review, or the scientific validity of every modeling simplification.
-
-The committed repository was evaluated in a separate Git checkout using an isolated Python environment. All 160 unit tests and five Stage 6 validation scripts passed in that environment. A separate Stage 7.1 inventory audit verified the presence of required repository files. These results support code-level reproducibility and internal consistency, but they do not constitute independent technical validation, empirical economic calibration, or confirmation of commercial feasibility.
+A clean Git checkout and isolated Python environment were used for a separate Stage 7.1 reproducibility assessment, in which 160 unit tests and five Stage 6 validation scripts passed. The Stage 7.1 inventory audit also checked the presence of required repository files. These checks support reproducibility and code-level consistency under the supplied inputs; they do not establish empirical calibration, completeness of external source verification, or commercial feasibility. A complete independent reconstruction of every upstream data source is outside the scope of this test evidence.
 
 ### 2.10 Methodological Boundaries
 
@@ -327,8 +380,6 @@ The component-learning model demonstrates how manufacturing experience may affec
 
 Under the illustrative assumptions of a 25% learning-addressable magnet-system CAPEX share and a 20% component learning rate, four doublings of cumulative production reduce total modeled plant capital expenditure by approximately **14.76%**, from €12 billion to €10.23 billion (author's calculations; `reports/stage44_learning_results.csv`). The calculation applies learning exclusively to the designated component share and excludes additional industrial scale-up expenditure. It therefore does not establish an empirically achievable cost-reduction trajectory.
 
-The modeled reference capital expenditure of €12 billion decreases to approximately €10.23 billion under these assumptions.
-
 The result highlights that subsystem learning does not produce an equivalent percentage reduction in whole-plant costs.
 
 It also depends on the assumed production sequence, cost allocation, and exclusion of additional industrial scale-up expenditure.
@@ -356,8 +407,11 @@ The numerical findings are therefore interpreted as conditional exploratory evid
 Four hypothetical commercialization structures were evaluated:
 
 - **STR01:** Integrated plant ownership.
+
 - **STR02:** Joint-venture ownership.
+
 - **STR03:** Technology supplier or OEM structure.
+
 - **STR04:** Hybrid ownership and supply arrangement.
 
 The strategy framework compares stakeholder-level value allocation, construction-risk exposure, revenue-risk exposure, and alternative multi-criteria weighting policies.
@@ -371,8 +425,6 @@ In the subsequent economic screening, **none of the 60 strategy-context combinat
 ![Commercialization feasibility matrix](figures/figure04_strategy_feasibility.png)
 
 *Figure 4. Economic feasibility screening across four commercialization structures and 15 modeled contexts. All 60 combinations fail at least one of the applicable economic feasibility conditions. The result applies only to the selected analytical scenarios and assumptions.*
-
-Across the 15 examined contexts, no strategy is simultaneously eligible under the defined economic conditions.
 
 These findings do not establish that a particular commercialization structure is universally infeasible. They show that the modeled allocation of value and risk does not resolve the economic constraints within the examined assumptions.
 
@@ -424,7 +476,7 @@ Technology-supplier and hybrid arrangements may reduce the direct investment res
 
 However, transferring capital expenditure and project risks to utilities, investors, or industrial partners does not by itself eliminate the economic obligations of the underlying power plant.
 
-The economic screening finds that none of the 60 evaluated strategy-context combinations satisfies the full set of modeled financial feasibility conditions. The retained feasibility screen records no fully eligible combinations among the 60 evaluated strategy-context cases (`reports/stage65_feasibility_screen.csv`). This finding is specific to the defined economic gates and scenario assumptions and should not be interpreted as evidence that all possible commercial fusion arrangements are economically infeasible.
+The retained feasibility screen records no fully eligible combinations among the 60 evaluated strategy-context cases (`reports/stage65_feasibility_screen.csv`). This finding is specific to the defined economic gates and scenario assumptions and should not be interpreted as evidence that all possible commercial fusion arrangements are economically infeasible.
 
 This outcome highlights a distinction between favorable strategic attributes and financially eligible projects under the selected assumptions.
 
@@ -494,22 +546,10 @@ Instead, its principal contribution is a computationally reproducible, evidence-
 
 Future work should focus on externally calibrated engineering and cost assumptions, expanded financing and electricity-market models, improved uncertainty diagnostics, and independently verified industrial evidence.
 
-
 ## 7. References and Data Availability
 
-The study draws on peer-reviewed technical literature,
-energy-system cost methodologies, public company disclosures,
-and reproducible computational model outputs.
+The study draws on published technical literature, energy-system cost methodologies, public company disclosures, and reproducible computational model outputs. Source identifiers, bibliographic records, and review status are documented in [the accompanying references file](references.md) and [the source inventory](reference_source_inventory.md). Not all bibliographic records have undergone independent external verification.
 
-The reference inventory, bibliographic review status,
-and source identifiers are documented in
-[the accompanying references file](references.md).
+Model inputs and evidence registers are maintained in the repository's `data/` directory. Computational implementations and validators are maintained in `src/`, while scenario outputs and audit records are retained in `reports/`. The relationships between outputs, source identifiers, and claims are documented in [the citation map](citation_map.md) and [the results evidence inventory](stage72_results_evidence_inventory.md). Figure provenance and source-file hashes are recorded in `figures/figure_manifest.json`.
 
-The analytical results are derived from the project's
-structured inputs and Python implementations. The
-corresponding source-to-result relationships are recorded
-in [the citation map](citation_map.md).
-
-The numerical outputs represent conditional scenario
-calculations, not independently validated commercial
-reactor forecasts.
+The numerical results are conditional scenario calculations, not independently validated commercial reactor forecasts. In particular, the Stage 5 convergence audits retain nonconverged status, and Stage 6 feasibility gates are exploratory rather than financing certifications.

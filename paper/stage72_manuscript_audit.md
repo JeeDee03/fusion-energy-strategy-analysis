@@ -1,7 +1,7 @@
 # Stage 7.2.8 — Manuscript Audit
 
 **Status:** TECHNICAL_CHECKS_PASSED_WITH_EDITORIAL_REVIEW
-**Passed checks:** 57
+**Passed checks:** 59
 **Failed checks:** 0
 **Review warnings:** 4
 
@@ -30,7 +30,9 @@
 - Reference document: references.md
 - Reference document: citation_map.md
 - Local Markdown link: references.md
+- Local Markdown link: reference_source_inventory.md
 - Local Markdown link: citation_map.md
+- Local Markdown link: stage72_results_evidence_inventory.md
 - Reference LCOE matches expected scenario anchor
 - LC004 matches expected scenario anchor
 - Learning reduction matches expected scenario anchor
