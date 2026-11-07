@@ -1,0 +1,23 @@
+{
+  "status": "PASS_WITH_EXPLORATORY_LIMITATIONS",
+  "strategy_count": 4,
+  "price_scenarios": 3,
+  "result_rows": 12,
+  "cash_flow_rows": 492,
+  "validation": "annual and discounted owner/supplier cash-flow conservation",
+  "source_sha256": {
+    "data/strategy_value_capture_scenarios.csv": "ad4400287620bf33e54fd29b667358e1415625d2fb64ef4a24fa86afbc78df62",
+    "data/lcoe_scenarios_stage42.csv": "84572c57e6fac4927aa79ef5cad7c27c39df987515185639944a3e17a8c3d0cb",
+    "data/lifecycle_cash_flow_cases.json": "098c6e1f224ab95f90cd1d4a06dbe158b2930e15d405c088058e2f204ec22520",
+    "data/engineering_generation_cases.csv": "af3ba64d1e4680ae7ef401602a68e6eaf6205881e6acb30ff91731859bbc3a60"
+  },
+  "limitations": [
+    "Supplier production cost is carved out from baseline CAPEX; fee markup is a transfer from plant owner to supplier.",
+    "Company setup and overhead are incremental real costs; no real company financial statements or contract terms are inferred.",
+    "Project hurdle rate is reused for company and investor discounting only as a diagnostic; no WACC/debt/tax modeling.",
+    "Supplier and owner value should not be ranked across distinct business models without capital risk and contractual context.",
+    "Company equity fraction is a simplified funding-and-cash-flow participation rule, not a modeled project-finance waterfall.",
+    "Only GEN002/LC004/R05 is modeled; STR04 is not yet a true phased multi-project strategy.",
+    "Revenue price scenarios are hypothetical, not commercial PPA evidence."
+  ]
+}
