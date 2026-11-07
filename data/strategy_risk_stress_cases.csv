@@ -1,0 +1,6 @@
+stress_id,stress_name,capex_multiplier,additional_cod_delay_years,electricity_price_multiplier,assumption_class,notes
+RS00,Baseline,1.00,0,1.00,analyst_scenario,No additional stress
+RS01,Construction overrun,1.20,0,1.00,analyst_scenario,Twenty percent additional overnight construction CAPEX only
+RS02,COD delay,1.00,2,1.00,analyst_scenario,Construction spending remains on original dates while COD and all operating events shift two years
+RS03,Electricity price shortfall,1.00,0,0.80,analyst_scenario,Twenty percent reduction in the constant real electricity sale price
+RS04,Combined stress,1.20,2,0.80,analyst_scenario,Apply all three stressors with sequential PV attribution CAPEX then delay then price

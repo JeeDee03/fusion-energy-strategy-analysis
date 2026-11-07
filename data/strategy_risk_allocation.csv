@@ -1,0 +1,5 @@
+strategy_id,capex_overrun_company_share,cod_delay_company_share,electricity_price_shortfall_company_share,assumption_class,notes
+STR01,1.00,1.00,1.00,analyst_scenario,Integrated owner bears all modeled project downside
+STR02,0.35,0.25,0.35,analyst_scenario,Joint venture risk shares reflect illustrative contracts and may differ from equity
+STR03,0.10,0.20,0.00,analyst_scenario,OEM retains limited illustrative cost warranty and delay guarantee but no electricity-price exposure
+STR04,0.50,0.45,0.50,analyst_scenario,Hybrid retains substantial illustrative ownership and delivery exposure

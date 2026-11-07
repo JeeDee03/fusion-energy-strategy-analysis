@@ -1,0 +1,25 @@
+{
+  "status": "PASS_WITH_HYPOTHETICAL_RISK_ALLOCATION_LIMITATIONS",
+  "result_rows": 60,
+  "strategies": 4,
+  "price_cases": 3,
+  "stress_cases": 5,
+  "reconciliation": "company plus external partner NPV equals stressed lifecycle project NPV less unchanged company setup/overhead PV",
+  "source_sha256": {
+    "data/strategy_risk_allocation.csv": "453eb7ff47716be69f73c3a16b29a0dc6d2599af61c00038e7e70ba66ca69475",
+    "data/strategy_risk_stress_cases.csv": "6e7a64b42ac102efce6b6191edf5105ee8482d3eae751573fb81a483801cfae1",
+    "data/strategy_value_capture_scenarios.csv": "ad4400287620bf33e54fd29b667358e1415625d2fb64ef4a24fa86afbc78df62",
+    "data/lifecycle_cash_flow_cases.json": "098c6e1f224ab95f90cd1d4a06dbe158b2930e15d405c088058e2f204ec22520",
+    "data/engineering_generation_cases.csv": "af3ba64d1e4680ae7ef401602a68e6eaf6205881e6acb30ff91731859bbc3a60",
+    "data/lcoe_scenarios_stage42.csv": "84572c57e6fac4927aa79ef5cad7c27c39df987515185639944a3e17a8c3d0cb"
+  },
+  "limitations": [
+    "Illustrative risk-sharing percentages are not actual Proxima contracts or published financing terms.",
+    "NPV-level contractual allocation, not annual cash transfer ledger, debt financing, taxes, guarantees valuation or probability model.",
+    "Supplier margins and company overhead remain fixed at the Stage 6.2 reference allocation when stresses occur.",
+    "A two-year COD delay retains original construction spend dates and shifts operating and replacement timelines.",
+    "Stress decomposition uses ordered CAPEX then delay then price effects; attribution would differ under another ordering.",
+    "Major replacement cost amount stays fixed under initial CAPEX overrun; no extra cost inflation or new capex financing.",
+    "Only GEN002 and LC004 are used; risk shares are diagnostic scenario parameters, not strategy rankings."
+  ]
+}
