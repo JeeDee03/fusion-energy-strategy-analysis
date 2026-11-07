@@ -1,0 +1,17 @@
+{
+  "status": "PASS_WITH_LIMITATIONS",
+  "scenarios": 7,
+  "targets_met": 6,
+  "targets_not_met": 1,
+  "beyond_documented_duration_cases": 1,
+  "interpretation": "Targets not met are analytical findings, not invalid data. Passing cases are conditional, not verified reactor feasibility.",
+  "limitations": [
+    "Gross power, online auxiliary fraction, other downtime and load factors are analyst assumptions, not measured Stellaris parameters.",
+    "FPY exposure and gross electrical output are assumed to scale with the same load factor; no nonlinear fusion/thermal/electric model is supplied.",
+    "Other downtime is conditional on the non-major-outage window; losses are not subtracted twice.",
+    "Auxiliary power reduces net-rated output once. CF is relative to that net rating. Off-state electricity purchases are excluded.",
+    "Outputs are long-run cycle averages, not a dated annual maintenance schedule. Step 6 must handle timing and event costs consistently.",
+    "Total reference CAPEX and OPEX are held fixed; no engineering cost uplift or replacement event cost is added here.",
+    "Legacy independent CF grids are retained as algebraic sensitivity cases, not asserted to satisfy these engineering scenarios."
+  ]
+}

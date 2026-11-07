@@ -1,0 +1,18 @@
+{
+  "status": "PASS_WITH_EVIDENCE_GAPS",
+  "review_date": "2026-11-05",
+  "companies": 5,
+  "criteria": 8,
+  "cells": 40,
+  "primary_sources": 14,
+  "unresolved_cells": 4,
+  "interpretation": "Coverage is not technical readiness, source independence, comparative LCOE or commercial success.",
+  "limitations": [
+    "Reported plans, conceptual designs, contracts and experimental results are different evidence types; no ordinal maturity score is assigned.",
+    "Unresolved means not established in this selected review, not absence of a capability or disclosure anywhere.",
+    "Business labels classify declared strategy, not realized fusion-electricity revenue, margins or financing risk reduction.",
+    "First-party websites and announcements were manually reviewed; offline validation cannot independently certify their claims or track later page changes.",
+    "The same engineering/economic model is not calibrated separately for five companies, so no company LCOE or cost ranking is inferred.",
+    "This is a bounded source snapshot, not a full legal, financial, licensing or technical due-diligence review."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "status": "PASS_WITH_LIMITATIONS",
+  "scenarios": 6,
+  "legacy_special_case_matches": true,
+  "price_year": 2024,
+  "currency": "EUR",
+  "discount_basis": "real_pre_tax_unlevered",
+  "construction_timing": "Shares paid at t=0..C-1; COD=C; first annual operating receipts at C+1.",
+  "replacement_timing": "Exact outage-start times; annual buckets retain component-specific discounting.",
+  "limitations": [
+    "Construction durations, spending shares and replacement costs are uncalibrated analyst scenarios, not Proxima budgets or schedules.",
+    "Engineering cases interpret fixed/variable OPEX as routine expenses excluding separate major replacements; this allocation is not empirically established.",
+    "Explicit operating windows replace the long-run CF loss; other downtime and load remain averaged within those windows.",
+    "No extra debt-interest/IDC charge is added to the unlevered DCF. Financing, taxes, decommissioning, offline power purchases and terminal value remain excluded.",
+    "LC003 zero replacement cost is a diagnostic; a delay case holds spending and other costs fixed and omits real delay overhead/overruns.",
+    "No replacement is purchased at retirement; an outage starting earlier incurs full replacement cost even if its duration extends beyond retirement."
+  ]
+}

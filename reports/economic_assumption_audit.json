@@ -1,0 +1,613 @@
+{
+  "status": "PASS_WITH_RESEARCH_GAPS",
+  "errors": [],
+  "research_gaps": [
+    "CAPEX/OPEX, lifetime and discount assumptions are not calibrated to a commercial Stellaris plant.",
+    "1000 MWe is an analyst net-rated assumption; published peak electric power is not verified net output.",
+    "Legacy CF grids remain independent sensitivities. New engineering cases screen conditional compatibility; reliability, improved maintenance costs and commercial feasibility remain unvalidated.",
+    "FOAK is an illustrative first-unit scenario label; repeated production is not verified industrial NOAK maturity.",
+    "2024 constant EUR is an adopted analyst convention, not a currency/inflation conversion of published USD estimates.",
+    "Literature USD benchmarks retain their original values; their price-year and transferability remain unresolved in this project.",
+    "Exploratory parameter ranges are stress-test choices, not empirical confidence intervals or probability distributions.",
+    "The historical 2024 average is not a future PPA/capture-price forecast."
+  ],
+  "model_basis": {
+    "schema_version": 1,
+    "currency": "EUR",
+    "price_year": 2024,
+    "price_basis": "constant_real",
+    "basis_origin": "analyst_convention_not_source_rebasing",
+    "discount_basis": "real_pre_tax_unlevered",
+    "capex_boundary": "overnight_upfront_year_zero",
+    "deployment_basis": "illustrative_first_unit_FOAK",
+    "geography": "Europe_context_not_country_calibrated",
+    "net_output_basis": "analyst_net_rated_not_verified_Stellaris",
+    "model_hours_per_year": 8760,
+    "historical_year": 2024,
+    "historical_hours": 8784,
+    "calibration_status": "provisional_not_empirically_calibrated",
+    "repeat_unit_basis": "learning_sensitivity_not_verified_NOAK",
+    "basis_rationale": "Adopt 2024 constant EUR to match the historical market reference. Existing analyst EUR costs are assigned this convention; they are not revalued from any source-year cost estimate. This is a new bookkeeping assumption, not empirical calibration.",
+    "excluded_costs": "Construction-period financing and timing; explicit major replacement costs; tax/debt structure; decommissioning; industrial investment needed for learning. The 5 EUR/MWh variable OPEX is an aggregate placeholder, not a verified fuel-cycle cost.",
+    "parameter_dependencies": "CF depends on maintenance, reliability and derating. Net output depends on auxiliary power. Learning affects only the assumed magnet CAPEX share. Higher reliability may increase costs. Existing sensitivity axes are not joint feasible scenarios.",
+    "reference_scenario": "CAL002",
+    "performance_comparison_reference": "8000 EUR_2024/kWe at CF 0.85; separate from the CAL002 mid-cost reference",
+    "planning_horizon": "2035-2050 context only; no plant COD or construction schedule currently modeled",
+    "boundary_scope": "Legacy annual LCOE and Stage 4.5 DCF; lifecycle extension declares staged investment and replacement boundaries separately in lifecycle_cash_flow_cases.json."
+  },
+  "parameters": 10,
+  "bindings_checked": 57,
+  "active_inputs": [
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL001",
+      "input_field": "capex_eur_per_kwe",
+      "parameter_id": "CAPEX",
+      "value_in_register_units": 8000.0,
+      "unit": "EUR_2024/kWe",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL001",
+      "input_field": "net_power_mwe",
+      "parameter_id": "POWER",
+      "value_in_register_units": 1000.0,
+      "unit": "MWe",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL001",
+      "input_field": "capacity_factor",
+      "parameter_id": "CF",
+      "value_in_register_units": 0.85,
+      "unit": "fraction",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL001",
+      "input_field": "fixed_opex_eur_million_per_year",
+      "parameter_id": "FOM",
+      "value_in_register_units": 200.0,
+      "unit": "EUR_2024_million/year",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL001",
+      "input_field": "variable_opex_eur_per_mwh",
+      "parameter_id": "VOM",
+      "value_in_register_units": 5.0,
+      "unit": "EUR_2024/MWh",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL001",
+      "input_field": "plant_lifetime_years",
+      "parameter_id": "LIFE",
+      "value_in_register_units": 35.0,
+      "unit": "years",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL001",
+      "input_field": "real_discount_rate",
+      "parameter_id": "RATE",
+      "value_in_register_units": 0.08,
+      "unit": "fraction_real",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL002",
+      "input_field": "capex_eur_per_kwe",
+      "parameter_id": "CAPEX",
+      "value_in_register_units": 12000.0,
+      "unit": "EUR_2024/kWe",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL002",
+      "input_field": "net_power_mwe",
+      "parameter_id": "POWER",
+      "value_in_register_units": 1000.0,
+      "unit": "MWe",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL002",
+      "input_field": "capacity_factor",
+      "parameter_id": "CF",
+      "value_in_register_units": 0.85,
+      "unit": "fraction",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL002",
+      "input_field": "fixed_opex_eur_million_per_year",
+      "parameter_id": "FOM",
+      "value_in_register_units": 200.0,
+      "unit": "EUR_2024_million/year",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL002",
+      "input_field": "variable_opex_eur_per_mwh",
+      "parameter_id": "VOM",
+      "value_in_register_units": 5.0,
+      "unit": "EUR_2024/MWh",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL002",
+      "input_field": "plant_lifetime_years",
+      "parameter_id": "LIFE",
+      "value_in_register_units": 35.0,
+      "unit": "years",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL002",
+      "input_field": "real_discount_rate",
+      "parameter_id": "RATE",
+      "value_in_register_units": 0.08,
+      "unit": "fraction_real",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL003",
+      "input_field": "capex_eur_per_kwe",
+      "parameter_id": "CAPEX",
+      "value_in_register_units": 18000.0,
+      "unit": "EUR_2024/kWe",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL003",
+      "input_field": "net_power_mwe",
+      "parameter_id": "POWER",
+      "value_in_register_units": 1000.0,
+      "unit": "MWe",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL003",
+      "input_field": "capacity_factor",
+      "parameter_id": "CF",
+      "value_in_register_units": 0.85,
+      "unit": "fraction",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL003",
+      "input_field": "fixed_opex_eur_million_per_year",
+      "parameter_id": "FOM",
+      "value_in_register_units": 200.0,
+      "unit": "EUR_2024_million/year",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL003",
+      "input_field": "variable_opex_eur_per_mwh",
+      "parameter_id": "VOM",
+      "value_in_register_units": 5.0,
+      "unit": "EUR_2024/MWh",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL003",
+      "input_field": "plant_lifetime_years",
+      "parameter_id": "LIFE",
+      "value_in_register_units": 35.0,
+      "unit": "years",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios_stage42.csv",
+      "scenario_id": "CAL003",
+      "input_field": "real_discount_rate",
+      "parameter_id": "RATE",
+      "value_in_register_units": 0.08,
+      "unit": "fraction_real",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST001",
+      "input_field": "capex_eur_million",
+      "parameter_id": "CAPEX",
+      "value_in_register_units": 8000.0,
+      "unit": "EUR_2024/kWe",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST001",
+      "input_field": "net_power_mwe",
+      "parameter_id": "POWER",
+      "value_in_register_units": 1000.0,
+      "unit": "MWe",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST001",
+      "input_field": "capacity_factor",
+      "parameter_id": "CF",
+      "value_in_register_units": 0.85,
+      "unit": "fraction",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST001",
+      "input_field": "fixed_opex_eur_million_per_year",
+      "parameter_id": "FOM",
+      "value_in_register_units": 200.0,
+      "unit": "EUR_2024_million/year",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST001",
+      "input_field": "variable_opex_eur_per_mwh",
+      "parameter_id": "VOM",
+      "value_in_register_units": 5.0,
+      "unit": "EUR_2024/MWh",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST001",
+      "input_field": "plant_lifetime_years",
+      "parameter_id": "LIFE",
+      "value_in_register_units": 35.0,
+      "unit": "years",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST001",
+      "input_field": "real_discount_rate",
+      "parameter_id": "RATE",
+      "value_in_register_units": 0.08,
+      "unit": "fraction_real",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST002",
+      "input_field": "capex_eur_million",
+      "parameter_id": "CAPEX",
+      "value_in_register_units": 10000.0,
+      "unit": "EUR_2024/kWe",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST002",
+      "input_field": "net_power_mwe",
+      "parameter_id": "POWER",
+      "value_in_register_units": 1000.0,
+      "unit": "MWe",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST002",
+      "input_field": "capacity_factor",
+      "parameter_id": "CF",
+      "value_in_register_units": 0.85,
+      "unit": "fraction",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST002",
+      "input_field": "fixed_opex_eur_million_per_year",
+      "parameter_id": "FOM",
+      "value_in_register_units": 200.0,
+      "unit": "EUR_2024_million/year",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST002",
+      "input_field": "variable_opex_eur_per_mwh",
+      "parameter_id": "VOM",
+      "value_in_register_units": 5.0,
+      "unit": "EUR_2024/MWh",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST002",
+      "input_field": "plant_lifetime_years",
+      "parameter_id": "LIFE",
+      "value_in_register_units": 35.0,
+      "unit": "years",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST002",
+      "input_field": "real_discount_rate",
+      "parameter_id": "RATE",
+      "value_in_register_units": 0.08,
+      "unit": "fraction_real",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST003",
+      "input_field": "capex_eur_million",
+      "parameter_id": "CAPEX",
+      "value_in_register_units": 8000.0,
+      "unit": "EUR_2024/kWe",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST003",
+      "input_field": "net_power_mwe",
+      "parameter_id": "POWER",
+      "value_in_register_units": 1000.0,
+      "unit": "MWe",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST003",
+      "input_field": "capacity_factor",
+      "parameter_id": "CF",
+      "value_in_register_units": 0.75,
+      "unit": "fraction",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST003",
+      "input_field": "fixed_opex_eur_million_per_year",
+      "parameter_id": "FOM",
+      "value_in_register_units": 200.0,
+      "unit": "EUR_2024_million/year",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST003",
+      "input_field": "variable_opex_eur_per_mwh",
+      "parameter_id": "VOM",
+      "value_in_register_units": 5.0,
+      "unit": "EUR_2024/MWh",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST003",
+      "input_field": "plant_lifetime_years",
+      "parameter_id": "LIFE",
+      "value_in_register_units": 35.0,
+      "unit": "years",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_scenarios.csv",
+      "scenario_id": "TEST003",
+      "input_field": "real_discount_rate",
+      "parameter_id": "RATE",
+      "value_in_register_units": 0.08,
+      "unit": "fraction_real",
+      "classification": "synthetic_test",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_performance_scenarios.csv",
+      "scenario_id": "PERF001",
+      "input_field": "capacity_factor",
+      "parameter_id": "CF",
+      "value_in_register_units": 0.7,
+      "unit": "fraction",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_performance_scenarios.csv",
+      "scenario_id": "PERF002",
+      "input_field": "capacity_factor",
+      "parameter_id": "CF",
+      "value_in_register_units": 0.75,
+      "unit": "fraction",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_performance_scenarios.csv",
+      "scenario_id": "PERF003",
+      "input_field": "capacity_factor",
+      "parameter_id": "CF",
+      "value_in_register_units": 0.85,
+      "unit": "fraction",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_performance_scenarios.csv",
+      "scenario_id": "PERF004",
+      "input_field": "capacity_factor",
+      "parameter_id": "CF",
+      "value_in_register_units": 0.9,
+      "unit": "fraction",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "lcoe_performance_scenarios.csv",
+      "scenario_id": "PERF005",
+      "input_field": "capacity_factor",
+      "parameter_id": "CF",
+      "value_in_register_units": 0.95,
+      "unit": "fraction",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "manufacturing_learning_scenarios.csv",
+      "scenario_id": "LR000",
+      "input_field": "magnet_capex_share",
+      "parameter_id": "SHARE",
+      "value_in_register_units": 0.25,
+      "unit": "fraction",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "manufacturing_learning_scenarios.csv",
+      "scenario_id": "LR000",
+      "input_field": "magnet_learning_rate",
+      "parameter_id": "LEARNING",
+      "value_in_register_units": 0.0,
+      "unit": "fraction_per_doubling",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "manufacturing_learning_scenarios.csv",
+      "scenario_id": "LR010",
+      "input_field": "magnet_capex_share",
+      "parameter_id": "SHARE",
+      "value_in_register_units": 0.25,
+      "unit": "fraction",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "manufacturing_learning_scenarios.csv",
+      "scenario_id": "LR010",
+      "input_field": "magnet_learning_rate",
+      "parameter_id": "LEARNING",
+      "value_in_register_units": 0.1,
+      "unit": "fraction_per_doubling",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "manufacturing_learning_scenarios.csv",
+      "scenario_id": "LR020",
+      "input_field": "magnet_capex_share",
+      "parameter_id": "SHARE",
+      "value_in_register_units": 0.25,
+      "unit": "fraction",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "manufacturing_learning_scenarios.csv",
+      "scenario_id": "LR020",
+      "input_field": "magnet_learning_rate",
+      "parameter_id": "LEARNING",
+      "value_in_register_units": 0.2,
+      "unit": "fraction_per_doubling",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "electricity_revenue_scenarios.csv",
+      "scenario_id": "REV001",
+      "input_field": "electricity_price_eur_per_mwh",
+      "parameter_id": "PRICE",
+      "value_in_register_units": 78.51,
+      "unit": "EUR_2024/MWh",
+      "classification": "historical_observation",
+      "source_role": "historical_value"
+    },
+    {
+      "input_file": "electricity_revenue_scenarios.csv",
+      "scenario_id": "REV002",
+      "input_field": "electricity_price_eur_per_mwh",
+      "parameter_id": "PRICE",
+      "value_in_register_units": 120.0,
+      "unit": "EUR_2024/MWh",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "electricity_revenue_scenarios.csv",
+      "scenario_id": "REV003",
+      "input_field": "electricity_price_eur_per_mwh",
+      "parameter_id": "PRICE",
+      "value_in_register_units": 170.0,
+      "unit": "EUR_2024/MWh",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    },
+    {
+      "input_file": "electricity_revenue_scenarios.csv",
+      "scenario_id": "REV004",
+      "input_field": "electricity_price_eur_per_mwh",
+      "parameter_id": "PRICE",
+      "value_in_register_units": 200.0,
+      "unit": "EUR_2024/MWh",
+      "classification": "analyst_scenario",
+      "source_role": "assumption_or_synthetic_test"
+    }
+  ],
+  "calibration_status": "provisional_not_empirically_calibrated"
+}

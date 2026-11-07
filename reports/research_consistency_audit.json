@@ -1,0 +1,120 @@
+{
+  "status": "PASS_WITH_RESEARCH_LIMITATIONS",
+  "errors": [],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "title": "Technology Economics",
+      "statement": "Stellarator operating advantages may compensate for higher engineering complexity and capital costs.",
+      "status": "open",
+      "assessment": "Conditional plant-economic mechanisms explored; comparative engineering and cost advantage not established.",
+      "next_evidence": "Comparable plant boundaries, calibrated costs and credible net-generation/maintenance evidence."
+    },
+    {
+      "id": "H2",
+      "title": "Commercialization Strategy",
+      "statement": "Industrial and utility partnerships may mitigate financing and commercialization risks.",
+      "status": "open",
+      "assessment": "Declared roles and commitments described; causal risk reduction and company-level retained value not quantified.",
+      "next_evidence": "Contractual funding, liabilities, ownership, control and retained cash flows under comparable strategy cases."
+    },
+    {
+      "id": "H3",
+      "title": "Manufacturing Scalability",
+      "statement": "Standardization and accumulated manufacturing experience may reduce reactor construction costs.",
+      "status": "open",
+      "assessment": "Component-learning scenarios calculated; observed fusion learning rates and industrial investment requirements remain unknown.",
+      "next_evidence": "Measured component cost shares, repeat-production evidence, cost floors and deployment/industrial investment requirements."
+    }
+  ],
+  "stages": [
+    {
+      "stage": 1,
+      "status": "design_implemented"
+    },
+    {
+      "stage": 2,
+      "status": "descriptive_baseline_with_limits"
+    },
+    {
+      "stage": 3,
+      "status": "evidence_framework_with_gaps"
+    },
+    {
+      "stage": 4,
+      "status": "conditional_models_not_empirically_calibrated"
+    },
+    {
+      "stage": 5,
+      "status": "planned"
+    },
+    {
+      "stage": 6,
+      "status": "planned"
+    },
+    {
+      "stage": 7,
+      "status": "planned"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F01",
+      "artifact": "reports/stage42_lcoe_scenarios.csv",
+      "where": {
+        "scenario_id": "CAL002"
+      },
+      "field": "lcoe_eur_per_mwh",
+      "value": 170.14,
+      "unit": "EUR_2024/MWh",
+      "boundary": "Legacy upfront CAPEX and constant 85% net CF; CAL002 analyst inputs.",
+      "classification": "conditional_model_output",
+      "absolute_tolerance": 0.005,
+      "current_value": 170.14090447598144
+    },
+    {
+      "id": "F02",
+      "artifact": "reports/lifecycle_summary.csv",
+      "where": {
+        "scenario_id": "LC001"
+      },
+      "field": "break_even_eur_2024_per_mwh",
+      "value": 170.14,
+      "unit": "EUR_2024/MWh",
+      "boundary": "Lifecycle legacy special case: no construction delay or explicit replacement cost.",
+      "classification": "conditional_model_output",
+      "absolute_tolerance": 0.005,
+      "current_value": 170.14090447598142
+    },
+    {
+      "id": "F03",
+      "artifact": "reports/lifecycle_summary.csv",
+      "where": {
+        "scenario_id": "LC004"
+      },
+      "field": "break_even_eur_2024_per_mwh",
+      "value": 213.42,
+      "unit": "EUR_2024/MWh",
+      "boundary": "Five construction years, GEN002 event generation, EUR 600m per replacement; analyst stress case.",
+      "classification": "conditional_model_output",
+      "absolute_tolerance": 0.005,
+      "current_value": 213.41584428523262
+    },
+    {
+      "id": "F04",
+      "artifact": "reports/stage44_learning_results.csv",
+      "where": {
+        "scenario_id": "LR020",
+        "cumulative_equivalent_units": 16
+      },
+      "field": "total_capex_eur_million",
+      "value": 10228.8,
+      "unit": "EUR_2024 million",
+      "boundary": "25% magnet share, 20% component learning, four doublings; 14.76% total reduction from EUR 12000m.",
+      "classification": "conditional_model_output",
+      "absolute_tolerance": 0.005,
+      "current_value": 10228.8
+    }
+  ],
+  "scope": "Canonical blocks, selected numerical anchors and local links only; arbitrary prose, source truth, calibration and publication suitability require human review."
+}
