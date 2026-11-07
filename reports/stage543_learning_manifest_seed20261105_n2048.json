@@ -1,0 +1,35 @@
+{
+  "status": "EXPLORATORY_H3_NOT_CONVERGENCE_CERTIFIED",
+  "seed": 20261105,
+  "n_per_level": 2048,
+  "cumulative_equivalent_units": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "context_id": "GEN002_LC004_R05",
+  "total_evaluations": 10240,
+  "generator": "NumPy PCG64; Stage 5.2 economic stream + SeedSequence([seed,543]) H3 stream",
+  "sampling": "independent exploratory uniform SHARE and LEARNING; common draws across unit levels",
+  "replacement_rule": "5% of UNLEARNED initial CAPEX at each replacement",
+  "limitations": "No factory investment, scale-up expenditure, deployment learning evidence, or NOAK claim",
+  "python_version": "3.13.3",
+  "numpy_version": "2.5.4",
+  "pandas_version": "3.1.0",
+  "sha256_inputs_scripts": {
+    "data/stage5_uncertainty_spec.json": "3020d6f8276d33d27cd27c34882f26460724e8c7ed0e722bb772e0c225696acf",
+    "data/lifecycle_cash_flow_cases.json": "098c6e1f224ab95f90cd1d4a06dbe158b2930e15d405c088058e2f204ec22520",
+    "data/engineering_generation_cases.csv": "af3ba64d1e4680ae7ef401602a68e6eaf6205881e6acb30ff91731859bbc3a60",
+    "data/lcoe_scenarios_stage42.csv": "84572c57e6fac4927aa79ef5cad7c27c39df987515185639944a3e17a8c3d0cb",
+    "src/run_stage5_monte_carlo.py": "d2f9917e1a385991e01a0bb3ccf6df7c97eaf65979d0ad12e18f5aca6574090f",
+    "src/run_stage543_learning.py": "2a2d8c17a8252bd91f2f09d733b980d1a45d779200ba8605a1179168ace701f0",
+    "src/lifecycle_cash_flow.py": "a46348b29d2ba1c6d6f147ec8f106bd1a5879f21f8797a7e87438d1effb061e2",
+    "src/engineering_generation.py": "5fb2efddcd2ef08f16e7e1e0324bbcae3958ab74fcb5bb0faa2236b9cfa023aa"
+  },
+  "sha256_outputs": {
+    "stage543_learning_draws_seed20261105_n2048.csv": "bf3c27c4c181bfc4ca5a8fc11b913ad2102d7cc99087129622eb4a94ba32b19f",
+    "stage543_learning_summary_seed20261105_n2048.csv": "8707d83dd85f2379476de5d6547e8da45d722acff5f5991512c297dad0f5f717"
+  }
+}
