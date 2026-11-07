@@ -1,0 +1,27 @@
+{
+  "status": "PASS_PAIRED_DEPENDENCE_AUDIT_NOT_CONVERGENCE_CERTIFIED",
+  "seed": 20261105,
+  "n": 2048,
+  "contexts": 12,
+  "modes": [
+    "aligned_burden_stress",
+    "offsetting_burden_stress"
+  ],
+  "baseline_file": "stage52_draws_seed20261105_n2048.csv",
+  "baseline_sha256": "a5b007ba302d7d07a1e2d9d219f5879c4cb95966c806cd58d6ad48f68dd9c800",
+  "stress_inputs": [
+    {
+      "mode": "aligned_burden_stress",
+      "input_file": "stage54_dependency_aligned_burden_stress_draws_seed20261105_n2048.csv",
+      "sha256": "90f6799f8a3d23567a956428ef4cc764f9024130b243f2c7c285ffa06afa44cc"
+    },
+    {
+      "mode": "offsetting_burden_stress",
+      "input_file": "stage54_dependency_offsetting_burden_stress_draws_seed20261105_n2048.csv",
+      "sha256": "18210c3bcf99878dc9c75fa87816f0d04640b4c547b7f8992aaaa71251a61500"
+    }
+  ],
+  "comparison_sha256": "cf16abc3b37537e7d341857eb383eff04c6a2d494e4bafed3aa8dfa2f7214358",
+  "method": "Preserve uniform marginals; stress all inputs with CAPEX common PCG64 rank (or its complement), no estimated copula.",
+  "warning": "Stress outcomes not probability bounds or empirical commercial success chances; common-rank stress is not independent iid across five inputs."
+}
