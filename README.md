@@ -1,20 +1,75 @@
-# The Economics of Commercial Fusion
+# The Economics of Commercial Stellarator Fusion
 
-### A Data-Driven Market and Strategic Analysis of Proxima Fusion
+### An Integrated Techno-Economic, Uncertainty, and Commercialization Strategy Analysis
 
-**Independent Research Project | Engineering Economics · Energy Strategy · Data Analytics**
+**Independent Computational Research | Fusion Energy · Engineering Economics · Quantitative Modeling · Energy Strategy**
 
 ## Overview
 
-Commercial nuclear fusion has the potential to become a new source of low-carbon electricity. However, its economic competitiveness remains uncertain due to technological, manufacturing, financial, and commercialization challenges.
+This independent research project investigates the technological, financial, and strategic conditions influencing the prospective commercialization of stellarator-based nuclear fusion electricity, using Proxima Fusion and its proposed Stellaris power-plant architecture as a motivating case study.
 
-This independent research project investigates the emerging commercial fusion industry, using Proxima Fusion as its primary case study.
+The research integrates publicly documented industry evidence, comparative technology assessment, engineering-constrained electricity generation, levelized cost of electricity (LCOE), discounted lifecycle cash flows, component-level manufacturing learning, exploratory Monte Carlo analysis, and stakeholder-level commercialization strategy modeling.
 
-The research combines competitive intelligence, quantitative market analysis, engineering economics, and strategic decision modeling.
+The project is implemented in Python using structured datasets, explicit assumptions, automated validation checks, source-provenance records, and reproducible analytical outputs.
+
+**Research status:** Computational models and manuscript draft completed. External empirical calibration, full bibliographic review, and publication approval remain open.
 
 ### Central Research Question
 
-> Under which technological, economic, and market conditions can stellarator-based fusion become commercially competitive in Europe, and what strategic positioning should Proxima Fusion pursue?
+> Under which technological, economic, and market conditions could stellarator-based fusion electricity become commercially competitive, and how do alternative commercialization structures influence the distribution of financial value and risk?
+
+### Research Manuscript
+
+**[Read the research manuscript](paper/manuscript.md)**
+
+Supporting documentation:
+
+- [Reference inventory](paper/references.md)
+- [Citation and evidence mapping](paper/citation_map.md)
+- [Numerical evidence inventory](paper/stage72_results_evidence_inventory.md)
+- [Manuscript technical audit](paper/stage72_manuscript_audit.md)
+
+The reported economic results are conditional scenario calculations. They are not verified financial forecasts, independently validated power-plant cost estimates, or investment recommendations.
+
+## Selected Research Findings
+
+The computational framework produces the following conditional results under explicitly defined engineering and financial assumptions.
+
+| Analysis | Illustrative Result |
+|---|---|
+| Simplified reference LCOE | €170.14/MWh (constant 2024 EUR) |
+| LC004 lifecycle break-even price | €213.42/MWh (constant 2024 EUR) |
+| Initial reference plant CAPEX | €12.0 billion |
+| CAPEX after illustrative magnet manufacturing learning | €10.23 billion |
+| Total modeled CAPEX reduction | 14.76% |
+| Stage 5 convergence status | `NONCONVERGED` |
+| Stage 6 fully economically eligible cases | 0 of 60 |
+
+The manufacturing-learning example assumes a 25% learning-addressable magnet-system capital-cost share, a 20% component learning rate, and four doublings of cumulative production.
+
+The Monte Carlo refinement and cross-seed analyses are exploratory. The strict numerical convergence requirements were not satisfied, and their results should not be interpreted as empirically calibrated probabilities of commercial success.
+
+The Stage 6 assessment compares four hypothetical commercialization structures across 15 economic contexts. None of the 60 combinations passes all applicable stakeholder and project-level economic gates. This does not establish that commercial fusion is universally infeasible.
+
+### Research Figures
+
+![Engineering-constrained electricity generation](paper/figures/figure01_engineering_capacity_factor.png)
+
+*Figure 1. Modeled capacity factors under alternative maintenance and operating assumptions.*
+
+![Lifecycle break-even prices](paper/figures/figure02_lifecycle_break_even.png)
+
+*Figure 2. Conditional break-even electricity prices across six lifecycle scenarios.*
+
+![Monte Carlo refinement diagnostics](paper/figures/figure03_monte_carlo_refinement.png)
+
+*Figure 3. Numerical refinement diagnostics; visual stabilization is not convergence certification.*
+
+![Commercialization strategy feasibility](paper/figures/figure04_strategy_feasibility.png)
+
+*Figure 4. Exploratory economic feasibility screening for four commercialization structures across 15 contexts.*
+
+All reported results remain subject to their stated assumptions and evidence boundaries.
 
 ## Research Objectives
 
@@ -36,15 +91,19 @@ The research combines competitive intelligence, quantitative market analysis, en
 
 The project is organized into seven stages:
 
-| Stage | Description | Status |
+The project is organized into seven research stages:
+
+| Stage | Research Area | Current Status |
 |---|---|---|
-| 1 | Research Design & Hypotheses | Design implemented; hypotheses open |
-| 2 | Market Data & Financial Analysis | Descriptive baseline completed; scope limitations retained |
-| 3 | Competitive Technology Benchmarking | Evidence framework implemented; gaps retained |
-| 4 | Techno-Economic Modeling | Conditional models implemented; empirical calibration open |
-| 5 | Risk & Monte Carlo Simulation | Planned |
-| 6 | Strategic Decision Modeling | Planned |
-| 7 | Final Research Report & Dashboard | Planned |
+| 1 | Research Design and Hypotheses | Implemented; H1–H3 remain open |
+| 2 | Market and Financial Evidence | Descriptive analysis implemented; evidence limitations retained |
+| 3 | Competitive Technology and Engineering Benchmarking | Implemented; conceptual and demonstrated parameters distinguished |
+| 4 | Integrated Techno-Economic and Lifecycle Modeling | Implemented; automated numerical checks passed |
+| 5 | Monte Carlo Uncertainty and Sensitivity Analysis | Exploratory analysis completed; strict convergence criterion not satisfied |
+| 6 | Commercialization Strategy and Stakeholder Economics | Implemented and validated; no eligible cases among 60 tested combinations |
+| 7 | Research Manuscript, Reproducibility, and Publication Package | Manuscript and figures committed; scientific editorial review and publication packaging ongoing |
+
+Each stage distinguishes documented evidence, analyst-defined assumptions, model-derived results, and unresolved requirements. Passing computational checks does not imply empirical validation or commercial bankability.
 
 ### Research Hypotheses
 
@@ -284,12 +343,20 @@ The analysis provides conditional quantitative findings but does not establish c
 - Component-level manufacturing learning curves
 - Automated model validation and integration audits
 
-**Planned Methods**
+**Additional Implemented Methods**
 
-- Monte Carlo simulation
-- Global sensitivity analysis
-- Correlated uncertainty and risk modeling
-- Multi-criteria decision analysis
+- Monte Carlo uncertainty propagation with reproducible seeds
+- Sample-size refinement and cross-seed convergence diagnostics
+- Exploratory marginal-distribution and dependence sensitivity analysis
+- Stakeholder-level strategy cash-flow allocation
+- Capital-cost and electricity-price risk stress testing
+- Four-criterion exploratory multi-criteria decision analysis
+- Economic feasibility screening and break-even threshold analysis
+
+**Research qualifications:** The Monte Carlo convergence
+criteria were not satisfied. MCDA scores represent conditional
+analyst preferences rather than independently verified commercial
+strategy rankings.
 
 ## Repository Structure
 
@@ -299,6 +366,7 @@ fusion-energy-strategy-analysis/
 ├── src/                # Python analysis and validation scripts
 ├── research/           # Research proposal, methods, and chapters
 ├── reports/            # Analytical figures, model outputs, and audits
+├── paper/              # Research manuscript, references, figures and audits
 ├── notebooks/          # Exploratory analysis notebooks
 ├── README.md
 ├── requirements.txt
@@ -431,28 +499,75 @@ Stage 3 established a structured engineering evidence baseline, and Stage 4 deve
 
 H1–H3 remain open research hypotheses.
 
-## Next Stage — Risk and Monte Carlo Simulation
+## Stage 5 — Exploratory Monte Carlo Uncertainty Analysis
 
-Stage 5 will investigate how uncertain economic and engineering inputs jointly influence fusion electricity costs and project investment outcomes.
+Stage 5 implements numerical uncertainty propagation, sample-size
+refinement, multiple pseudorandom seeds, and sensitivity analysis
+across predefined engineering and lifecycle contexts.
 
-The analysis will focus on:
+The initial Stage 5.3 numerical audit reports `NONCONVERGED`,
+with 74 failed refinement tests. The extension audit also reports
+`NONCONVERGED`, with 17 failed refinement tests.
 
-- Capital expenditure uncertainty
-- Capacity factor and operational performance
-- Fixed and variable operating expenses
-- Manufacturing learning rates
-- Discount rates and financing conditions
-- Electricity sale-price uncertainty
-- Dependencies and correlations between model parameters
+The Stage 5.5 integration status is
+`COMPLETE_EXPLORATORY_CROSS_SEED_SUMMARY_NOT_CONVERGENCE_CERTIFIED`.
 
-Monte Carlo simulations will be used to explore distributions of LCOE and NPV outcomes, identify important risk drivers, and evaluate the robustness of conditional economic conclusions.
+These results provide conditional sensitivity evidence, not
+empirically calibrated commercial-success probabilities or a
+certification of numerical convergence.
 
-Where empirical evidence is insufficient, uncertainty distributions will be explicitly identified as exploratory analyst assumptions rather than objective probabilities of commercial success.
+Relevant audit outputs:
 
-The results will provide the foundation for Stage 6, where alternative financing, industrial partnerships, and commercialization strategies will be evaluated.
+- `reports/stage53_audit.json`
+- `reports/stage53_extension_audit.json`
+- `reports/stage55_integration_audit.json`
 
-**Current Research Status:** The nine-step Stage 3–4 improvement cycle is implemented, subject to passing checks and human review. Main Stage 5 simulation remains to be implemented; its source-bound uncertainty specification is now chapter 32. Empirical calibration and H1–H3 remain open.
-## Stage 5 uncertainty specification — improvement Step 9
+## Stage 6 — Commercialization Strategy Analysis
+
+Four hypothetical commercialization structures are evaluated:
+
+- STR01 — Integrated plant ownership
+- STR02 — Joint-venture ownership
+- STR03 — Technology supplier / OEM
+- STR04 — Hybrid ownership and supply
+
+The analysis allocates modeled cash flows between the technology
+company and external stakeholders. It also tests risk exposure,
+conditional MCDA preferences, and economic eligibility.
+
+The provisional MCDA produces 240 scored rows across 15 contexts
+and four weighting policies. These scores do not constitute a
+verified commercial strategy ranking.
+
+The economic feasibility analysis evaluates 60 strategy-context
+combinations. None satisfies all applicable company, external
+stakeholder, and project-level NPV gates.
+
+This is a bounded scenario result, not proof that all potential
+commercial fusion arrangements are infeasible.
+
+Relevant output:
+
+- `reports/stage65_feasibility_screen.csv`
+
+## Stage 7 — Research Manuscript and Publication Preparation
+
+The integrated research manuscript, four figures, numerical
+evidence inventory, source register, and manuscript audit are
+available in the `paper/` directory.
+
+The manuscript technical audit passed 59 checks with zero
+failures in the retained revision. Four editorial review
+warnings remain.
+
+Outstanding tasks include external bibliographic verification,
+reproducibility documentation, editorial review, and final
+publication formatting.
+
+The manuscript is an independent exploratory research study,
+not an externally validated commercial fusion investment case.
+
+### Stage 5 Uncertainty Specification and Supporting Documentation
 
 Read [chapter 32](research/32_stage5_uncertainty_specification.md) and
 `data/stage5_uncertainty_spec.json`. Five exploratory marginal supports are
