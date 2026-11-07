@@ -1,0 +1,5 @@
+strategy_id,strategy_name,ownership_model,proxima_primary_role,external_partner_role,principal_revenue_mechanism,principal_risk_exposure,assumption_class
+STR01,Integrated developer-operator,Majority or full plant ownership,Developer and operator,Contractors and suppliers,Electricity sales,Capital construction and operating risk,analytical_alternative
+STR02,Utility joint venture,Shared plant ownership,Technology developer and equity partner,Co-developer investor and operator,Equity distributions and negotiated technology payments,Shared construction and commercial risk,analytical_alternative
+STR03,Technology provider OEM,External plant ownership,Reactor technology and systems supplier,Plant investor owner and operator,Equipment sales engineering services and royalties,Supplier delivery warranty and performance risk,analytical_alternative
+STR04,Hybrid phased commercialization,Ownership varies by deployment phase,Reference plant developer then technology partner,Utility investors and industrial partners,Combination of electricity and technology revenues,Transition capital and contractual execution risk,analytical_alternative

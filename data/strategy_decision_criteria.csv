@@ -1,0 +1,9 @@
+criterion_id,criterion_name,criterion_type,preferred_direction,evaluation_method,evidence_status
+C01,Proxima capital commitment,economic,lower,company_level_cash_flow_model,to_be_modeled
+C02,Proxima value capture,economic,higher,company_level_cash_flow_model,to_be_modeled
+C03,Construction risk retained,risk,lower,risk_allocation_matrix,to_be_assessed
+C04,Revenue risk retained,risk,lower,risk_allocation_matrix,to_be_assessed
+C05,Financing exposure,risk,lower,financing_scenario_analysis,to_be_modeled
+C06,Manufacturing learning opportunity,engineering,higher,learning_and_business_model_analysis,to_be_assessed
+C07,Execution capability alignment,organizational,higher,evidence_based_ordinal_assessment,to_be_assessed
+C08,Strategic control,strategic,higher,evidence_based_ordinal_assessment,to_be_assessed
