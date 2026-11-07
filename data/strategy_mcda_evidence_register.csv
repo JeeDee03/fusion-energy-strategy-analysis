@@ -1,0 +1,9 @@
+criterion_id,criterion_name,mcda_status,reason,required_next_evidence
+C01,Proxima capital commitment,included_proxy,Ownership fraction is an exposure proxy not quantified financed capital,Equity funding obligations and cash calls
+C02,Proxima value capture,included_conditional,Stage 6.3 company stressed NPV under hypothetical contracts,Contract pricing and company level WACC
+C03,Construction risk retained,included_proxy,Assumed CAPEX overrun allocation share,Negotiated warranties and cost overrun guarantees
+C04,Revenue risk retained,included_proxy,Assumed sale price risk allocation share,Offtake contracts and revenue guarantees
+C05,Financing exposure,excluded_overlap,Overlaps ownership fraction and NPV with no independent debt model,Debt equity structure and funding commitments
+C06,Manufacturing learning opportunity,pending_evidence,No strategy specific manufacturing learning model,Contractual repeat unit learning capture and manufacturing allocation
+C07,Execution capability alignment,pending_evidence,No robust comparable ordinal observations,Capability assessments and implementation evidence
+C08,Strategic control,pending_evidence,No documented calibrated scale,IP rights governance and licensing constraints

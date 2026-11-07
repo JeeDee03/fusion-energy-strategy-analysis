@@ -1,0 +1,36 @@
+{
+  "status": "PARTIAL_SCREENING_COMPLETED_NOT_FULL_MCDA",
+  "scored_criteria": [
+    "C01",
+    "C02",
+    "C03",
+    "C04"
+  ],
+  "excluded_or_pending": [
+    "C05",
+    "C06",
+    "C07",
+    "C08"
+  ],
+  "scenarios": 15,
+  "weight_sets": 4,
+  "score_rows": 240,
+  "scenarios_with_different_leaders_across_weight_sets": 0,
+  "source_sha256": {
+    "data/strategy_mcda_weights.csv": "58f143206673c671f0b29785572eca1711148a587fc486810cbb0962c768592f",
+    "data/strategy_mcda_evidence_register.csv": "459ac228993ab7b369c44e72dd3cb3991d921905087f6dae9d615b828b1c0582",
+    "data/strategy_value_capture_scenarios.csv": "ad4400287620bf33e54fd29b667358e1415625d2fb64ef4a24fa86afbc78df62",
+    "reports/stage62_value_capture_results.csv": "40c3b00e6582bbec53a97ea23d17c5a20b9d2b0d41942efe6094e8a6bb1694b5",
+    "reports/stage63_risk_allocation_results.csv": "26f63038bf91bd89d3fb21c537dbebbdab83acbf10c0dd31d3bf6b5b1457fe16"
+  },
+  "limitations": [
+    "Ownership fraction is a capital exposure proxy, not actual capital-at-risk.",
+    "Risk fractions are hypothetical contractual allocations, not observed risk.",
+    "C01 and C03 may overlap economically; their weights are subjective and must be stress-tested.",
+    "C05 excluded due to overlapping financing risk; C06-C08 lack defensible scores.",
+    "Min-max scores are relative to alternatives within each price/stress scenario.",
+    "The 4-criterion scores are not comparable across price/stress contexts.",
+    "Supplier sales and markups presume customer viability; no debt, default, contract certainty or financing waterfalls.",
+    "Do not interpret highest weighted score as a verified strategic recommendation."
+  ]
+}

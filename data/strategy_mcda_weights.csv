@@ -1,0 +1,17 @@
+weight_set,criterion_id,weight,assumption_class
+BALANCED,C01,0.25,analyst_preference
+BALANCED,C02,0.25,analyst_preference
+BALANCED,C03,0.25,analyst_preference
+BALANCED,C04,0.25,analyst_preference
+VALUE_FOCUS,C01,0.15,analyst_preference
+VALUE_FOCUS,C02,0.55,analyst_preference
+VALUE_FOCUS,C03,0.15,analyst_preference
+VALUE_FOCUS,C04,0.15,analyst_preference
+CAPITAL_FOCUS,C01,0.45,analyst_preference
+CAPITAL_FOCUS,C02,0.25,analyst_preference
+CAPITAL_FOCUS,C03,0.20,analyst_preference
+CAPITAL_FOCUS,C04,0.10,analyst_preference
+RISK_FOCUS,C01,0.10,analyst_preference
+RISK_FOCUS,C02,0.20,analyst_preference
+RISK_FOCUS,C03,0.35,analyst_preference
+RISK_FOCUS,C04,0.35,analyst_preference
