@@ -5,7 +5,7 @@
 - Registry rows: 54
 - Unique registry IDs: 54
 - Manuscript citation IDs: 3
-- Bibliography heading IDs: 45
+- Bibliography heading IDs: 54
 - Registry-field issues: 14
 - Repeated URL groups: 5
 - Manuscript citations absent from bibliography: 0

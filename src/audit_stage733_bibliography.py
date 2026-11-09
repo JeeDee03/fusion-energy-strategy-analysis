@@ -59,11 +59,11 @@ references = (PAPER / "references.md").read_text(
 )
 
 citation_ids = set(re.findall(
-    r"\[([A-Za-z]{1,5}\d{2,3})\]",
+    r"\[([A-Za-z][A-Za-z0-9_]*\d)\]",
     manuscript
 ))
 reference_ids = set(re.findall(
-    r"^##\s+([A-Za-z]{1,5}\d{2,3})\b",
+    r"^##\s+([A-Za-z][A-Za-z0-9_]*\d)\b",
     references,
     flags=re.MULTILINE
 ))
