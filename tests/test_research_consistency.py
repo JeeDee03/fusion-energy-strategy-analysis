@@ -27,6 +27,26 @@ class ResearchConsistencyTests(unittest.TestCase):
             target = self.root/name
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(PROJECT/name, target)
+
+        # Stage 7 publication links in the README must also
+        # resolve inside the temporary project fixture.
+        tracked_paper_files = subprocess.run(
+            ["git", "ls-files", "--", "paper/"],
+            cwd=PROJECT,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.splitlines()
+
+        for relative in tracked_paper_files:
+            source = PROJECT / relative
+            if not source.is_file():
+                continue
+
+            target = self.root / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, target)
+
         # Synthetic records isolate record checks; the real combined runner is
         # exercised separately on the complete supplied project, not mocked here.
         self.r12 = {'schema_version':1,'status':'passed','evidence_issues':[],
