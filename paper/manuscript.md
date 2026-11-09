@@ -151,9 +151,7 @@ CF_{\mathrm{FPY}}=\frac{F}{F/q+m/12}
 Second, under a calendar-cycle maintenance convention with a total cycle length \(T\):
 
 \[
-CF_{\mathrm{calendar}}=
-
-\left(1-\frac{m}{12T}\right)q
+CF_{\mathrm{calendar}}=\left(1-\frac{m}{12T}\right)q
 \]
 
 The model applies additional downtime and operating-load effects once, avoiding duplicate capacity-factor deductions. Auxiliary consumption reduces net-rated capacity separately.
@@ -349,7 +347,7 @@ In the retained engineering analysis, the nominal 95% capacity-factor target is 
 
 A hypothetical reduction of the major maintenance outage to two months permits the modeled target to be reached under the specified additional assumptions. This constitutes a sensitivity result, not evidence that the shorter maintenance period is technically achievable.
 
-![Engineering-constrained capacity factor](figures/figure01_engineering_capacity_factor.png)
+![](figures/figure01_engineering_capacity_factor.png)
 
 *Figure 1. Engineering-constrained capacity factors and scenario targets across seven illustrative configurations. Derived performance is conditional on maintenance schedules, operating loads, and auxiliary electricity consumption.*
 
@@ -368,7 +366,7 @@ The six lifecycle scenarios produce the following results:
 | LC005 | 228.32 |
 | LC006 | 241.29 |
 
-![Lifecycle break-even electricity prices](figures/figure02_lifecycle_break_even.png)
+![](figures/figure02_lifecycle_break_even.png)
 
 *Figure 2. Modeled break-even electricity prices across six lifecycle scenarios, expressed in constant 2024 EUR/MWh. Scenarios differ in construction timing, electricity-generation treatment, replacement expenditure, or commissioning delays.*
 
@@ -392,11 +390,11 @@ The Monte Carlo framework examines the propagation of exploratory economic uncer
 
 The initial Stage 5.3 convergence audit reports `NONCONVERGED`, with 74 failed refinement tests. The extended assessment, incorporating sample sizes up to 131,072 per seed, also reports `NONCONVERGED`, with 17 failed refinement tests. Both assessments require two consecutive successful refinements under their prescribed criteria.
 
-![Monte Carlo refinement diagnostic](figures/figure03_monte_carlo_refinement.png)
+![](figures/figure03_monte_carlo_refinement.png)
 
 *Figure 3. Median modeled break-even electricity price for the GEN002_LC004_R05 context under increasing Monte Carlo sample sizes and alternative pseudorandom seeds. Visual stability of a selected statistic does not establish satisfaction of the full convergence criteria.*
 
-The Stage 5.5 integration audit records the status `COMPLETE_EXPLORATORY_CROSS_SEED_SUMMARY_NOT_CONVERGENCE_CERTIFIED`. Accordingly, successful production of cross-seed summaries should be distinguished from certified numerical convergence.
+The Stage 5.5 integration audit records completion of the exploratory cross-seed summary without certification of numerical convergence. Accordingly, successful production of cross-seed summaries should be distinguished from certified numerical convergence.
 
 The retained simulation results remain useful for exploratory comparisons and identifying model sensitivities. However, they do not establish reliable empirical probabilities of commercial success. The engineering contexts are not probability-weighted, and the assumed input distributions are not independently calibrated to realized commercial stellarator projects.
 
@@ -422,7 +420,7 @@ However, preference-based rankings must be distinguished from economic feasibili
 
 In the subsequent economic screening, **none of the 60 strategy-context combinations satisfies all applicable company, external-stakeholder, and project-level economic gates**.
 
-![Commercialization feasibility matrix](figures/figure04_strategy_feasibility.png)
+![](figures/figure04_strategy_feasibility.png)
 
 *Figure 4. Economic feasibility screening across four commercialization structures and 15 modeled contexts. All 60 combinations fail at least one of the applicable economic feasibility conditions. The result applies only to the selected analytical scenarios and assumptions.*
 
