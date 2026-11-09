@@ -1,5 +1,7 @@
 # Stage 4.3 — Engineering Performance and LCOE Sensitivity Analysis
 
+> Scope update — 5 November 2026: this chapter describes the original analytical layer. The current synthesis is [chapter 25](25_stage4_techno_economic_synthesis.md), with engineering generation in [28](28_engineering_constrained_generation.md), construction/replacement DCF in [29](29_construction_replacement_cash_flows.md), and current research status in [31](31_research_status_and_claims.md). Legacy omissions are not omissions of every later extension; conditional results remain uncalibrated.
+
 ## 1. Research Objective
 
 Investigate whether higher operational performance could compensate for the potentially higher construction costs of stellarator-based fusion power plants.

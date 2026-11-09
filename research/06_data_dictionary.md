@@ -502,3 +502,185 @@ Human-readable validation summary intended for research review.
 - Historical electricity prices must not be treated as future forecasts.
 - The distinction between capital cost intensity, total capital investment, gross power and net electricity production must be preserved.
 - Stage 5 must distinguish exploratory probability assumptions from empirically supported distributions.
+
+## Reviewed Economic Assumptions and Price Basis — Step 4
+
+The following are source inputs, distinct from the generated engineering
+`economic_input_register.csv`. Validation never overwrites their reviewed content.
+
+### economic_assumptions.csv
+
+One row per modeled numerical parameter family, keyed by `parameter_id`.
+
+| Fields | Definition |
+|---|---|
+| `model_field`, `unit` | Scenario input field and explicit physical/monetary unit |
+| `reference_value`, `reference_scenario` | Reviewed reference and the active row it must match |
+| `lower`, `upper`, `range_role` | Reviewed sensitivity envelope or unexecuted exploratory candidate, not a confidence interval |
+| `evidence_class`, `calibration_status` | Analyst assumption and retained lack of empirical calibration |
+| `reference_notes` | Semicolon-separated note IDs in economic_reference_notes.csv |
+| `rationale`, `range_rationale` | Why the reference and bracket are used; not a substitute for evidence |
+| `dependencies`, `next_evidence_needed` | Engineering/economic coupling and the outstanding research action |
+| `geography`, `deployment_basis` | Declared analyst scenario scope, not country-calibrated costs |
+| `price_year` | 2024 for monetary quantities; not_applicable for other quantities |
+
+### economic_reference_notes.csv
+
+`note_id` identifies a source note. `source_id` points to sources.csv when an
+existing ID applies; the separately reviewed SAM methodology page is cited by
+URL. `url` and `locator` identify the evidence. `source_role` distinguishes
+context_only, methodology_only and historical_value. `finding` records what
+was used and `transfer_limit` explains what it does not establish.
+
+### economic_model_basis.json
+
+Explicit 2024 constant-EUR analyst convention, real/pre-tax/unlevered discount
+basis, overnight upfront CAPEX, illustrative first-unit FOAK scope, unverified
+net-rated output, normalized 8760-hour model year and the 8784-hour historical
+2024 reference. Price year is not COD or cash-flow year zero. Repeat-unit
+learning is not verified NOAK. Full calibration remains open.
+
+### economic_assumption_audit.json and .md
+
+Generated validation outputs. Status PASS_WITH_RESEARCH_GAPS means that the
+reviewed register matches active inputs and model conventions; it does not
+mean empirical calibration is complete. JSON records 57 active numerical
+bindings with their parameter, unit and evidence class. Errors and retained
+research gaps are separate lists. These reports and all three new source inputs
+are included in the Stage 3–4 provenance checks.
+
+
+## Conditional Engineering Generation — Step 5
+
+### engineering_generation_cases.csv
+
+Reviewed analyst inputs keyed by scenario_id. `maintenance_basis` is
+full_power_exposure (interval_years denotes accumulated FPY) or calendar_cycle
+(interval_years includes its major outage). `major_outage_months` uses 12 equal
+model months/year. `other_outage_fraction` applies only in the non-major window;
+`operating_load_fraction` applies while online. `gross_electric_mwe` is electrical
+power before proportional online `auxiliary_fraction`. The target_capacity_factor
+is tested, not inserted as generation. `assumption_class`, `source_id` and `notes`
+retain assumption/evidence limits; none is measured plant performance.
+
+### engineering_generation_scenarios.csv
+
+Generated full-row engineering calculations and conditional LCOE. `net_rated_mwe`
+subtracts auxiliaries once. `derived_capacity_factor` is relative to that net
+rating. `annual_net_energy_mwh` is the long-run annual cycle average.
+`operating_window_years`, `cycle_years`, major_outage_availability and
+online_availability distinguish time and loss mechanisms. `target_met` and
+cf_target_gap preserve unmet performance targets. `evidence_relation` flags
+shorter-than-documented duration targets and analyst calendar interpretations.
+Total CAL002 investment is held fixed; effective capital intensity changes with
+net rating. LCOE uses 2024 constant EUR.
+
+### engineering_generation_audit.json, .md and capacity_factors.png
+
+Generated summaries with conditional target counts, source limits and the
+CF/target figure. An intentionally unmet target is an analytical finding.
+Passing execution does not validate the optimistic engineering assumptions.
+All new inputs and outputs are tracked by the Stage 3–4 rebuild/freshness checks.
+
+
+## Construction and Replacement Cash Flow — Step 6
+
+### lifecycle_cash_flow_cases.json
+
+Reviewed source cases with an explicit 2024 constant-EUR cost/discount boundary.
+construction_years is a nonnegative integer; construction_spend_shares sums to
+one and has C entries (one for C=0). Shares are paid at model times 0..C-1,
+COD=C, and operating receipts start at C+1. generation_mode is legacy_constant_cf
+or engineering_events. engineering_case_id and price_scenario_id reference
+reviewed source cases. replacement_cost_eur_million is paid per event, at exact
+outage start. opex_boundary prevents silently combining aggregate costs with
+separate replacements. All schedules/costs remain analyst assumptions.
+
+### lifecycle_summary.csv
+
+Generated per-case NPV, discounted-cost/energy break-even price, discounted
+cost components, finite-life capacity factor, total generation, replacement
+count, declared assumptions and source references. The finite-life CF can differ
+from the Step 5 long-run cycle average because first/last cycles are partial.
+
+### lifecycle_annual_cash_flows.csv
+
+Generated integer reporting buckets with separately discounted construction,
+routine operating and replacement components. model_year is relative project
+time, not price year or an absolute calendar date. Replacement discounting uses
+its exact time before aggregation, so discounted cash flow need not equal the
+raw annual total divided by the integer-year discount factor.
+
+### lifecycle_replacement_events.csv
+
+Exact operating/project start time, replacement index, reporting year, outage
+end clipped to retirement and nominal/discounted event cost. No event is bought
+at retirement; earlier events incur full assumed expense even for a truncated
+final outage. Other downtime/load losses are averaged within operating windows.
+
+### lifecycle_audit.json, .md and lifecycle_break_even.png
+
+Generated reconciliation, case findings, monetary/time boundaries, limitations
+and the break-even comparison. Passing checks validate consistency, not commercial
+calibration or loan-financing assumptions. All new sources/outputs are included
+in Stage 3–4 hashes. Existing economic_model_basis.json now explicitly identifies
+its upfront-investment boundary as legacy scope; the extension's boundary is
+separate, while the 2024 constant-EUR unit is shared.
+
+
+## Comparable Company and Business Evidence — Step 7
+
+### company_business_profiles.csv
+
+Five reviewed profiles keyed by company_id. strategy_label must match the shared
+companies.csv business_model field. classification_basis is explicitly an analyst
+classification of declared strategy, not observed revenue. source_ids reference
+the competitive source ledger; review_date and limitations bound interpretation.
+Updating this shared descriptive metadata requires a Stage 1–2 provenance refresh
+before claiming its old input hashes match the new company file.
+
+### competitive_sources.csv
+
+Fourteen selected sources with source_id, company_id, title, publisher, URL,
+publication/updated/review dates, source_kind, locator and limitations. An optional
+legacy_source_id links to sources.csv without modifying its existing financial
+source register. Undated websites are marked with blank publication dates, not
+invented event dates. The bounded snapshot date is 2026-11-05.
+
+### company_comparison_claims.csv
+
+Forty records: one company/criterion pair for each of five companies and eight
+criteria. claim_id is unique; reference_device_id is owned by the same company.
+statement, evidence_type, source_ids and evidence_locator describe the reviewed
+claim; limitation and analyst_implication explicitly separate boundaries and
+interpretation. not_established_in_reviewed_sources is a review gap, not proof
+that the company lacks the capability. Source statements are not independently
+verified by offline validation.
+
+### company_comparison.csv, company_comparison_matrix.csv, company_comparison.md
+
+Generated tidy evidence table, wide comparison and linked human-readable review.
+Device roles distinguish experiments, demonstrators and commercial concepts;
+no maturity score or comparative LCOE is computed. Source and assumption changes
+must reconcile before integration/freshness can pass.
+
+### company_comparison_audit.json
+
+Generated coverage and consistency status PASS_WITH_EVIDENCE_GAPS. It retains
+selected-review unknown counts and interpretation limits. Counts measure dataset
+coverage, not scientific readiness, source independence or commercial success.
+
+## Current research interpretation registers — improvement Step 8
+
+- `data/research_status.json`: canonical H1–H3 definitions, open assessments, evidence still required and implementation states for main Stages 1–7. A planned stage is not marked complete by running software.
+- `data/research_findings.json`: reviewed numerical anchors; each records a report CSV, unique row selector, field, expected rounded value, absolute tolerance, unit, conditional classification and boundary. The runner checks anchors but never silently updates them to match changed results.
+- `reports/research_consistency_audit.json` and `reports/research_consistency_summary.md`: generated bounded checks of hypothesis blocks, anchors and relative links. They are not source verification or automated review of arbitrary prose.
+- `reports/stage12_run_summary.json` and `reports/stage34_run_summary.json`: separate execution/provenance records. `check_stage14_freshness.py` checks both declared file sets and environments without rewriting them. The Stage 1–2 record now requires schema version 1; rebuild older records.
+
+Both rebuilds conservatively track top-level Python scripts. Stage 3–4 also tracks current editorial Markdown inputs, excluding the Stage 1–2-generated chapters 02/11 (their producer tracks those outputs). No human milestone review is overwritten.
+
+## Stage 5 uncertainty design — improvement Step 9
+
+- `data/stage5_uncertainty_spec.json`: reviewed source-bound specification, ten parameter roles, five pilot marginals, separate learning family, 12 unweighted contexts, dependence designs and sampling/convergence acceptance rules. No empirical probability calibration is asserted. `reviewed_input_hashes` pins the six reviewed source files; changed sources require deliberate design reconciliation.
+- `reports/stage5_design_dry_run.csv`: generated 396 deterministic center/corner checks, with explicit context, parameter values, replacement cost, finite-life CF, NPV and break-even price. Rows are neither random draws nor probability-weighted observations.
+- `reports/stage5_spec_audit.json` and `.md`: specification/numerical preflight results. `simulation_executed` is false. Passing does not establish feasibility, empirical calibration, convergence, or completion of main Stage 5.

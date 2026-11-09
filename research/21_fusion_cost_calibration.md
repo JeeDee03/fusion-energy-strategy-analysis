@@ -1,5 +1,7 @@
 # Stage 4.2 — Fusion Cost Benchmarks and Provisional Economic Scenarios
 
+> Scope update — 5 November 2026: this chapter describes the original analytical layer. The current synthesis is [chapter 25](25_stage4_techno_economic_synthesis.md), with engineering generation in [28](28_engineering_constrained_generation.md), construction/replacement DCF in [29](29_construction_replacement_cash_flows.md), and current research status in [31](31_research_status_and_claims.md). Legacy omissions are not omissions of every later extension; conditional results remain uncalibrated.
+
 ## 1. Research Objective
 
 Identify published capital-cost benchmarks for magnetic confinement fusion power plants and establish a transparent initial scenario framework for Proxima Fusion's Stellaris concept.
